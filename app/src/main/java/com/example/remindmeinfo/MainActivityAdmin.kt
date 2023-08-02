@@ -1,13 +1,13 @@
 package com.example.remindmeinfo
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.remindmeinfo.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivityAdmin : AppCompatActivity() {
 
@@ -18,6 +18,8 @@ class MainActivityAdmin : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
 
         val navView: BottomNavigationView = binding.navView
 

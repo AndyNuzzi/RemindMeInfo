@@ -8,12 +8,10 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment"
-        android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_reminder_admin" />
 
     <fragment
         android:id="@+id/navigation_map"
         android:name="com.example.remindmeinfo.ui.map_admin.MapAdminFragment"
-        android:label="@string/title_map"
         tools:layout="@layout/fragment_map_admin"/>
 </navigation>
