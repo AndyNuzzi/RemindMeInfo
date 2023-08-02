@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.remindmeinfo.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivityAdmin : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

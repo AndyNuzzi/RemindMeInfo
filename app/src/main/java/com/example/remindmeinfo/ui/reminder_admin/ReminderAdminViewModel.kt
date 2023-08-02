@@ -1,10 +1,10 @@
-package com.example.remindmeinfo.ui.dashboard
+package com.example.remindmeinfo.ui.reminder_admin
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class ReminderAdminViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is dashboard Fragment"

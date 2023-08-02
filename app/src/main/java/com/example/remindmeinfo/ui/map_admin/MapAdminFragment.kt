@@ -1,4 +1,4 @@
-package com.example.remindmeinfo.ui.map
+package com.example.remindmeinfo.ui.map_admin
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.remindmeinfo.databinding.FragmentMapBinding
-import com.example.remindmeinfo.databinding.FragmentNotificationsBinding
 
-class MapFragment : Fragment() {
+class MapAdminFragment : Fragment() {
 
     private var _binding: FragmentMapBinding? = null
 
@@ -24,7 +23,7 @@ class MapFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val mapViewModel =
-            ViewModelProvider(this).get(MapViewModel::class.java)
+            ViewModelProvider(this).get(MapAdminViewModel::class.java)
 
         _binding = FragmentMapBinding.inflate(inflater, container, false)
         val root: View = binding.root
