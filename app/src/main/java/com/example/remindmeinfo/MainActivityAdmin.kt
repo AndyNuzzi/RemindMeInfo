@@ -19,7 +19,9 @@ class MainActivityAdmin : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // show icon in action bar
         supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         val navView: BottomNavigationView = binding.navView
 
