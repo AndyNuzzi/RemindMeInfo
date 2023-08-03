@@ -4,12 +4,11 @@
 
     <item
         android:id="@+id/navigation_reminder"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_reminder" />
+        android:title="Ajustes" />
 
     <item
         android:id="@+id/navigation_map"
-        android:icon="@drawable/ic_baseline_map_24"
-        android:title="@string/title_map" />
+
+        android:title="Ayuda" />
 
 </menu>
