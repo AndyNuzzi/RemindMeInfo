@@ -14,4 +14,6 @@
         android:id="@+id/navigation_map"
         android:name="com.example.remindmeinfo.ui.map_admin.MapAdminFragment"
         tools:layout="@layout/fragment_map_admin"/>
+
+
 </navigation>

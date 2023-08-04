@@ -5,12 +5,21 @@
         <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryVariant">@color/pink</item>
         <item name="colorOnPrimary">@color/white</item>
-            <!--Secondarybrandcolor.-->
+        <!--Secondarybrandcolor.-->
         <item name="colorSecondary">@color/orange</item>
         <item name="colorSecondaryVariant">@color/gray</item>
         <item name="colorOnSecondary">@color/black</item>
-            <!--Statusbarcolor.-->
+        <!--Statusbarcolor.-->
         <item name="android:statusBarColor">@color/blue</item>
-            <!--Customizeyourthemehere.-->
+        <!--Customizeyourthemehere.-->
     </style>
+
+    <style name="Theme.RemindMeInfo.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.RemindMeInfo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.RemindMeInfo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

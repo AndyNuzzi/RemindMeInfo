@@ -1,6 +1,11 @@
 package com.example.remindmeinfo
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -36,5 +41,16 @@ class MainActivityAdmin : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.nav_menu, menu)
+        return true
+    }
+
+    fun starHelp(item: MenuItem) {
+        val intent = Intent(this, HelpActivity::class.java)
+        startActivity(intent)
     }
 }

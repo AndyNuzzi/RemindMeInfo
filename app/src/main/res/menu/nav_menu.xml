@@ -3,12 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_reminder"
+        android:id="@+id/navigation_setting"
+
         android:title="Ajustes" />
 
     <item
-        android:id="@+id/navigation_map"
-
+        android:id="@+id/navigation_help"
+        android:onClick="starHelp"
         android:title="Ayuda" />
 
 </menu>
