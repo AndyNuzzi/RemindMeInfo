@@ -9,11 +9,9 @@
         android:id="@+id/navigation_reminder"
         android:name="com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment"
         tools:layout="@layout/fragment_reminder_admin" />
-
     <fragment
         android:id="@+id/navigation_map"
         android:name="com.example.remindmeinfo.ui.map_admin.MapAdminFragment"
         tools:layout="@layout/fragment_map_admin"/>
-
 
 </navigation>

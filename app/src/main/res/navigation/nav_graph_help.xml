@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/nav_graph_help"
     app:startDestination="@id/FirstHelpFragment">
 
     <fragment
@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_second_help">
 
         <action
-            android:id="@+id/action_SecondHelpFragment_to_mainActivity"
-            app:destination="@id/container" />
+            android:id="@+id/action_SecondFragment_to_mainActivity"
+            app:destination="@id/nav_host_fragment_activity_main" />
     </fragment>
 </navigation>

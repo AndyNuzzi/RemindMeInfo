@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph2"
+    android:id="@+id/nav_graph_setting"
     app:startDestination="@id/FirstSettingFragment">
 
     <fragment
@@ -23,6 +23,6 @@
 
         <action
             android:id="@+id/action_SecondSettingFragment_to_mainActivity"
-            app:destination="@id/container" />
+            app:destination="@id/nav_host_fragment_activity_main" />
     </fragment>
 </navigation>
