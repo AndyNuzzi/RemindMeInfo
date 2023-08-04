@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/FirstSettingFragment">
+
+    <fragment
+        android:id="@+id/FirstSettingFragment"
+        android:name="com.example.remindmeinfo.ui.setting.FirstSettingFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first_setting">
+
+        <action
+            android:id="@+id/action_FirstSettingFragment_to_SecondSettingFragment"
+            app:destination="@id/SecondSettingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondSettingFragment"
+        android:name="com.example.remindmeinfo.ui.setting.SecondSettingFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second_setting">
+
+        <action
+            android:id="@+id/action_SecondSettingFragment_to_mainActivity"
+            app:destination="@id/container" />
+    </fragment>
+</navigation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstHelpFragment">
+
+    <fragment
+        android:id="@+id/FirstHelpFragment"
+        android:name="com.example.remindmeinfo.ui.help.FirstHelpFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first_help">
+
+        <action
+            android:id="@+id/action_FirstHelpFragment_to_SecondHelpFragment"
+            app:destination="@id/SecondHelpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondHelpFragment"
+        android:name="com.example.remindmeinfo.ui.help.SecondHelpFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second_help">
+
+        <action
+            android:id="@+id/action_SecondHelpFragment_to_mainActivity"
+            app:destination="@id/container" />
+    </fragment>
+</navigation>

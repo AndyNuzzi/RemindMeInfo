@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.remindmeinfo.databinding.ActivityMainBinding
+import com.example.remindmeinfo.ui.help.HelpActivity
+import com.example.remindmeinfo.ui.setting.SettingActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivityAdmin : AppCompatActivity() {
@@ -49,8 +50,13 @@ class MainActivityAdmin : AppCompatActivity() {
         return true
     }
 
-    fun starHelp(item: MenuItem) {
+    fun startHelp(item: MenuItem) {
         val intent = Intent(this, HelpActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun startSetting(item: MenuItem) {
+        val intent = Intent(this, SettingActivity::class.java)
         startActivity(intent)
     }
 }
