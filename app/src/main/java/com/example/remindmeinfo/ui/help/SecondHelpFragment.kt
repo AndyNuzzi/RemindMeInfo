@@ -34,7 +34,7 @@ class SecondHelpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondSettingFragment_to_mainActivity)
+            findNavController().navigate(R.id.action_SecondHelpFragment_to_mainActivity)
         }
     }
 

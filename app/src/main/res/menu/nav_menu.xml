@@ -4,12 +4,17 @@
 
     <item
         android:id="@+id/navigation_setting"
-        android:onClick="startSetting"
+        android:onClick="onNavigationItemSelected"
         android:title="Ajustes" />
 
     <item
         android:id="@+id/navigation_help"
-        android:onClick="startHelp"
+        android:onClick="onNavigationItemSelected"
         android:title="Ayuda" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:onClick="onNavigationItemSelected"
+        android:title="Home" />
 
 </menu>

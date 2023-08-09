@@ -50,12 +50,27 @@ class MainActivityAdmin : AppCompatActivity() {
         return true
     }
 
-    fun startHelp(item: MenuItem) {
+    fun onNavigationItemSelected(item: MenuItem):Boolean{
+
+        when (item.itemId){
+            R.id.navigation_help -> startHelp()
+            R.id.navigation_setting -> startSetting()
+            R.id.navigation_home -> startMain()
+        }
+        return true
+    }
+
+    fun startMain(){
+        val intent = Intent(this, MainActivityAdmin::class.java)
+        startActivity(intent)
+    }
+
+    fun startHelp() {
         val intent = Intent(this, HelpActivity::class.java)
         startActivity(intent)
     }
 
-    fun startSetting(item: MenuItem) {
+    fun startSetting() {
         val intent = Intent(this, SettingActivity::class.java)
         startActivity(intent)
     }

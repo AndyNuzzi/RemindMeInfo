@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_second_help">
 
         <action
-            android:id="@+id/action_SecondFragment_to_mainActivity"
+            android:id="@+id/action_SecondHelpFragment_to_mainActivity"
             app:destination="@id/nav_host_fragment_activity_main" />
     </fragment>
 </navigation>
