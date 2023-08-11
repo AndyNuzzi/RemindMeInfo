@@ -11,7 +11,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.remindmeinfo.databinding.ActivityMainBinding
-import com.example.remindmeinfo.ui.help.HelpActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivityAdmin : AppCompatActivity() {
