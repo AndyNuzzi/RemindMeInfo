@@ -54,13 +54,9 @@ class MainActivityAdmin : AppCompatActivity() {
             R.id.navigation_help -> startHelp()
             R.id.navigation_setting -> startSetting()
             R.id.navigation_home -> startMain()
+            R.id.navigation_profile -> startProfile()
         }
         return true
-    }
-
-    fun startMain(){
-        val intent = Intent(this, MainActivityAdmin::class.java)
-        startActivity(intent)
     }
 
     fun startHelp() {
@@ -72,4 +68,16 @@ class MainActivityAdmin : AppCompatActivity() {
         val intent = Intent(this, SettingActivity::class.java)
         startActivity(intent)
     }
+
+    fun startMain(){
+        val intent = Intent(this, MainActivityAdmin::class.java)
+        startActivity(intent)
+    }
+
+    fun startProfile(){
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+    }
+
+
 }

@@ -17,9 +17,4 @@
         android:onClick="onNavigationItemSelected"
         android:title="Home" />
 
-    <item
-        android:id="@+id/navigation_profile"
-        android:onClick="onNavigationItemSelected"
-        android:title="Perfil" />
-
 </menu>

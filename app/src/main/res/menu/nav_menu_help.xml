@@ -8,11 +8,6 @@
         android:title="Ajustes" />
 
     <item
-        android:id="@+id/navigation_help"
-        android:onClick="onNavigationItemSelected"
-        android:title="Ayuda" />
-
-    <item
         android:id="@+id/navigation_home"
         android:onClick="onNavigationItemSelected"
         android:title="Home" />

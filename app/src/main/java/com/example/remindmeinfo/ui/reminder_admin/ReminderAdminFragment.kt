@@ -22,14 +22,14 @@ class ReminderAdminFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
+        val reminderViewModel =
             ViewModelProvider(this).get(ReminderAdminViewModel::class.java)
 
         _binding = FragmentReminderAdminBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textReminder
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        reminderViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

@@ -1,15 +1,17 @@
-package com.example.remindmeinfo.ui.help
+package com.example.remindmeinfo.ui.profile
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.view.*
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
-import com.example.remindmeinfo.R
-import com.example.remindmeinfo.databinding.FragmentHelpBinding
+import com.example.remindmeinfo.databinding.FragmentProfileBinding
+import com.example.remindmeinfo.ui.help.HelpViewModel
 
-class HelpFragment : Fragment() {
-    private var _binding: FragmentHelpBinding? = null
+class ProfileFragment : Fragment() {
+    private var _binding: FragmentProfileBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,14 +22,14 @@ class HelpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val helpViewModel =
-            ViewModelProvider(this).get(HelpViewModel::class.java)
+        val profileViewModel =
+            ViewModelProvider(this).get(ProfileViewModel::class.java)
 
-        _binding = FragmentHelpBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.message
-        helpViewModel.text.observe(viewLifecycleOwner) {
+        profileViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
