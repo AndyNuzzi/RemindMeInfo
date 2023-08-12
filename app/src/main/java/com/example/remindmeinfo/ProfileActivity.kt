@@ -21,7 +21,7 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.nav_menu_setting, menu)
+        inflater.inflate(R.menu.nav_menu_profile, menu)
         return true
     }
 
