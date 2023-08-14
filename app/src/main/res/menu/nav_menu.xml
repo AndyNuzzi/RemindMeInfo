@@ -4,22 +4,29 @@
 
     <item
         android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:onClick="onNavigationItemSelected"
-        android:title="Ajustes" />
+        android:title="Ajustes"/>
 
     <item
         android:id="@+id/navigation_help"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:onClick="onNavigationItemSelected"
-        android:title="Ayuda" />
+        android:title="Ayuda"
+        android:visible="true" />
 
     <item
         android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:onClick="onNavigationItemSelected"
-        android:title="Home" />
+        android:title="Home"
+        android:visible="true" />
 
     <item
         android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:onClick="onNavigationItemSelected"
-        android:title="Perfil" />
+        android:title="Perfil"
+        android:visible="true" />
 
 </menu>
