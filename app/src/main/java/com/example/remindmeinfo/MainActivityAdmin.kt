@@ -2,19 +2,23 @@ package com.example.remindmeinfo
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.remindmeinfo.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.remindmeinfo.ui.help.HelpFragment
+import com.example.remindmeinfo.ui.map_admin.MapAdminFragment
+import com.example.remindmeinfo.ui.profile.ProfileFragment
+import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
+import com.example.remindmeinfo.ui.setting.SettingFragment
+import com.google.android.material.navigation.NavigationView
 
-class MainActivityAdmin : AppCompatActivity() {
+class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    private lateinit var fragmentManager: FragmentManager
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,61 +27,66 @@ class MainActivityAdmin : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
+        fragmentManager = supportFragmentManager
+
+        //navigation drawer
+        val toggle = ActionBarDrawerToggle(this, binding.drawerLayout, binding.toolbar, 0, 0)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        binding.navigationDrawer.setNavigationItemSelectedListener(this)
+
+
+        //botom navigation
+        binding.botomNavigation.background = null
+
+        binding.botomNavigation.setOnItemReselectedListener { item ->
+            when (item.itemId){
+                R.id.navigation_reminder -> openFragment(ReminderAdminFragment())
+                R.id.navigation_map -> openFragment(MapAdminFragment())
+            }
+        }
+
+
         // show icon in action bar
         supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                //R.id.navigation_home, R.id.navigation_notifications,
-                R.id.navigation_reminder, R.id.navigation_map
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.nav_menu, menu)
-        return true
-    }
-
-    fun onNavigationItemSelected(item: MenuItem):Boolean{
+    override fun onNavigationItemSelected(item: MenuItem):Boolean{
 
         when (item.itemId){
-            R.id.navigation_help -> startHelp()
-            R.id.navigation_setting -> startSetting()
+            R.id.navigation_help -> openFragment(HelpFragment())
+            R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
-            R.id.navigation_profile -> startProfile()
+            R.id.navigation_profile -> openFragment(ProfileFragment())
         }
+
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    fun startHelp() {
-        val intent = Intent(this, HelpActivity::class.java)
-        startActivity(intent)
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)){
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.getOnBackPressedDispatcher().onBackPressed()
+        }
+
     }
 
-    fun startSetting() {
-        val intent = Intent(this, SettingActivity::class.java)
-        startActivity(intent)
+    private fun openFragment(fragment: Fragment){
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
     fun startMain(){
         val intent = Intent(this, MainActivityAdmin::class.java)
         startActivity(intent)
     }
-
-    fun startProfile(){
-        val intent = Intent(this, ProfileActivity::class.java)
-        startActivity(intent)
-    }
-
 
 }
