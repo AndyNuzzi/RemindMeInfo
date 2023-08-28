@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.databinding.ActivityMainBinding
 import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.map_admin.MapAdminFragment
@@ -42,12 +43,16 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         //botom navigation
         binding.botomNavigation.background = null
 
-        binding.botomNavigation.setOnItemReselectedListener { item ->
+        binding.botomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId){
                 R.id.navigation_reminder -> openFragment(ReminderAdminFragment())
                 R.id.navigation_map -> openFragment(MapAdminFragment())
             }
+            true
         }
+
+        fragmentManager = supportFragmentManager
+        openFragment(ReminderAdminFragment())
 
 
         // show icon in action bar
@@ -78,10 +83,10 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     private fun openFragment(fragment: Fragment){
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+        val fragmentTransaction: FragmentTransaction =  fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        //fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 
     fun startMain(){
