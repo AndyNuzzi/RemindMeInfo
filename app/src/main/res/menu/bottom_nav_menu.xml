@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_reminder"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_reminder" />
+        android:title="@string/title_reminder"
+        app:maxImageSize="40dp"/>
 
     <item
         android:title=""
@@ -14,6 +15,7 @@
     <item
         android:id="@+id/navigation_map"
         android:icon="@drawable/ic_baseline_map_24"
-        android:title="@string/title_map" />
+        android:title="@string/title_map"
+        app:maxImageSize="40dp"/>
 
 </menu>

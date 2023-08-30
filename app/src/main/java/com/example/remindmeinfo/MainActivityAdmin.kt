@@ -3,6 +3,7 @@ package com.example.remindmeinfo
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -44,7 +45,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         binding.botomNavigation.background = null
 
         binding.botomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId){
+            when (item.itemId) {
                 R.id.navigation_reminder -> openFragment(ReminderAdminFragment())
                 R.id.navigation_map -> openFragment(MapAdminFragment())
             }
@@ -53,6 +54,10 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         fragmentManager = supportFragmentManager
         openFragment(ReminderAdminFragment())
+
+        binding.fab.setOnClickListener {
+            Toast.makeText(this, "Adding new reminder", Toast.LENGTH_SHORT).show()
+        }
 
 
         // show icon in action bar

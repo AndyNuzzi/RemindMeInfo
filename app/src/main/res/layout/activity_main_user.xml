@@ -43,19 +43,10 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/botom_navigation"
                     app:labelVisibilityMode="labeled"
-                    app:menu="@menu/bottom_nav_menu"
+                    app:menu="@menu/bottom_nav_menu_user"
                     android:background="@android:color/transparent"/>
 
             </com.google.android.material.bottomappbar.BottomAppBar>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_add_circle_outline_24"
-                android:backgroundTint="@color/orange"
-                app:layout_anchor="@id/bottomAppBar"
-                app:maxImageSize="50dp"
-                android:id="@+id/fab"/>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
