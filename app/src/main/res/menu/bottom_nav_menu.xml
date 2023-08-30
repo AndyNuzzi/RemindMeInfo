@@ -8,6 +8,10 @@
         android:title="@string/title_reminder" />
 
     <item
+        android:title=""
+        android:enabled="false"/>
+
+    <item
         android:id="@+id/navigation_map"
         android:icon="@drawable/ic_baseline_map_24"
         android:title="@string/title_map" />
