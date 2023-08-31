@@ -10,25 +10,25 @@
 
     <item
         android:id="@+id/navigation_calendar"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_calendar_month_24"
         android:title="Calendario"
         app:maxImageSize="40dp"/>
 
     <item
         android:id="@+id/navigation_panic"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_call_24"
         android:title="Boton Pánico"
         app:maxImageSize="40dp"/>
 
     <item
         android:id="@+id/navigation_medical_info"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_library_books_24"
         android:title="Informes"
         app:maxImageSize="40dp"/>
 
     <item
         android:id="@+id/navigation_pharmacy_info"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_medication_24"
         android:title="Medicación"
         app:maxImageSize="40dp"/>
 
