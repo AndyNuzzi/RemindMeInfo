@@ -4,36 +4,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
-    <group
-        android:checkableBehavior="single">
+    <item android:title="Personalización">
+        <menu>
+            <item
+                android:id="@+id/navigation_setting"
+                android:icon="@drawable/ic_baseline_settings_24"
+                android:title="Ajustes"
+                app:maxImageSize="40dp"/>
+        </menu>
+    </item>
+    <item android:title="Información Adicional">
+        <menu>
+            <item
+                android:id="@+id/navigation_help"
+                android:icon="@drawable/ic_baseline_help_24"
+                android:title="Ayuda"
+                android:visible="true"
+                app:maxImageSize="40dp"/>
+        </menu>
+    </item>
 
-        <item
-            android:id="@+id/navigation_setting"
-            android:icon="@drawable/ic_baseline_settings_24"
-            android:title="Ajustes"
-            app:maxImageSize="40dp"/>
+    <item android:title="Pantalla de inicio">
+        <menu>
+            <item
+                android:id="@+id/navigation_home"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:title="Home"
+                android:visible="true"
+                app:maxImageSize="40dp"/>
+        </menu>
+    </item>
 
-        <item
-            android:id="@+id/navigation_help"
-            android:icon="@drawable/ic_baseline_help_24"
-            android:title="Ayuda"
-            android:visible="true"
-            app:maxImageSize="40dp"/>
+    <item android:title="Información Personal">
+        <menu>
+            <item
+                android:id="@+id/navigation_profile"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Perfil"
+                android:visible="true"
+                app:maxImageSize="40dp"/>
+        </menu>
+    </item>
 
-        <item
-            android:id="@+id/navigation_home"
-            android:icon="@drawable/ic_baseline_home_24"
-            android:title="Home"
-            android:visible="true"
-            app:maxImageSize="40dp"/>
+    <item android:title="Información de la Sesión">
+        <menu>
+            <item
+                android:id="@+id/navigation_session"
+                android:icon="@drawable/ic_baseline_logout_24"
+                android:title="Cerrar Sesión"
+                android:visible="true"
+                app:maxImageSize="40dp"/>
+        </menu>
+    </item>
 
-        <item
-            android:id="@+id/navigation_profile"
-            android:icon="@drawable/ic_baseline_person_24"
-            android:title="Perfil"
-            android:visible="true"
-            app:maxImageSize="40dp"/>
-
-    </group>
+    <item android:title="">
+        <menu>
+            <item android:title=""/>
+        </menu>
+    </item>
 
 </menu>
