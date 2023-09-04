@@ -40,10 +40,17 @@
             <item
                 android:id="@+id/navigation_profile"
                 android:icon="@drawable/ic_baseline_person_24"
-                android:title="Perfil"
+                android:title="Perfil Administrador"
+                android:visible="true"
+                app:maxImageSize="40dp"/>
+            <item
+                android:id="@+id/navigation_profile_user"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Perfil Usuario"
                 android:visible="true"
                 app:maxImageSize="40dp"/>
         </menu>
+
     </item>
 
     <item android:title="Información de la Sesión">

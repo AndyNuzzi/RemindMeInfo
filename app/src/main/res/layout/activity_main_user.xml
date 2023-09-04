@@ -59,7 +59,7 @@
         android:layout_gravity="start"
         app:itemIconTint="@color/pink"
         app:itemTextColor="@color/gray"
-        app:menu="@menu/nav_menu"/>
+        app:menu="@menu/nav_menu_user"/>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
