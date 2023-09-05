@@ -9,8 +9,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+
 import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
@@ -41,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
     }
 
-    fun login(view: View){
+    fun login(view:View) {
         email = etEmail.text.toString()
         psswrd = etPsswrd.text.toString()
 

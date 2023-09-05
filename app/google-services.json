@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "916218835212",
+    "project_id": "remindmeinfo-90d98",
+    "storage_bucket": "remindmeinfo-90d98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916218835212:android:ef9c733b16fb9750f29929",
+        "android_client_info": {
+          "package_name": "com.example.remindmeinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916218835212-2v2jtkfofdttrg9nspfjlgkccjivcqk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYYCZ2T8Mdld02OM02wVDA8nwlXo3wgV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916218835212-2v2jtkfofdttrg9nspfjlgkccjivcqk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
