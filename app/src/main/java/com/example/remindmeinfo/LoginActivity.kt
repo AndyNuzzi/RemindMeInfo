@@ -3,6 +3,7 @@ package com.example.remindmeinfo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
@@ -112,7 +113,19 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun forgottenPsswrd(view: View){
-        startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        //startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        var em = etEmail.text.toString()
+
+        if(!TextUtils.isEmpty(em)){
+            mAuth.sendPasswordResetEmail(em)
+                .addOnCompleteListener{ task ->
+                    if (task.isSuccessful){
+                        Toast.makeText(this, "Email enviado a $em", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "No se ha encontrado usuario con ese correo", Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }
     }
 
     fun goTerms(view: View){
