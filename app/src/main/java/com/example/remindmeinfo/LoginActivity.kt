@@ -9,6 +9,9 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.*
 
 import kotlin.properties.Delegates
 
@@ -60,7 +63,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goHome(email: String, provider: String){
-
         useremail = email
         providerSession = provider
 
@@ -73,10 +75,21 @@ class LoginActivity : AppCompatActivity() {
         etPsswrd = findViewById(R.id.textPassword)
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, psswrd)
-            .addOnCompleteListener(this){ task ->
-                if(task.isSuccessful){
-                    val intent = Intent(this, RegisterActivity::class.java)
-                    startActivity(intent)
+            .addOnCompleteListener {
+                if(it.isSuccessful){
+
+                    var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
+                    var dbRegister = FirebaseFirestore.getInstance()
+                    dbRegister.collection("users").document(email).set(hashMapOf(
+                        "user" to email,
+                        "dateRegister" to dateRegister
+                    ))
+
+
+                    goHome(email, "google")
+
+                   // val intent = Intent(this, RegisterActivity::class.java)
+                   // startActivity(intent)
                 }
                 else Toast.makeText(this, "Error, algo no ha salido como se esperaba", Toast.LENGTH_SHORT).show()
             }
