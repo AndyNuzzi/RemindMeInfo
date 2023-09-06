@@ -43,6 +43,24 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
     }
 
+    public override fun onStart() {
+        super.onStart()
+
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        if (currentUser!= null){
+            goHome(currentUser.email.toString(), currentUser.providerId)
+        }
+
+    }
+
+    override fun onBackPressed() {
+        val startMain = Intent(Intent.ACTION_MAIN)
+        startMain.addCategory(Intent.CATEGORY_HOME)
+        startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(startMain)
+    }
+
     fun login(view:View) {
         email = etEmail.text.toString()
         psswrd = etPsswrd.text.toString()
