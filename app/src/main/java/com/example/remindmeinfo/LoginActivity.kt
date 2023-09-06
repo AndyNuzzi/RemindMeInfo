@@ -102,8 +102,6 @@ class LoginActivity : AppCompatActivity() {
                         "user" to email,
                         "dateRegister" to dateRegister
                     ))
-
-
                     goHome(email, "google")
 
                    // val intent = Intent(this, RegisterActivity::class.java)
@@ -111,6 +109,14 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else Toast.makeText(this, "Error, algo no ha salido como se esperaba", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    fun forgottenPsswrd(view: View){
+        startActivity(Intent(this, ForgotPasswordActivity::class.java))
+    }
+
+    fun goTerms(view: View){
+        startActivity(Intent(this, TermsActivity::class.java))
     }
 
 }
