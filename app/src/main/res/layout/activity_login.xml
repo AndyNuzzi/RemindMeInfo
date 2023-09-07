@@ -62,6 +62,17 @@
         android:textColor="@color/white"
         android:onClick="forgottenPsswrd" />
 
+    <TextView
+        android:id="@+id/signIn"
+        style="@style/viewCustom"
+        android:layout_below="@id/buttonLogin"
+        android:textSize="12sp"
+        android:paddingTop="0dp"
+        android:gravity="center_horizontal"
+        android:text="¿Todavía no tiene cuenta en la aplicación?"
+        android:textColor="@color/white"
+        android:onClick="signIn_Act"/>
+
     <Button
         android:id="@+id/btnGoogle"
         android:layout_width="match_parent"

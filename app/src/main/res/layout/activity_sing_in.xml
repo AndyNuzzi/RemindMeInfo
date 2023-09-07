@@ -37,31 +37,6 @@
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"/>
 
-    <TextView
-        android:id="@+id/buttonSignIn"
-        style="@style/viewCustom"
-        android:background="@color/blue"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:paddingTop="7dp"
-        android:paddingBottom="7dp"
-        android:textAlignment="center"
-        android:text="Registrar"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:onClick="register"/>
-
-    <TextView
-        android:id="@+id/forgottenPassword"
-        style="@style/viewCustom"
-        android:layout_below="@id/buttonLogin"
-        android:textSize="12sp"
-        android:paddingTop="0dp"
-        android:gravity="center_horizontal"
-        android:text="¿Ya tiene cuenta en la aplicación?"
-        android:textColor="@color/white"
-        android:onClick="login_Act"/>
-
     <LinearLayout
         android:id="@+id/legalTerms"
         style="@style/viewCustom"
@@ -109,5 +84,18 @@
         android:textSize="16sp"
         android:paddingLeft="30dp"/>
 
+    <TextView
+        android:id="@+id/buttonSignIn"
+        style="@style/viewCustom"
+        android:background="@color/blue"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:textAlignment="center"
+        android:text="Registrar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:onClick="register"/>
 
 </LinearLayout>

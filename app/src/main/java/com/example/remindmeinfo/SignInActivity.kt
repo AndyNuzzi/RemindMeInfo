@@ -117,8 +117,4 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    fun login_Act(view: View){
-        startActivity(Intent(this, LoginActivity::class.java))
-    }
-
 }
