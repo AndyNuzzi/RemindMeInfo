@@ -3,6 +3,7 @@ package com.example.remindmeinfo
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ import com.example.remindmeinfo.ui.profile.ProfileFragment
 import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -72,6 +74,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
             R.id.navigation_profile -> openFragment(ProfileFragment())
+            R.id.navigation_session -> singOutAdmin()
         }
 
         binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -97,6 +100,11 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
     fun startMain(){
         val intent = Intent(this, MainActivityAdmin::class.java)
         startActivity(intent)
+    }
+
+    fun singOutAdmin(){
+        FirebaseAuth.getInstance().signOut()
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
 }
