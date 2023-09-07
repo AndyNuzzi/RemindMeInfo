@@ -110,4 +110,8 @@ class LoginActivity : AppCompatActivity() {
         startActivity(Intent(this, SignInActivity::class.java))
     }
 
+    fun signInGoogle(view:View){
+
+    }
+
 }
