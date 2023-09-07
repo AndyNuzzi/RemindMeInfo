@@ -5,14 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
+import androidx.core.content.ContextCompat
+import androidx.core.widget.doOnTextChanged
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import java.text.SimpleDateFormat
-import java.util.*
 
 import kotlin.properties.Delegates
 
@@ -27,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
     private var psswrd by Delegates.notNull<String>()
     private lateinit var etEmail: EditText
     private lateinit var etPsswrd: EditText
-    private lateinit var lyTerms: LinearLayout
 
     private lateinit var mAuth: FirebaseAuth
 
@@ -36,12 +31,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        lyTerms = findViewById(R.id.legalTerms)
-        lyTerms.visibility = View.INVISIBLE
-
         etEmail = findViewById(R.id.textEmail)
         etPsswrd = findViewById(R.id.textPassword)
         mAuth = FirebaseAuth.getInstance()
+
+       // manageButtonLogin()
+       // etEmail.doOnTextChanged { text, start, before, count -> manageButtonLogin() }
     }
 
     public override fun onStart() {
@@ -68,16 +63,7 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth.signInWithEmailAndPassword(email, psswrd)
             .addOnCompleteListener(this){ task ->
-                if (task.isSuccessful) goHome(email, "google")
-                else{
-                    if (lyTerms.visibility == View.INVISIBLE){
-                        lyTerms.visibility = View.VISIBLE
-                    }
-                    else{
-                        var cbAcept = findViewById<CheckBox>(R.id.check)
-                        if (cbAcept.isChecked) register()
-                    }
-                }
+                goHome(email, "google")
             }
     }
 
@@ -87,29 +73,6 @@ class LoginActivity : AppCompatActivity() {
 
         val intent = Intent(this, MainActivityAdmin::class.java)
         startActivity(intent)
-    }
-
-    private fun register(){
-        etEmail = findViewById(R.id.textEmail)
-        etPsswrd = findViewById(R.id.textPassword)
-
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, psswrd)
-            .addOnCompleteListener {
-                if(it.isSuccessful){
-
-                    var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
-                    var dbRegister = FirebaseFirestore.getInstance()
-                    dbRegister.collection("users").document(email).set(hashMapOf(
-                        "user" to email,
-                        "dateRegister" to dateRegister
-                    ))
-                    goHome(email, "google")
-
-                   // val intent = Intent(this, RegisterActivity::class.java)
-                   // startActivity(intent)
-                }
-                else Toast.makeText(this, "Error, algo no ha salido como se esperaba", Toast.LENGTH_SHORT).show()
-            }
     }
 
     fun forgottenPsswrd(view: View){
@@ -128,8 +91,19 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun goTerms(view: View){
-        startActivity(Intent(this, TermsActivity::class.java))
+    private fun manageButtonLogin(){
+        var tvLogin = findViewById<TextView>(R.id.buttonLogin)
+
+        email = etEmail.text.toString()
+        psswrd = etPsswrd.text.toString()
+
+        if(TextUtils.isEmpty(psswrd) || ValidateEmail.isEmail(email) == false){
+            tvLogin.setBackgroundColor((ContextCompat.getColor(this, R.color.gray)))
+            tvLogin.isEnabled = false
+        } else{
+            tvLogin.setBackgroundColor((ContextCompat.getColor(this, R.color.blue)))
+            tvLogin.isEnabled = true
+        }
     }
 
 }
