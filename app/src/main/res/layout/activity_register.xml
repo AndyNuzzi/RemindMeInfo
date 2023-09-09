@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/Image"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="MissingConstraints" />
 
@@ -23,25 +23,28 @@
         <EditText
             android:id="@+id/textName"
             style="@style/viewCustom"
-            android:layout_width="179dp"
+            android:layout_width="155dp"
             android:layout_marginTop="0dp"
             android:backgroundTint="@color/white"
             android:hint="Nombre"
             android:inputType="text"
-            android:paddingTop="30dp"
+            android:paddingTop="25dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
         <EditText
-            android:id="@+id/textEmail"
+            android:id="@+id/textAge"
             style="@style/viewCustom"
+            android:layout_width="160dp"
             android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:paddingTop="30dp"
+            android:hint="Edad"
+            android:inputType="text"
+            android:paddingTop="25dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -53,105 +56,64 @@
         <EditText
             android:id="@+id/textSurname"
             style="@style/viewCustom"
-            android:layout_width="179dp"
+            android:layout_width="155dp"
             android:layout_marginTop="0dp"
             android:backgroundTint="@color/white"
-            android:hint="Primer Apellido"
+            android:hint="Apellidos"
             android:inputType="text"
-            android:paddingTop="30dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-
-        <EditText
-            android:id="@+id/textPassword"
-            style="@style/viewCustom"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:paddingTop="30dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/personal_info3"
-        style="@style/viewCustom"
-        android:layout_width="397dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/textSurname2"
-            style="@style/viewCustom"
-            android:layout_width="179dp"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
-            android:hint="Segundo Apellido"
-            android:inputType="text"
-            android:paddingTop="30dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-
-        <EditText
-            android:id="@+id/textPasswordConfirmation"
-            style="@style/viewCustom"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
-            android:hint="Contraseña confirmación"
-            android:inputType="textPassword"
-            android:textSize="15sp"
-            android:paddingTop="30dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/personal_info4"
-        style="@style/viewCustom"
-        android:layout_width="397dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/textAge"
-            style="@style/viewCustom"
-            android:layout_width="179dp"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
-            android:hint="Edad"
-            android:inputType="text"
-            android:paddingTop="30dp"
+            android:paddingTop="25dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/textGenre"
             style="@style/viewCustom"
+            android:layout_width="160dp"
             android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"
             android:hint="Género"
-            android:inputType="textPassword"
-            android:textSize="15sp"
-            android:paddingTop="30dp"
+            android:inputType="text"
+            android:paddingTop="25dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
+
     </LinearLayout>
+
+
 
     <EditText
         android:id="@+id/textMedicalInfo"
         style="@style/viewCustom"
         android:layout_marginTop="0dp"
         android:backgroundTint="@color/white"
+        android:layout_marginLeft="10dp"
         android:hint="Información médica adicional"
-        android:inputType="textPassword"
-        android:textSize="15sp"
-        android:paddingTop="30dp"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:paddingTop="25dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
+    <EditText
+        android:id="@+id/familyName"
+        style="@style/viewCustom"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginLeft="10dp"
+        android:hint="Nombre del grupo familiar"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:paddingTop="25dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+
     <CheckBox
-        android:id="@+id/check"
+        android:id="@+id/check_admin_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:text="Soy usuario gestor de la aplicación"
         android:gravity="center"
         android:textSize="18sp"

@@ -24,6 +24,7 @@ import com.example.remindmeinfo.ui.profile.ProfileFragment
 import com.example.remindmeinfo.ui.reminder_list_user.ReminderListUserFragment
 import com.example.remindmeinfo.ui.reminder_list_user.ReminderListUserViewModel
 import com.example.remindmeinfo.ui.setting.SettingFragment
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -79,6 +80,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
             R.id.navigation_profile -> openFragment(ProfileFragment())
+            R.id.navigation_session -> singOutAdmin()
         }
 
         binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -103,6 +105,11 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
     fun startMain() {
         val intent = Intent(this, MainActivityUser::class.java)
         startActivity(intent)
+    }
+
+    fun singOutAdmin(){
+        FirebaseAuth.getInstance().signOut()
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
 }

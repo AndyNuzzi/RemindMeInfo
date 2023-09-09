@@ -7,16 +7,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/purple">
-    
+
     <ImageView
         android:id="@+id/Image"
         android:layout_width="match_parent"
-        android:layout_height="275dp"
+        android:layout_height="230dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="MissingConstraints" />
-    
+
     <EditText
-        android:id="@+id/textEmail"
+        android:id="@+id/textEmailS"
         style="@style/viewCustom"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -27,7 +27,7 @@
         android:backgroundTint="@color/white"/>
 
     <EditText
-        android:id="@+id/textPassword"
+        android:id="@+id/textPasswordS"
         style="@style/viewCustom"
         android:hint="Contraseña"
         android:inputType="textPassword"
@@ -36,9 +36,33 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"/>
-    
+
+    <LinearLayout
+        android:id="@+id/legalTerms"
+        style="@style/viewCustom"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="He leido y acepto los"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="términos y condiciones de uso"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/orange"
+            android:onClick="goTerms" />
+
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonSignIn"
         style="@style/viewCustom"
         android:background="@color/blue"
         android:layout_height="wrap_content"
@@ -46,47 +70,9 @@
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:textAlignment="center"
-        android:text="Iniciar Sesión"
+        android:text="Registrar"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:onClick="login"/>
-
-    <TextView
-        android:id="@+id/forgottenPassword"
-        style="@style/viewCustom"
-        android:layout_below="@id/buttonLogin"
-        android:textSize="12sp"
-        android:paddingTop="0dp"
-        android:gravity="center_horizontal"
-        android:text="¿Ha olvidado su contraseña?"
-        android:textColor="@color/white"
-        android:onClick="forgottenPsswrd" />
-
-    <TextView
-        android:id="@+id/signIn"
-        style="@style/viewCustom"
-        android:layout_below="@id/buttonLogin"
-        android:textSize="12sp"
-        android:paddingTop="0dp"
-        android:gravity="center_horizontal"
-        android:text="¿Todavía no tiene cuenta en la aplicación?"
-        android:textColor="@color/white"
-        android:onClick="signIn_Act"/>
-
-    <Button
-        android:id="@+id/btnGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:backgroundTint="@color/white"
-        android:drawableLeft="@drawable/google"
-        android:text="GOOGLE"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:paddingLeft="30dp"
-        android:onClick="signInGoogle"/>
-
+        android:onClick="register"/>
 
 </LinearLayout>

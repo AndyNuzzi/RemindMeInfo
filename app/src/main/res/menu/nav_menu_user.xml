@@ -35,6 +35,17 @@
         </menu>
     </item>
 
+    <item android:title="Información de la Sesión">
+        <menu>
+            <item
+                android:id="@+id/navigation_session"
+                android:icon="@drawable/ic_baseline_logout_24"
+                android:title="Cerrar Sesión"
+                android:visible="true"
+                app:maxImageSize="40dp"/>
+        </menu>
+    </item>
+
     <item android:title="">
         <menu>
             <item android:title=""/>
