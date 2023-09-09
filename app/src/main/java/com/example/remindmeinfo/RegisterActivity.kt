@@ -21,7 +21,14 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
     }
 
-    fun saveRegister(){
+    override fun onBackPressed() {
+        val startMain = Intent(Intent.ACTION_MAIN)
+        startMain.addCategory(Intent.CATEGORY_HOME)
+        startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(startMain)
+    }
+
+    fun saveRegister(view:View){
         var email = currentUser?.email.toString()
         var dbRegister = FirebaseFirestore.getInstance()
 

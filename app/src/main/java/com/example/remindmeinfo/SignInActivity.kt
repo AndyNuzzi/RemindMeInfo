@@ -1,14 +1,20 @@
 package com.example.remindmeinfo
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,6 +35,7 @@ class SignInActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
 
+    private var RC_SIGN_IN = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +55,7 @@ class SignInActivity : AppCompatActivity() {
         val currentUser = FirebaseAuth.getInstance().currentUser
 
         if (currentUser!= null){
-            goHome(currentUser.email.toString(), currentUser.providerId)
+            goRegister(currentUser.email.toString(), currentUser.providerId)
         }
 
     }
@@ -60,7 +67,7 @@ class SignInActivity : AppCompatActivity() {
         startActivity(startMain)
     }
 
-    private fun goHome(emailS: String, provider: String){
+    private fun goRegister(emailS: String, provider: String){
         useremailS = emailS
         providerSession = provider
 
@@ -74,27 +81,28 @@ class SignInActivity : AppCompatActivity() {
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailS, psswrdS)
             .addOnCompleteListener {
-                if(it.isSuccessful){
-                    var cbAcept = findViewById<CheckBox>(R.id.check)
+                var cbAcept = findViewById<CheckBox>(R.id.check)
 
-                    if(cbAcept.isChecked){
-                        var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
-                        var dbRegister = FirebaseFirestore.getInstance()
-                        dbRegister.collection("users").document(emailS).set(hashMapOf(
-                            "user" to emailS,
-                            "dateRegister" to dateRegister
-                        ))
-                        goHome(emailS, "google")
-                    } else if(!cbAcept.isChecked){
-                        Toast.makeText(this, "Tiene que marcar el checkbox de terminos de uso", Toast.LENGTH_SHORT).show()
-                    }
+                if(cbAcept.isChecked){
+                    var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
+                    var dbRegister = FirebaseFirestore.getInstance()
+                    dbRegister.collection("users").document(emailS).set(hashMapOf(
+                        "user" to emailS,
+                        "dateRegister" to dateRegister
+                    ))
+                    goRegister(emailS, "email")
+                } else {
+                    Toast.makeText(this, "Tiene que marcar el checkbox de terminos de uso", Toast.LENGTH_SHORT).show()
                 }
-                else Toast.makeText(this, "Error, algo no ha salido como se esperaba", Toast.LENGTH_SHORT).show()
             }
     }
 
     fun goTerms(view: View){
         startActivity(Intent(this, TermsActivity::class.java))
+    }
+
+    fun goHome(){
+        startActivity(Intent(this, MainActivityAdmin::class.java))
     }
 
     private fun manageButtonSignIn(){
@@ -115,7 +123,39 @@ class SignInActivity : AppCompatActivity() {
 
 
     fun signInGoogle(view:View){
+        val googsignOpc = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
 
+        var googleSignInClient = GoogleSignIn.getClient(this, googsignOpc)
+
+        val signIntent = googleSignInClient.signInIntent
+        startActivityForResult(signIntent, RC_SIGN_IN)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == RC_SIGN_IN){
+            try{
+                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+                val account = task.getResult(ApiException::class.java)
+
+                if (account != null){
+                    emailS = account.email!!
+                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                    mAuth.signInWithCredential(credential).addOnCompleteListener{
+                        if (it.isSuccessful) {
+                            goHome()
+                            Toast.makeText(this, "Bienvenid@ a RemindMeInfo", Toast.LENGTH_SHORT)
+                        }
+                        else Toast.makeText(this, "Error en la conexión con los servicios de google", Toast.LENGTH_SHORT)
+                    }
+                }
+            } catch(e: ApiException){
+                Toast.makeText(this, "Error en la conexión con los servicios de google", Toast.LENGTH_SHORT)
+            }
+        }
     }
 
 }
