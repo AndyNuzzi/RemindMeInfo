@@ -64,7 +64,7 @@ class SignInActivity : AppCompatActivity() {
         useremailS = emailS
         providerSession = provider
 
-        val intent = Intent(this, MainActivityAdmin::class.java)
+        val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
 
@@ -76,17 +76,13 @@ class SignInActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 if(it.isSuccessful){
                     var cbAcept = findViewById<CheckBox>(R.id.check)
-                    var cbAdmin = findViewById<CheckBox>(R.id.check2)
-
-                    var badmin = cbAdmin.isChecked
 
                     if(cbAcept.isChecked){
                         var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
                         var dbRegister = FirebaseFirestore.getInstance()
                         dbRegister.collection("users").document(emailS).set(hashMapOf(
                             "user" to emailS,
-                            "dateRegister" to dateRegister,
-                            "bool_admin" to badmin
+                            "dateRegister" to dateRegister
                         ))
                         goHome(emailS, "google")
                     } else if(!cbAcept.isChecked){
@@ -115,6 +111,11 @@ class SignInActivity : AppCompatActivity() {
             tvSignIn.setBackgroundColor((ContextCompat.getColor(this, R.color.blue)))
             tvSignIn.isEnabled = true
         }
+    }
+
+
+    fun signInGoogle(view:View){
+
     }
 
 }

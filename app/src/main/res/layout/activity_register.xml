@@ -33,15 +33,17 @@
             android:textColorHint="@color/white" />
 
         <EditText
-            android:id="@+id/textEmail"
+            android:id="@+id/textAge"
             style="@style/viewCustom"
+            android:layout_width="179dp"
             android:layout_marginTop="0dp"
             android:backgroundTint="@color/white"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:hint="Edad"
+            android:inputType="text"
             android:paddingTop="30dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -63,15 +65,16 @@
             android:textColorHint="@color/white" />
 
         <EditText
-            android:id="@+id/textPassword"
+            android:id="@+id/textGenre"
             style="@style/viewCustom"
             android:layout_marginTop="0dp"
             android:backgroundTint="@color/white"
-            android:hint="Contraseña"
+            android:hint="Género"
             android:inputType="textPassword"
             android:paddingTop="30dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -92,48 +95,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
-        <EditText
-            android:id="@+id/textPasswordConfirmation"
-            style="@style/viewCustom"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
-            android:hint="Contraseña confirmación"
-            android:inputType="textPassword"
-            android:textSize="15sp"
-            android:paddingTop="30dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/personal_info4"
-        style="@style/viewCustom"
-        android:layout_width="397dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/textAge"
-            style="@style/viewCustom"
-            android:layout_width="179dp"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
-            android:hint="Edad"
-            android:inputType="text"
-            android:paddingTop="30dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-
-        <EditText
-            android:id="@+id/textGenre"
-            style="@style/viewCustom"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
-            android:hint="Género"
-            android:inputType="textPassword"
-            android:textSize="15sp"
-            android:paddingTop="30dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
     </LinearLayout>
 
     <EditText
@@ -141,12 +102,27 @@
         style="@style/viewCustom"
         android:layout_marginTop="0dp"
         android:backgroundTint="@color/white"
+        android:layout_marginLeft="10dp"
         android:hint="Información médica adicional"
         android:inputType="textPassword"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:paddingTop="30dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/familyName"
+        style="@style/viewCustom"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginLeft="10dp"
+        android:hint="Nombre del grupo familiar"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        android:paddingTop="30dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
 
     <CheckBox
         android:id="@+id/check"
