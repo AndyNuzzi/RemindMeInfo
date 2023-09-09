@@ -35,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
 
-    private var RC_SIGN_IN = 100
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -118,43 +118,6 @@ class SignInActivity : AppCompatActivity() {
         } else{
             tvSignIn.setBackgroundColor((ContextCompat.getColor(this, R.color.blue)))
             tvSignIn.isEnabled = true
-        }
-    }
-
-
-    fun signInGoogle(view:View){
-        val googsignOpc = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-        var googleSignInClient = GoogleSignIn.getClient(this, googsignOpc)
-
-        val signIntent = googleSignInClient.signInIntent
-        startActivityForResult(signIntent, RC_SIGN_IN)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RC_SIGN_IN){
-            try{
-                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-                val account = task.getResult(ApiException::class.java)
-
-                if (account != null){
-                    emailS = account.email!!
-                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-                    mAuth.signInWithCredential(credential).addOnCompleteListener{
-                        if (it.isSuccessful) {
-                            goHome()
-                            Toast.makeText(this, "Bienvenid@ a RemindMeInfo", Toast.LENGTH_SHORT)
-                        }
-                        else Toast.makeText(this, "Error en la conexión con los servicios de google", Toast.LENGTH_SHORT)
-                    }
-                }
-            } catch(e: ApiException){
-                Toast.makeText(this, "Error en la conexión con los servicios de google", Toast.LENGTH_SHORT)
-            }
         }
     }
 
