@@ -2,10 +2,8 @@ package com.example.remindmeinfo.ui.pharmacy_user
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentItemPharmacyBinding
 
 import com.example.remindmeinfo.ui.pharmacy_user.placeholder.PlaceholderContent.PlaceholderItem
