@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentPharmacyInfoUserBinding
-import com.example.remindmeinfo.ui.map_admin.MapAdminViewModel
 
 class PharmacyInfoUserFragment : Fragment() {
     private var _binding: FragmentPharmacyInfoUserBinding? = null
