@@ -21,16 +21,13 @@ class MedicalInfoUserFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val mapViewModel =
-            ViewModelProvider(this).get(MedicalInfoUserViewModel::class.java)
+
 
         _binding = FragmentMedicalInfoUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textMedicalInfo
-        mapViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 
