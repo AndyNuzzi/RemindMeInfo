@@ -3,7 +3,6 @@ package com.example.remindmeinfo
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +12,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.databinding.ActivityMainBinding
 import com.example.remindmeinfo.ui.help.HelpFragment
-import com.example.remindmeinfo.ui.map_admin.MapAdminFragment
+import com.example.remindmeinfo.ui.map_admin.MapsAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileFragment
 import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
@@ -49,7 +48,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         binding.botomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_reminder -> openFragment(ReminderAdminFragment())
-                R.id.navigation_map -> openFragment(MapAdminFragment())
+                R.id.navigation_map -> openFragment(MapsAdminFragment())
             }
             true
         }
