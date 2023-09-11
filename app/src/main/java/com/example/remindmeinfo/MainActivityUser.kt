@@ -5,12 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.FragmentManager
 import com.example.remindmeinfo.databinding.ActivityMainUserBinding
-import com.example.remindmeinfo.ui.map_admin.MapAdminFragment
-import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.google.android.material.navigation.NavigationView
 import android.content.Intent
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -19,10 +16,8 @@ import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.medical_info_user.MedicalInfoUserFragment
 import com.example.remindmeinfo.ui.panic_user.PanicUserFragment
 import com.example.remindmeinfo.ui.pharmacy_user.PharmacyInfoUserFragment
-import com.example.remindmeinfo.ui.pharmacy_user.PharmacyInfoUserViewModel
 import com.example.remindmeinfo.ui.profile.ProfileFragment
 import com.example.remindmeinfo.ui.reminder_list_user.ReminderListUserFragment
-import com.example.remindmeinfo.ui.reminder_list_user.ReminderListUserViewModel
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.firebase.auth.FirebaseAuth
 
