@@ -26,7 +26,6 @@ class MedicalInfoUserFragment : Fragment() {
         _binding = FragmentMedicalInfoUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textMedicalInfo
 
         return root
     }

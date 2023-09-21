@@ -14,7 +14,7 @@ import com.example.remindmeinfo.ui.pharmacy_user.placeholder.PlaceholderContent
 /**
  * A fragment representing a list of Items.
  */
-class ItemPharmacyFragment : Fragment() {
+class ItemFragment : Fragment() {
 
     private var columnCount = 1
 
@@ -30,7 +30,7 @@ class ItemPharmacyFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_item_pharmacy_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_item_list, container, false)
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -53,7 +53,7 @@ class ItemPharmacyFragment : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            ItemPharmacyFragment().apply {
+            ItemFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }
