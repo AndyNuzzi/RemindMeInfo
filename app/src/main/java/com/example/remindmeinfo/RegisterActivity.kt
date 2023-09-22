@@ -28,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
         startActivity(startMain)
     }
 
-    fun saveRegister(view:View){
+    fun saveRegister(view: View){
         var email = currentUser?.email.toString()
         var dbRegister = FirebaseFirestore.getInstance()
 

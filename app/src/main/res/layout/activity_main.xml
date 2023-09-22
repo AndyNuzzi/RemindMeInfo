@@ -26,8 +26,8 @@
 
             <FrameLayout
                 android:id="@+id/fragment_container"
-                android:layout_width="328dp"
-                android:layout_height="486dp"
+                android:layout_width="369dp"
+                android:layout_height="577dp"
                 android:layout_gravity="center" />
 
             <com.google.android.material.bottomappbar.BottomAppBar
