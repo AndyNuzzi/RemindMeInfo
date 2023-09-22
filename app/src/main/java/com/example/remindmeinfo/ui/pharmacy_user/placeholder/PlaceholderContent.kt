@@ -1,6 +1,10 @@
 package com.example.remindmeinfo.ui.pharmacy_user.placeholder
 
+import android.util.Log
 import com.example.remindmeinfo.ui.pharmacy_user.Medications
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QueryDocumentSnapshot
+import com.google.firebase.firestore.ktx.toObject
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -17,28 +21,39 @@ object PlaceholderContent {
      */
     val ITEMS: MutableList<Medications> = ArrayList()
 
-    /**
-     * A map of sample (placeholder) items, by ID.
-     */
-    val ITEM_MAP: MutableMap<String, Medications> = HashMap()
-
-    private val COUNT = 10
+    private val dbReference = FirebaseFirestore.getInstance()
 
     init {
-        // Add some sample items.
-        for (i in 1..COUNT) {
-            addItem(createPlaceholderItem())
-        }
+        //for (i in 1.. ITEMS.lastIndex){
+            createPlaceholderItem()
+       // }
+
     }
 
-    private fun addItem(item: Medications) {
-        ITEMS.add(item)
-        ITEM_MAP.put(item.amount, item)
-    }
+    private fun createPlaceholderItem(): List<Medications>{
+        var med_amount = ""
+        var med_date = ""
+        var med_name = ""
 
-    private fun createPlaceholderItem(): Medications {
-        return Medications("1", "hola ", "2/2/2002")
-    }
+        //val db =
+        dbReference.collection("pharmacy_medications")
+            .get()
+            .addOnSuccessListener{ result ->
+                for (doc in result){
+                    med_amount = doc.get("amount") as String
+                    med_date = doc.get("date") as String
+                    med_name = doc.get("name") as String
 
+                    val med = Medications(med_amount, med_date, med_name)
+
+                    if (med != null) {
+                        ITEMS.add(med)
+                    }
+
+                }
+
+            }
+        return ITEMS
+    }
 
 }

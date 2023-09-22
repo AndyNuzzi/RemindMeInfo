@@ -43,7 +43,7 @@ class MyItemRecyclerViewAdapter(
         val med_date: TextView = itemView.findViewById(R.id.content1)
 
         override fun toString(): String {
-            return super.toString() + amount + med_name + med_date.text
+            return super.toString() + amount.text + med_name.text + med_date.text
         }
     }
 
