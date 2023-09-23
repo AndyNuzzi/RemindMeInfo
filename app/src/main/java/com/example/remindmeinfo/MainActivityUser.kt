@@ -7,7 +7,9 @@ import androidx.fragment.app.FragmentManager
 import com.example.remindmeinfo.databinding.ActivityMainUserBinding
 import com.google.android.material.navigation.NavigationView
 import android.content.Intent
+import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -45,7 +47,6 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
          binding.navigationDrawer.setNavigationItemSelectedListener(this)
 
-
          //botom navigation
          binding.botomNavigation.background = null
 
@@ -68,6 +69,19 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
          //supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
          supportActionBar!!.setDisplayShowHomeEnabled(true)
      }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_vital_control, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.vital_control -> openFragment(VitalControlFragment())
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 

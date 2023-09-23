@@ -45,17 +45,6 @@
                 app:maxImageSize="40dp"/>
         </menu>
     </item>
-
-    <item android:title="Datos de Salud">
-        <menu>
-            <item
-                android:id="@+id/vital_control"
-                android:icon="@drawable/ic_baseline_monitor_heart_24"
-                android:title="Monitorizar"
-                app:maxImageSize="40dp"/>
-        </menu>
-    </item>
-
     <item android:title="">
         <menu>
             <item android:title=""/>
