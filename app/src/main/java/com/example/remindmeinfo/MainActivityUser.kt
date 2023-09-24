@@ -21,7 +21,6 @@ import com.example.remindmeinfo.ui.pharmacy_user.ItemFragment
 import com.example.remindmeinfo.ui.profile.ProfileFragment
 import com.example.remindmeinfo.ui.reminder_list_user.ReminderListUserFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
-import com.example.remindmeinfo.ui.vital_control_user.VitalControlFragment
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -77,7 +76,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.vital_control -> openFragment(VitalControlFragment())
+            R.id.vital_control -> startVital()
         }
 
         return super.onOptionsItemSelected(item)
@@ -91,7 +90,6 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.navigation_home -> startMain()
             R.id.navigation_profile -> openFragment(ProfileFragment())
             R.id.navigation_session -> singOutAdmin()
-            R.id.vital_control -> openFragment(VitalControlFragment())
         }
 
         binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -121,6 +119,11 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
     fun singOutAdmin(){
         FirebaseAuth.getInstance().signOut()
         startActivity(Intent(this, LoginActivity::class.java))
+    }
+
+    fun startVital(){
+        val intent = Intent(this, VitalControlActivity::class.java)
+        startActivity(intent)
     }
 
 }
