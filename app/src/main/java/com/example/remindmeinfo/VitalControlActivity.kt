@@ -50,14 +50,13 @@ class VitalControlActivity : AppCompatActivity() {
         intent.data = Uri.parse("mailto:")
         intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("rmeinfotfg@gmail.com"))
         intent.putExtra(Intent.EXTRA_SUBJECT, "Información vital del usuario " + email)
-        intent.putExtra(Intent.EXTRA_TEXT,
-            """Buenos días, 
-                La información vital recopilada del usuario es la siguiente: 
-                 - Datos de diabetes --> ${diabText}
-                 - Datos de pulso cardíaco --> ${heartText}
-                 - Datos de la tensión --> ${tensionHText} (alta) y ${tensionLText} (baja)
-                Un saludo,
-                Gracias!!"""
+        intent.putExtra(Intent.EXTRA_TEXT, """Buenos días, 
+        La información vital recopilada del usuario es la siguiente: 
+         - Datos de diabetes --> ${diabText}
+         - Datos de pulso cardíaco --> ${heartText}
+         - Datos de la tensión --> ${tensionHText} (alta) y ${tensionLText} (baja)
+        Un saludo,
+        Gracias!!"""
         )
         startActivity(intent)
     }
