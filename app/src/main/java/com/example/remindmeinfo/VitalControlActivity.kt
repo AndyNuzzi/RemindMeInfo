@@ -8,10 +8,13 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.*
 
 class VitalControlActivity : AppCompatActivity() {
 
     val currentUser = FirebaseAuth.getInstance().currentUser
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +30,14 @@ class VitalControlActivity : AppCompatActivity() {
         var tensionHText = findViewById<EditText>(R.id.textDataTension).getText().toString()
         var tensionLText = findViewById<EditText>(R.id.textDataTension2).getText().toString()
 
+        var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
+
         dbSave.collection("vital_data").document(email).set(hashMapOf(
             "diabetes_data" to diabText,
             "heart_data" to heartText,
             "tension_high" to tensionHText,
-            "tension_low" to tensionLText
+            "tension_low" to tensionLText,
+            "current_date" to dateRegister
         ))
 
         sendEmail(email, diabText, heartText, tensionHText, tensionLText)
@@ -45,7 +51,8 @@ class VitalControlActivity : AppCompatActivity() {
         intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("rmeinfotfg@gmail.com"))
         intent.putExtra(Intent.EXTRA_SUBJECT, "Información vital del usuario " + email)
         intent.putExtra(Intent.EXTRA_TEXT,
-            """Buenos días, La información vital recopilada del usuario es la siguiente: 
+            """Buenos días, 
+                La información vital recopilada del usuario es la siguiente: 
                  - Datos de diabetes --> ${diabText}
                  - Datos de pulso cardíaco --> ${heartText}
                  - Datos de la tensión --> ${tensionHText} (alta) y ${tensionLText} (baja)
