@@ -45,11 +45,9 @@
                 app:maxImageSize="40dp"/>
         </menu>
     </item>
-
     <item android:title="">
         <menu>
             <item android:title=""/>
         </menu>
     </item>
-
 </menu>

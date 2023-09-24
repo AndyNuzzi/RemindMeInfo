@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VitalControlActivity">
+
+    <TextView
+        android:id="@+id/text_medical_info_diab"
+        android:layout_width="138dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Diabetes"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/text_medical_info_heart"
+        android:layout_width="238dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Pulso cardíaco"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.323" />
+
+    <TextView
+        android:id="@+id/text_medical_info_tension"
+        android:layout_width="238dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Tensión"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.568" />
+
+    <LinearLayout
+        android:id="@+id/data_heart"
+        style="@style/viewCustom"
+        android:layout_width="319dp"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433">
+
+        <EditText
+            android:id="@+id/textDataHeart"
+            style="@style/viewCustom"
+            android:layout_width="285dp"
+            android:backgroundTint="@color/gray"
+            android:hint="Datos del pulso cardíaco"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="372dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/data_tension"
+        style="@style/viewCustom"
+        android:layout_width="319dp"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/textDataTension"
+            style="@style/viewCustom"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:hint="Tensión Alta"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="372dp" />
+
+        <EditText
+            android:id="@+id/textDataTension2"
+            style="@style/viewCustom"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:hint="Tensión Baja"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="372dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/data_diab"
+        style="@style/viewCustom"
+        android:layout_width="319dp"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/textDataDiab"
+            style="@style/viewCustom"
+            android:layout_width="285dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="@color/gray"
+            android:hint="Datos de diabetes"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/buttonSaveVitalInfo"
+        style="@style/viewCustom"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/blue"
+        android:onClick="saveVitalInfo"
+        android:text="Guardar información"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
