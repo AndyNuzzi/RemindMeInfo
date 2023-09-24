@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentVitalControlUserBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class VitalControlFragment : Fragment() {
     private var _binding: FragmentVitalControlUserBinding? = null
+
+    val currentUser = FirebaseAuth.getInstance().currentUser
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,12 +23,8 @@ class VitalControlFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
         _binding = FragmentVitalControlUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-
         return root
     }
 
@@ -34,4 +33,7 @@ class VitalControlFragment : Fragment() {
         _binding = null
     }
 
+    fun saveVitalInfo(view: View){
+
+    }
 }
