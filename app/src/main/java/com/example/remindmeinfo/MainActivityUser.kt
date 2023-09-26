@@ -9,13 +9,12 @@ import com.google.android.material.navigation.NavigationView
 import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.ui.calendar_user.CalendarUserFragment
 import com.example.remindmeinfo.ui.help.HelpFragment
-import com.example.remindmeinfo.ui.medical_info_user.MedicalInfoUserFragment
+import com.example.remindmeinfo.ui.medical_info_user.ItemMedicalPDFFragment
 import com.example.remindmeinfo.ui.panic_user.PanicUserFragment
 import com.example.remindmeinfo.ui.pharmacy_user.ItemFragment
 import com.example.remindmeinfo.ui.profile.ProfileFragment
@@ -54,7 +53,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
                  R.id.navigation_reminder_list -> openFragment(ReminderListUserFragment())
                  R.id.navigation_calendar -> openFragment(CalendarUserFragment())
                  R.id.navigation_panic -> openFragment(PanicUserFragment())
-                 R.id.navigation_medical_info -> openFragment(MedicalInfoUserFragment())
+                 R.id.navigation_medical_info -> openFragment(ItemMedicalPDFFragment())
                  R.id.navigation_pharmacy_info -> openFragment(ItemFragment())
              }
              true
