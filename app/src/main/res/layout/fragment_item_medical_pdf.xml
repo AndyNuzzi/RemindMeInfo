@@ -5,11 +5,26 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/content"
+        android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:text="Medicación"
+        android:text="Fecha"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <TextView
+        android:id="@+id/depart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="Departamento"
+        android:textAppearance="?attr/textAppearanceListItem" />
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="Url"
         android:textAppearance="?attr/textAppearanceListItem" />
 
 </LinearLayout>

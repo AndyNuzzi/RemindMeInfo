@@ -20,7 +20,7 @@ object PlaceholderContent {
      */
     val ITEMS: MutableList<PdfItem> = ArrayList()
 
-    private val dbSReference = FirebaseStorage.getInstance().getReference()
+    private val dbReference = FirebaseFirestore.getInstance()
 
     init {
         createPlaceholderItem()
@@ -28,19 +28,25 @@ object PlaceholderContent {
     }
 
     private fun createPlaceholderItem(): List<PdfItem> {
+        var depart = ""
+        var date = ""
+        var url = ""
 
-        var ref = dbSReference.child("medical_info")
+        dbReference.collection("medical_info_pdfs")
+            .get()
+            .addOnSuccessListener { result ->
+                for (doc in result) {
+                    date = doc.get("date") as String
+                    depart = doc.get("department") as String
+                    url = doc.get("url") as String
 
-        ref.listAll().addOnSuccessListener{ result ->
-                for (item in result.items){
-                    val pdfName = item.name
-                    val pdfUrl = item.downloadUrl.toString()
+                    val pdf_Item = PdfItem(date, depart, url)
 
-                    var pdf_Item = PdfItem(pdfName, pdfUrl)
                     // Agregar a la lista de PDFs
-                    ITEMS.add(pdf_Item)
+                    if(pdf_Item != null){
+                        ITEMS.add(pdf_Item)
+                    }
                 }
-
             }
         return ITEMS
     }
@@ -48,7 +54,5 @@ object PlaceholderContent {
     /**
      * A placeholder item representing a piece of content.
      */
-    data class PdfItem(val name: String, val url: String) {
-        override fun toString(): String = name
-    }
+    data class PdfItem(val date: String, val depart: String, val url: String)
 }

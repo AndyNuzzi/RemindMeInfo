@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentItemMedicalPdfBinding
 import com.example.remindmeinfo.ui.medical_info_user.placeholder.PlaceholderContent
 import com.example.remindmeinfo.ui.medical_info_user.placeholder.PlaceholderContent.PdfItem
@@ -31,7 +32,9 @@ class MyItemMedicalPDFRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.contentView.text = item.name
+        holder.date.text = item.date
+        holder.depart.text = item.depart
+        holder.url.text = item.url
 
         holder.itemView.setOnClickListener {
             itemClickListener.onItemClick(item)
@@ -40,12 +43,13 @@ class MyItemMedicalPDFRecyclerViewAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentItemMedicalPdfBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        val contentView: TextView = binding.content
+    inner class ViewHolder(binding: FragmentItemMedicalPdfBinding) : RecyclerView.ViewHolder(binding.root) {
+        val date: TextView = itemView.findViewById(R.id.date)
+        val depart: TextView = itemView.findViewById(R.id.depart)
+        val url: TextView = itemView.findViewById(R.id.url)
 
         override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
+            return super.toString() + date.text + depart.text + url.text
         }
     }
 
