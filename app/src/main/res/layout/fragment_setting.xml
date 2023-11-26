@@ -7,13 +7,50 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/message_bright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SettingTestFragment"
+        android:text="Ajuste de Brillo de Pantalla"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <SeekBar
+        android:id="@+id/seekBarBright"
+        android:layout_width="312dp"
+        android:layout_height="16dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:max="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_bright" />
+
+    <TextView
+        android:id="@+id/message_contrast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajuste de Contraste de Pantalla"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <SeekBar
+        android:id="@+id/seekBarContrast"
+        android:layout_width="312dp"
+        android:layout_height="16dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:max="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_contrast" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
