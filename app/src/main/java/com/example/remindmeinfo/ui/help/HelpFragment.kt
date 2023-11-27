@@ -1,11 +1,10 @@
 package com.example.remindmeinfo.ui.help
 
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.TextView
-import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentHelpBinding
 
 class HelpFragment : Fragment() {
@@ -20,16 +19,11 @@ class HelpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val helpViewModel =
-            ViewModelProvider(this).get(HelpViewModel::class.java)
-
         _binding = FragmentHelpBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.message
-        helpViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 
