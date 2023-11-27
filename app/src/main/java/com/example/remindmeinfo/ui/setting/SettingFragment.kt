@@ -1,5 +1,6 @@
 package com.example.remindmeinfo.ui.setting
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -13,17 +14,21 @@ import androidx.annotation.RequiresApi
 import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentSettingBinding
 import android.provider.Settings
+import android.widget.Switch
+import androidx.appcompat.app.AppCompatDelegate
 
 class SettingFragment : Fragment() {
 
     private var _binding: FragmentSettingBinding? = null
     private lateinit var seekBarBrightness: SeekBar
     private lateinit var seekBarContrast: SeekBar
+    private lateinit var switchNightMode: Switch
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
+    @SuppressLint("MissingInflatedId")
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +39,7 @@ class SettingFragment : Fragment() {
 
         seekBarBrightness = view.findViewById(R.id.seekBarBright)
         seekBarContrast = view.findViewById(R.id.seekBarContrast)
+        switchNightMode = view.findViewById(R.id.switch1)
 
         // Solicitar permisos WRITE_SETTINGS si es necesario
         requestWriteSettingsPermission()
@@ -72,6 +78,23 @@ class SettingFragment : Fragment() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {}
         })
+
+        switchNightMode.isChecked = when (AppCompatDelegate.getDefaultNightMode()) {
+            AppCompatDelegate.MODE_NIGHT_YES -> true
+            else -> false
+        }
+
+        // Configurar el listener para el Switch
+        switchNightMode.setOnCheckedChangeListener { _, isChecked ->
+            // Cambiar dinámicamente el modo noche según la posición del Switch
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+            // Recrear la actividad para aplicar el cambio de modo noche
+            requireActivity().recreate()
+        }
 
         return view
     }
