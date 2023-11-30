@@ -17,7 +17,7 @@ import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.medical_info_user.ItemMedicalPDFFragment
 import com.example.remindmeinfo.ui.panic_user.PanicUserFragment
 import com.example.remindmeinfo.ui.pharmacy_user.ItemFragment
-import com.example.remindmeinfo.ui.profile.ProfileFragment
+import com.example.remindmeinfo.ui.profile.ProfileUserFragment
 import com.example.remindmeinfo.ui.reminder_list_user.ReminderListUserFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -87,7 +87,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.navigation_help -> openFragment(HelpFragment())
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
-            R.id.navigation_profile -> openFragment(ProfileFragment())
+            R.id.navigation_profile -> openFragment(ProfileUserFragment())
             R.id.navigation_session -> singOutAdmin()
         }
 

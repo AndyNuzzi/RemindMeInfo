@@ -1,6 +1,5 @@
 package com.example.remindmeinfo.ui.profile
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.remindmeinfo.databinding.FragmentProfileBinding
 
-class ProfileFragment : Fragment() {
+class ProfileAdminFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
 
     // This property is only valid between onCreateView and
