@@ -1,6 +1,6 @@
 package com.example.remindmeinfo.ui.help
 
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -11,6 +11,15 @@ import com.example.remindmeinfo.databinding.FragmentHelpBinding
 class HelpFragment : Fragment() {
     private var _binding: FragmentHelpBinding? = null
 
+    private lateinit var message1: TextView
+    private lateinit var message2: TextView
+    private lateinit var message3: TextView
+    private lateinit var message4: TextView
+    private lateinit var message5: TextView
+    private lateinit var message6: TextView
+    private lateinit var message7: TextView
+    private lateinit var message8: TextView
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -20,17 +29,18 @@ class HelpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val helpViewModel =
-            ViewModelProvider(this).get(HelpViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_help, container, false)
 
-        _binding = FragmentHelpBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        message1 = view.findViewById(R.id.message1)
+        message2 = view.findViewById(R.id.message2)
+        message3 = view.findViewById(R.id.message3)
+        message4 = view.findViewById(R.id.message4)
+        message5 = view.findViewById(R.id.message5)
+        message6 = view.findViewById(R.id.message6)
+        message7 = view.findViewById(R.id.message7)
+        message8 = view.findViewById(R.id.message8)
 
-        val textView: TextView = binding.message
-        helpViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return view
     }
 
     override fun onDestroyView() {

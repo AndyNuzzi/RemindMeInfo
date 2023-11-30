@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.remindmeinfo.databinding.FragmentProfileBinding
-import com.example.remindmeinfo.ui.help.HelpViewModel
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
