@@ -35,6 +35,18 @@
         </menu>
     </item>
 
+    <item android:title="Información Personal">
+        <menu>
+            <item
+                android:id="@+id/navigation_profile_user"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Perfil Usuario"
+                android:visible="true"
+                app:maxImageSize="40dp"/>
+        </menu>
+
+    </item>
+
     <item android:title="Información de la Sesión">
         <menu>
             <item
