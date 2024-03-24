@@ -63,7 +63,23 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun goNext(){
-        val intent = Intent(this, MainActivityAdmin::class.java)
-        startActivity(intent)
+        var email = currentUser?.email.toString()
+        var db = FirebaseFirestore.getInstance()
+        db.collection("users").document(email).get()
+            .addOnSuccessListener { documento ->
+                if (documento.exists()) {
+                    val bool = documento.get("bool_admin")
+
+                    if (bool == true){
+                        val intent = Intent(this, MainActivityAdmin::class.java)
+                        startActivity(intent)
+                    } else{
+                        val intent = Intent(this, MainActivityUser::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+
+
     }
 }

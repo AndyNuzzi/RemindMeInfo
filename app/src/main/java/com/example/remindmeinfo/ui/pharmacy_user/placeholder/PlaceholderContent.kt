@@ -21,7 +21,7 @@ object PlaceholderContent {
      */
     val ITEMS: MutableList<Medications> = ArrayList()
 
-    private val dbReference = FirebaseFirestore.getInstance()
+    val dbReference = FirebaseFirestore.getInstance()
 
     init {
         //for (i in 1.. ITEMS.lastIndex){

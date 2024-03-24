@@ -1,12 +1,16 @@
 package com.example.remindmeinfo.ui.profile
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentProfileUserBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileUserFragment : Fragment() {
     private var _binding: FragmentProfileUserBinding? = null
@@ -15,17 +19,40 @@ class ProfileUserFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    val usuario = FirebaseAuth.getInstance().currentUser
+    val uid = usuario?.email
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
+        val dbReference = FirebaseFirestore.getInstance()
+
+        lateinit var textViewName: TextView
+
 
         _binding = FragmentProfileUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.message
+        textViewName = binding.textName
+
+
+        if (uid != null) {
+            dbReference.collection("users").document(uid)
+                .get()
+                .addOnSuccessListener { documento ->
+                    if (documento != null) {
+                        val nombre = documento.getString("name")
+                        textViewName.text = nombre
+                    } else {
+                        Log.d("Fragment", "No such document")
+                    }
+                }
+        }
+
+        // val textView: TextView = binding.message
 
         return root
     }

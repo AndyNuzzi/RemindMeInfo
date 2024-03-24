@@ -7,12 +7,14 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
-import androidx.core.widget.doOnTextChanged
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.*
 
 import kotlin.properties.Delegates
 
@@ -140,8 +142,38 @@ class LoginActivity : AppCompatActivity() {
                     val credential = GoogleAuthProvider.getCredential(account.idToken, null)
                     mAuth.signInWithCredential(credential).addOnCompleteListener{
                         if (it.isSuccessful) {
-                            goHome(email, "google")
-                            Toast.makeText(this, "Bienvenid@ a RemindMeInfo", Toast.LENGTH_SHORT)
+                            val db = FirebaseFirestore.getInstance()
+                            val userId = FirebaseAuth.getInstance().currentUser?.email.toString()
+
+                            db.collection("users").document(userId).get()
+                                .addOnSuccessListener { documento ->
+                                    if (!documento.exists()) {
+                                        val email_new = documento.get("email")
+
+                                        if (email_new == null) {
+                                            var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
+                                            var name_ini = ""
+
+                                            db.collection("users").document(userId!!).set(hashMapOf(
+                                                "user" to userId,
+                                                "dateRegister" to dateRegister,
+                                                "name" to name_ini
+                                            ))
+                                        }
+                                        val name = documento.get("name")
+                                        if (name == null) {
+                                            val intent = Intent(this, RegisterActivity::class.java)
+                                            startActivity(intent)
+                                        }
+                                    }else {
+                                        goHome(email, "google")
+                                        Toast.makeText(
+                                            this,
+                                            "Bienvenid@ a RemindMeInfo",
+                                            Toast.LENGTH_SHORT
+                                        )
+                                    }
+                                }
                         }
                         else Toast.makeText(this, "Error en la conexión con los servicios de google", Toast.LENGTH_SHORT)
                     }
