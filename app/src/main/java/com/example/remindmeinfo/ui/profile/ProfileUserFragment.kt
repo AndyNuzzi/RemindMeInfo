@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.remindmeinfo.databinding.FragmentProfileBinding
+import com.example.remindmeinfo.databinding.FragmentProfileUserBinding
 
 class ProfileUserFragment : Fragment() {
-    private var _binding: FragmentProfileBinding? = null
+    private var _binding: FragmentProfileUserBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,7 +22,7 @@ class ProfileUserFragment : Fragment() {
     ): View {
 
 
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.message

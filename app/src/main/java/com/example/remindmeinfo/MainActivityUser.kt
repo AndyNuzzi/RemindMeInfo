@@ -87,7 +87,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.navigation_help -> openFragment(HelpFragment())
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
-            R.id.navigation_profile -> openFragment(ProfileUserFragment())
+            R.id.navigation_profile_user -> openFragment(ProfileUserFragment())
             R.id.navigation_session -> singOutAdmin()
         }
 

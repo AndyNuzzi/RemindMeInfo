@@ -14,6 +14,7 @@ import com.example.remindmeinfo.databinding.ActivityMainBinding
 import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.map_admin.MapsAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileAdminFragment
+import com.example.remindmeinfo.ui.profile.ProfileUserFragment
 import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.android.material.navigation.NavigationView
@@ -73,6 +74,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
             R.id.navigation_profile -> openFragment(ProfileAdminFragment())
+            R.id.navigation_profile_user -> openFragment(ProfileUserFragment())
             R.id.navigation_session -> singOutAdmin()
         }
 
