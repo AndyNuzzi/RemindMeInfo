@@ -79,8 +79,22 @@ class LoginActivity : AppCompatActivity() {
         useremail = email
         providerSession = provider
 
-        val intent = Intent(this, MainActivityUser::class.java)
-        startActivity(intent)
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("users").document(useremail).get()
+            .addOnSuccessListener {documento ->
+                if (documento.exists()) {
+                    val admin = documento.get("bool_admin")
+
+                    if (admin == true){
+                        val intent = Intent(this, MainActivityAdmin::class.java)
+                        startActivity(intent)
+                    } else{
+                        val intent = Intent(this, MainActivityUser::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
     }
 
     fun forgottenPsswrd(view: View){

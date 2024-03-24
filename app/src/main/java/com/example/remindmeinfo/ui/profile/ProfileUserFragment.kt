@@ -15,8 +15,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 class ProfileUserFragment : Fragment() {
     private var _binding: FragmentProfileUserBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     val usuario = FirebaseAuth.getInstance().currentUser
@@ -72,8 +70,6 @@ class ProfileUserFragment : Fragment() {
                     }
                 }
         }
-
-        // val textView: TextView = binding.message
 
         return root
     }
