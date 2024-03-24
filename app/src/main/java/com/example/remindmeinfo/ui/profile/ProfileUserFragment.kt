@@ -31,12 +31,20 @@ class ProfileUserFragment : Fragment() {
         val dbReference = FirebaseFirestore.getInstance()
 
         lateinit var textViewName: TextView
+        lateinit var textViewSurname: TextView
+        lateinit var textViewGenre: TextView
+        lateinit var textViewAge: TextView
+        lateinit var textViewAddInfo: TextView
 
 
         _binding = FragmentProfileUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         textViewName = binding.textName
+        textViewSurname = binding.textSurname
+        textViewGenre = binding.textGenre
+        textViewAge = binding.textAge
+        textViewAddInfo = binding.textInfo
 
 
         if (uid != null) {
@@ -46,6 +54,19 @@ class ProfileUserFragment : Fragment() {
                     if (documento != null) {
                         val nombre = documento.getString("name")
                         textViewName.text = nombre
+
+                        val apellido = documento.getString("surname")
+                        textViewSurname.text = apellido
+
+                        val genero = documento.getString("genre")
+                        textViewGenre.text = genero
+
+                        val edad = documento.getString("age")
+                        textViewAge.text = edad
+
+                        val infoAdd = documento.getString("aditional_info")
+                        textViewAddInfo.text = infoAdd
+
                     } else {
                         Log.d("Fragment", "No such document")
                     }
