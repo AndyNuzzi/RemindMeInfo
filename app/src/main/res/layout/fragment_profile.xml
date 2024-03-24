@@ -78,6 +78,41 @@
         app:layout_constraintVertical_bias="0.326" />
 
     <TextView
+        android:id="@+id/text_admin_email"
+        android:layout_width="115dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Email: "
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <TextView
+        android:id="@+id/text_email_admin"
+        style="@style/viewCustom"
+        android:layout_width="176dp"
+        android:layout_height="44dp"
+        android:backgroundTint="@color/gray"
+        android:inputType="text"
+        android:paddingTop="25sp"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.165" />
+
+    <TextView
         android:id="@+id/text_admin_genre"
         android:layout_width="115dp"
         android:layout_height="34dp"

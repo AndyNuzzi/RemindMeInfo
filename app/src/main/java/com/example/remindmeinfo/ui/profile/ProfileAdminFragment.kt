@@ -31,6 +31,7 @@ class ProfileAdminFragment : Fragment() {
         lateinit var textViewGenre: TextView
         lateinit var textViewAge: TextView
         lateinit var textViewAddInfo: TextView
+        lateinit var textViewEmail: TextView
 
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
@@ -41,6 +42,7 @@ class ProfileAdminFragment : Fragment() {
         textViewGenre = binding.textGenreAdmin
         textViewAge = binding.textAgeAdmin
         textViewAddInfo = binding.textInfoAdmin
+        textViewEmail = binding.textEmailAdmin
 
         if (uid != null) {
             dbReference.collection("users").document(uid)
@@ -61,6 +63,9 @@ class ProfileAdminFragment : Fragment() {
 
                         val infoAdd = documento.getString("aditional_info")
                         textViewAddInfo.text = infoAdd
+
+                        val email = documento.getString("user")
+                        textViewEmail.text = email
 
                     } else {
                         Log.d("Fragment", "No such document")
