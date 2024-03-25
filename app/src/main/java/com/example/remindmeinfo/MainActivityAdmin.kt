@@ -12,11 +12,13 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.databinding.ActivityMainBinding
 import com.example.remindmeinfo.ui.help.HelpFragment
-import com.example.remindmeinfo.ui.map_admin.MapAdminFragment
-import com.example.remindmeinfo.ui.profile.ProfileFragment
+import com.example.remindmeinfo.ui.map_admin.MapsAdminFragment
+import com.example.remindmeinfo.ui.profile.ProfileAdminFragment
+import com.example.remindmeinfo.ui.profile.ProfileUserFragment
 import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -47,7 +49,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         binding.botomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_reminder -> openFragment(ReminderAdminFragment())
-                R.id.navigation_map -> openFragment(MapAdminFragment())
+                R.id.navigation_map -> openFragment(MapsAdminFragment())
             }
             true
         }
@@ -71,7 +73,9 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.navigation_help -> openFragment(HelpFragment())
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
-            R.id.navigation_profile -> openFragment(ProfileFragment())
+            R.id.navigation_profile -> openFragment(ProfileAdminFragment())
+            R.id.navigation_profile_user -> openFragment(ProfileUserFragment())
+            R.id.navigation_session -> singOutAdmin()
         }
 
         binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -79,11 +83,10 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     override fun onBackPressed() {
-        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)){
-            binding.drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.getOnBackPressedDispatcher().onBackPressed()
-        }
+        val startMain = Intent(Intent.ACTION_MAIN)
+        startMain.addCategory(Intent.CATEGORY_HOME)
+        startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(startMain)
 
     }
 
@@ -97,6 +100,11 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
     fun startMain(){
         val intent = Intent(this, MainActivityAdmin::class.java)
         startActivity(intent)
+    }
+
+    fun singOutAdmin(){
+        FirebaseAuth.getInstance().signOut()
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
 }

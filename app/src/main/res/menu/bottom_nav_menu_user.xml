@@ -5,7 +5,7 @@
     <item
         android:id="@+id/navigation_reminder_list"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Lista Recordatorios"
+        android:title="Recordar"
         app:maxImageSize="40dp"/>
 
     <item
@@ -17,7 +17,7 @@
     <item
         android:id="@+id/navigation_panic"
         android:icon="@drawable/ic_baseline_call_24"
-        android:title="Boton Pánico"
+        android:title="Emergencia"
         app:maxImageSize="40dp"/>
 
     <item

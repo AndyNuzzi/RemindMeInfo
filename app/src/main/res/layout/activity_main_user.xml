@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,8 +26,8 @@
 
             <FrameLayout
                 android:id="@+id/fragment_container"
-                android:layout_width="328dp"
-                android:layout_height="486dp"
+                android:layout_width="369dp"
+                android:layout_height="577dp"
                 android:layout_gravity="center" />
 
             <com.google.android.material.bottomappbar.BottomAppBar
