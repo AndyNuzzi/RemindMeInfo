@@ -7,11 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentReminderListUserBinding
 
 class ReminderListUserFragment : Fragment() {
 
     private var _binding: FragmentReminderListUserBinding? = null
+
+    private lateinit var message1: TextView
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,17 +25,12 @@ class ReminderListUserFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val mapViewModel =
-            ViewModelProvider(this).get(ReminderListUserViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_reminder_list_user, container, false)
 
-        _binding = FragmentReminderListUserBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        message1 = view.findViewById(R.id.text_reminder_list)
 
-        val textView: TextView = binding.textReminderList
-        mapViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return view
+
     }
 
     override fun onDestroyView() {

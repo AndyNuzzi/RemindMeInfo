@@ -7,11 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentReminderAdminBinding
 
 class ReminderAdminFragment : Fragment() {
 
     private var _binding: FragmentReminderAdminBinding? = null
+
+    private lateinit var message1: TextView
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,17 +25,12 @@ class ReminderAdminFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val reminderViewModel =
-            ViewModelProvider(this).get(ReminderAdminViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_reminder_admin, container, false)
 
-        _binding = FragmentReminderAdminBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        message1 = view.findViewById(R.id.text_reminder)
 
-        val textView: TextView = binding.textReminder
-        reminderViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return view
+
     }
 
     override fun onDestroyView() {
