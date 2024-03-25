@@ -1,15 +1,20 @@
 package com.example.remindmeinfo.ui.profile
 
+
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.FragmentTransaction
+import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class ProfileAdminFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -17,7 +22,7 @@ class ProfileAdminFragment : Fragment() {
     private val binding get() = _binding!!
 
     val usuario = FirebaseAuth.getInstance().currentUser
-    val uid = usuario?.email
+    val uem = usuario?.email
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,8 +49,8 @@ class ProfileAdminFragment : Fragment() {
         textViewAddInfo = binding.textInfoAdmin
         textViewEmail = binding.textEmailAdmin
 
-        if (uid != null) {
-            dbReference.collection("users").document(uid)
+        if (uem != null) {
+            dbReference.collection("users").document(uem)
                 .get()
                 .addOnSuccessListener { documento ->
                     if (documento != null) {
@@ -80,4 +85,21 @@ class ProfileAdminFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val myButton: Button = view.findViewById(R.id.buttonEditProfile)
+        myButton.setOnClickListener {
+            // Aquí manejas el evento clic del botón
+            editProfile()
+        }
+    }
+
+    fun editProfile(){
+        val fragmentTransaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, EditProfileFragment())
+        fragmentTransaction.commit()
+    }
+
 }
