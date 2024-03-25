@@ -81,7 +81,6 @@
     </LinearLayout>
 
 
-
     <EditText
         android:id="@+id/textMedicalInfo"
         style="@style/viewCustom"
@@ -111,13 +110,26 @@
 
     <CheckBox
         android:id="@+id/check_admin_app"
-        android:layout_width="wrap_content"
+        android:layout_width="382dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:text="Soy usuario gestor de la aplicación"
         android:gravity="center"
-        android:textSize="18sp"
-        android:textColor="@color/white"/>
+        android:text="Soy usuario gestor de la aplicación"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/extraField"
+        style="@style/viewCustom"
+        android:layout_width="346dp"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/white"
+        android:hint="Correo electrónico del usuario anciano"
+        android:inputType="text"
+        android:paddingTop="25dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/buttonSaveRegister"

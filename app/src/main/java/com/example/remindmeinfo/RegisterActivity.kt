@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -19,6 +21,13 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        var check = findViewById<CheckBox>(R.id.check_admin_app)
+        var extraField = findViewById<EditText>(R.id.extraField)
+
+        check.setOnClickListener{
+            extraField.visibility = if (check.isChecked) View.VISIBLE else View.GONE
+        }
     }
 
     override fun onBackPressed() {
@@ -39,10 +48,16 @@ class RegisterActivity : AppCompatActivity() {
         var genre = findViewById<EditText>(R.id.textGenre).getText().toString()
         var info = findViewById<EditText>(R.id.textMedicalInfo).getText().toString()
         var familyName = findViewById<EditText>(R.id.familyName).getText().toString()
+        var extraField_b = findViewById<EditText>(R.id.extraField).getText().toString()
 
-        var check = findViewById<CheckBox>(R.id.check_admin_app)
-        var check_verified = check.isChecked
+        var check_b = findViewById<CheckBox>(R.id.check_admin_app)
 
+        var check_verified = check_b.isChecked
+
+        if (check_verified){
+            dbRegister.collection("users").document(email).update(
+                "user_elder", extraField_b)
+        }
 
         dbRegister.collection("users").document(email).update(
             "bool_admin", check_verified)
