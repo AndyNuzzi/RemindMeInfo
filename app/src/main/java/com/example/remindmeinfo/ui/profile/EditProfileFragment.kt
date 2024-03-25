@@ -34,30 +34,27 @@ class EditProfileFragment : Fragment() {
         var email = currentUser?.email.toString()
         var dbRegister = FirebaseFirestore.getInstance()
 
-        var name = view.findViewById<EditText>(R.id.textNameP).getText().toString()
-        var surname = view.findViewById<EditText>(R.id.textSurnameP).getText().toString()
-        var age = view.findViewById<EditText>(R.id.textAgeP).getText().toString()
-        var genre = view.findViewById<EditText>(R.id.textGenreP).getText().toString()
-        var info = view.findViewById<EditText>(R.id.textMedicalInfoP).getText().toString()
-        var familyName = view.findViewById<EditText>(R.id.familyNameP).getText().toString()
-
-
-        dbRegister.collection("users").document(email).update(
-            "name", name)
-        dbRegister.collection("users").document(email).update(
-            "surname", surname)
-        dbRegister.collection("users").document(email).update(
-            "age", age)
-        dbRegister.collection("users").document(email).update(
-            "genre", genre)
-        dbRegister.collection("users").document(email).update(
-            "aditional_info", info)
-        dbRegister.collection("users").document(email).update(
-            "family", familyName)
-
         val myButton: Button = view.findViewById(R.id.buttonSaveEdit)
         myButton.setOnClickListener {
-            // Aquí manejas el evento clic del botón
+            var name = view.findViewById<EditText>(R.id.textNameP).getText().toString()
+            var surname = view.findViewById<EditText>(R.id.textSurnameP).getText().toString()
+            var age = view.findViewById<EditText>(R.id.textAgeP).getText().toString()
+            var genre = view.findViewById<EditText>(R.id.textGenreP).getText().toString()
+            var info = view.findViewById<EditText>(R.id.textMedicalInfoP).getText().toString()
+            var familyName = view.findViewById<EditText>(R.id.familyNameP).getText().toString()
+
+            dbRegister.collection("users").document(email).update(
+                "name", name)
+            dbRegister.collection("users").document(email).update(
+                "surname", surname)
+            dbRegister.collection("users").document(email).update(
+                "age", age)
+            dbRegister.collection("users").document(email).update(
+                "genre", genre)
+            dbRegister.collection("users").document(email).update(
+                "aditional_info", info)
+            dbRegister.collection("users").document(email).update(
+                "family", familyName)
             saveEdit()
         }
 
