@@ -65,7 +65,8 @@
             android:inputType="date"
             android:paddingTop="25dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            android:focusable="false"/>
 
     </LinearLayout>
 
@@ -75,18 +76,20 @@
         android:layout_width="397dp"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/textColor"
+
+        <Spinner
+            android:id="@+id/spinner"
             style="@style/viewCustom"
+            android:layout_width="329dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="0dp"
             android:backgroundTint="@color/white"
-            android:layout_marginLeft="10dp"
             android:hint="Escoja el color del Recordatorio"
-            android:inputType="text"
-            android:textSize="18sp"
-            android:paddingTop="25dp"
+            android:paddingTop="10dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
