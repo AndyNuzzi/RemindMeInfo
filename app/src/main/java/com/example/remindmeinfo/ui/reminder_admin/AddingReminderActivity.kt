@@ -9,4 +9,8 @@ class AddingReminderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_reminder)
     }
+
+    override fun onBackPressed() {
+        // No llamar a super.onBackPressed() para ignorar el evento
+    }
 }

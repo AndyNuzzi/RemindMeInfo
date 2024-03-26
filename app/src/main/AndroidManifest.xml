@@ -20,7 +20,7 @@
         android:theme="@style/Theme.RemindMeInfo"
         tools:targetApi="31">
         <activity
-            android:name=".AddingReminderActivity"
+            android:name=".ui.reminder_admin.AddingReminderActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
