@@ -6,9 +6,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.example.remindmeinfo.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
 class AddingReminderActivity : AppCompatActivity() {
+
+    val currentUser = FirebaseAuth.getInstance().currentUser
+
+    var date = ""
+    var selectedItem = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_reminder)
@@ -31,8 +39,7 @@ class AddingReminderActivity : AppCompatActivity() {
         // Listener para manejar la selección de elementos
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedItem = parent.getItemAtPosition(position).toString()
-                Toast.makeText(this@AddingReminderActivity, "Seleccionado: $selectedItem", Toast.LENGTH_SHORT).show()
+                selectedItem = parent.getItemAtPosition(position).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -51,12 +58,35 @@ class AddingReminderActivity : AppCompatActivity() {
             // Formatear la fecha seleccionada y asignarla al EditText
             val selectedDate = "${dayOfMonth}/${monthOfYear + 1}/$year"
             findViewById<EditText>(R.id.editTextDate).setText(selectedDate)
+
+            date = selectedDate
         }, year, month, day)
+
+
 
         dpd.show()
     }
 
     override fun onBackPressed() {
         // No llamar a super.onBackPressed() para ignorar el evento
+    }
+
+    fun saveNewRemind(view:View){
+        var email = currentUser?.email.toString()
+        var dbRegister = FirebaseFirestore.getInstance()
+
+        var title = findViewById<EditText>(R.id.textTitle).getText().toString()
+        var subtitle = findViewById<EditText>(R.id.textSubtitle).getText().toString()
+
+        dbRegister.collection("reminders").document(email).set(hashMapOf(
+            "title" to title,
+            "subtitle" to subtitle,
+            "color" to selectedItem,
+            "email" to email
+        ))
+
+        if (date != null){
+            dbRegister.collection("reminders").document(email).update("date", date)
+        }
     }
 }

@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/textName"
+            android:id="@+id/textTitle"
             style="@style/viewCustom"
             android:layout_width="356dp"
             android:layout_marginTop="0dp"
@@ -76,7 +76,6 @@
         android:layout_width="397dp"
         android:orientation="horizontal">
 
-
         <Spinner
             android:id="@+id/spinner"
             style="@style/viewCustom"
@@ -94,11 +93,11 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/buttonSaveRegister"
+        android:id="@+id/buttonSaveReminder"
         style="@style/viewCustom"
         android:layout_height="wrap_content"
         android:background="@color/blue"
-        android:onClick="saveRegister"
+        android:onClick="saveNewRemind"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:text="Guardar información"
