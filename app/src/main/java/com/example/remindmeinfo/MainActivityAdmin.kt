@@ -15,6 +15,7 @@ import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.map_admin.MapsAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileUserFragment
+import com.example.remindmeinfo.ui.reminder_admin.AddingReminderActivity
 import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.android.material.navigation.NavigationView
@@ -58,7 +59,8 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         openFragment(ReminderAdminFragment())
 
         binding.fab.setOnClickListener {
-            Toast.makeText(this, "Adding new reminder", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AddingReminderActivity::class.java)
+            startActivity(intent)
         }
 
 
