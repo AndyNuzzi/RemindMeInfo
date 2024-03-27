@@ -28,6 +28,17 @@ class ItemReminderAdminFragment : Fragment() {
         }
     }
 
+    private fun loadReminders() {
+        PlaceholderContent.createPlaceholderItem {
+            view?.findViewById<RecyclerView>(R.id.list)?.adapter?.notifyDataSetChanged()
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadReminders()
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_item_list_reminder_admin, container, false)

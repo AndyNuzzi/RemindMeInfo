@@ -20,33 +20,24 @@ object PlaceholderContent {
 
     val dbReference = FirebaseFirestore.getInstance()
 
-    init {
-        //for (i in 1.. ITEMS.lastIndex){
-        createPlaceholderItem()
-        // }
 
-    }
+    fun createPlaceholderItem(onDataLoaded: () -> Unit){
 
-    private fun createPlaceholderItem(): List<AdminReminders>{
-        var rem_title = ""
 
-        //val db =
         dbReference.collection("reminders")
             .get()
-            .addOnSuccessListener{ result ->
-                for (doc in result){
-                    rem_title  = doc.get("title") as String
-
+            .addOnSuccessListener { result ->
+                ITEMS.clear()
+                for (doc in result) {
+                    val rem_title = doc.getString("title") ?: "Sin título"
                     val rem = AdminReminders(rem_title)
-
-                    if (rem != null) {
-                        ITEMS.add(rem)
-                    }
-
+                    ITEMS.add(rem)
                 }
-
+                onDataLoaded()
             }
-        return ITEMS
+            .addOnFailureListener { exception ->
+                // Aquí manejarías el error, como mostrar un mensaje al usuario.
+            }
     }
 
 }
