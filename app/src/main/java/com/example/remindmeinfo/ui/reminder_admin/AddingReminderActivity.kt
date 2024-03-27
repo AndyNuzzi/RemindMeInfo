@@ -21,7 +21,13 @@ class AddingReminderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_reminder)
 
+        var check = findViewById<CheckBox>(R.id.check_admin_reminder)
         val editTextDate = findViewById<EditText>(R.id.editTextDate)
+
+        check.setOnClickListener{
+            editTextDate.visibility = if (check.isChecked) View.VISIBLE else View.GONE
+        }
+
         editTextDate.setOnClickListener {
             showDatePickerDialog()
         }
@@ -39,7 +45,9 @@ class AddingReminderActivity : AppCompatActivity() {
         // Listener para manejar la selección de elementos
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                selectedItem = parent.getItemAtPosition(position).toString()
+                if (position > 0) {
+                    selectedItem = parent.getItemAtPosition(position).toString()
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -62,8 +70,6 @@ class AddingReminderActivity : AppCompatActivity() {
             date = selectedDate
         }, year, month, day)
 
-
-
         dpd.show()
     }
 
@@ -78,15 +84,32 @@ class AddingReminderActivity : AppCompatActivity() {
         var title = findViewById<EditText>(R.id.textTitle).getText().toString()
         var subtitle = findViewById<EditText>(R.id.textSubtitle).getText().toString()
 
+        var check_b = findViewById<CheckBox>(R.id.check_admin_reminder)
+
+        var check_verified = check_b.isChecked
+
+
         dbRegister.collection("reminders").document(email).set(hashMapOf(
             "title" to title,
             "subtitle" to subtitle,
-            "color" to selectedItem,
             "email" to email
         ))
 
-        if (date != null){
+        if (check_verified){
             dbRegister.collection("reminders").document(email).update("date", date)
         }
+
+        if (selectedItem != ""){
+            dbRegister.collection("reminders").document(email).update("color", selectedItem)
+        }
+
+        dbRegister.collection("users").document(email)
+            .get()
+            .addOnSuccessListener{document ->
+                if (document != null) {
+                    val elder = document.getString("user_elder").toString()
+                    dbRegister.collection("reminders").document(email).update("user_elder", elder)
+                }
+            }
     }
 }

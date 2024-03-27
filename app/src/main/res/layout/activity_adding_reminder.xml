@@ -49,28 +49,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/personal_info3"
-        style="@style/viewCustom"
-        android:layout_width="397dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/editTextDate"
-            android:ems="10"
-            style="@style/viewCustom"
-            android:layout_width="358dp"
-            android:layout_marginTop="0dp"
-            android:hint="Introduzca Fecha"
-            android:backgroundTint="@color/white"
-            android:inputType="date"
-            android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:focusable="false"/>
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/personal_info4"
         style="@style/viewCustom"
         android:layout_width="397dp"
@@ -91,6 +69,33 @@
             android:textSize="18sp" />
 
     </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/check_admin_reminder"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:gravity="center"
+        android:text="Recordatorio lleva Fecha asociada"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:ems="10"
+        style="@style/viewCustom"
+        android:layout_width="358dp"
+        android:layout_marginTop="0dp"
+        android:hint="Introduzca Fecha"
+        android:backgroundTint="@color/white"
+        android:inputType="date"
+        android:paddingTop="25dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:focusable="false"
+        android:visibility="gone"/>
+
 
     <TextView
         android:id="@+id/buttonSaveReminder"
