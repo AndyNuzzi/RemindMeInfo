@@ -16,6 +16,7 @@ import com.example.remindmeinfo.ui.map_admin.MapsAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileUserFragment
 import com.example.remindmeinfo.ui.reminder_admin.AddingReminderActivity
+import com.example.remindmeinfo.ui.reminder_admin.ItemReminderAdminFragment
 import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.android.material.navigation.NavigationView
@@ -49,7 +50,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         binding.botomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.navigation_reminder -> openFragment(ReminderAdminFragment())
+                R.id.navigation_reminder -> openFragment(ItemReminderAdminFragment())
                 R.id.navigation_map -> openFragment(MapsAdminFragment())
             }
             true
