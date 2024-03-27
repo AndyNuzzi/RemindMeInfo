@@ -3,7 +3,6 @@ package com.example.remindmeinfo
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -17,7 +16,6 @@ import com.example.remindmeinfo.ui.profile.ProfileAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileUserFragment
 import com.example.remindmeinfo.ui.reminder_admin.AddingReminderActivity
 import com.example.remindmeinfo.ui.reminder_admin.ItemReminderAdminFragment
-import com.example.remindmeinfo.ui.reminder_admin.ReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -57,7 +55,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         }
 
         fragmentManager = supportFragmentManager
-        openFragment(ReminderAdminFragment())
+        openFragment(ItemReminderAdminFragment())
 
         binding.fab.setOnClickListener {
             val intent = Intent(this, AddingReminderActivity::class.java)

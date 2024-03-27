@@ -9,7 +9,9 @@ import com.example.remindmeinfo.databinding.FragmentItemReminderAdminBinding
 
 
 class MyItemReminderAdminRecyclerViewAdapter(
-        private val values: List<AdminReminders>)
+    private val values: List<AdminReminders>,
+    private val onItemClicked: (AdminReminders) -> Unit
+)
     : RecyclerView.Adapter<MyItemReminderAdminRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,6 +29,10 @@ class MyItemReminderAdminRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
         holder.contentView.text = item.title
+
+        holder.itemView.setOnClickListener {
+            onItemClicked(item) // Llama al callback cuando se hace clic en el ítem
+        }
     }
 
     override fun getItemCount(): Int = values.size

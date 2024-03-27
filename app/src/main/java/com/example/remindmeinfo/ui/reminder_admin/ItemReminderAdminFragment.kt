@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.ui.profile.EditProfileFragment
 import com.example.remindmeinfo.ui.reminder_admin.placeholder.PlaceholderContent
 
 /**
@@ -37,7 +39,12 @@ class ItemReminderAdminFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyItemReminderAdminRecyclerViewAdapter(PlaceholderContent.ITEMS)
+                adapter = MyItemReminderAdminRecyclerViewAdapter(PlaceholderContent.ITEMS){ item ->
+                    // Inicia la actividad de detalles con el ítem clicado como argumento
+                    val fragmentTransaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+                    fragmentTransaction.replace(R.id.fragment_container, DetailAdminFragment())
+                    fragmentTransaction.commit()
+                }
             }
         }
         return view
@@ -58,3 +65,5 @@ class ItemReminderAdminFragment : Fragment() {
                 }
     }
 }
+
+
