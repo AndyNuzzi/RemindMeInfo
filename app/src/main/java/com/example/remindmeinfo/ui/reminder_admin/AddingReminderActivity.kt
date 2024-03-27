@@ -1,11 +1,16 @@
 package com.example.remindmeinfo.ui.reminder_admin
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.remindmeinfo.MainActivityAdmin
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.ui.profile.EditProfileFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -14,12 +19,16 @@ class AddingReminderActivity : AppCompatActivity() {
 
     val currentUser = FirebaseAuth.getInstance().currentUser
 
+    private lateinit var fragmentManager: FragmentManager
+
     var date = ""
     var selectedItem = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_reminder)
+
+        fragmentManager = supportFragmentManager
 
         var check = findViewById<CheckBox>(R.id.check_admin_reminder)
         val editTextDate = findViewById<EditText>(R.id.editTextDate)
@@ -111,5 +120,8 @@ class AddingReminderActivity : AppCompatActivity() {
                     dbRegister.collection("reminders").document(email).update("user_elder", elder)
                 }
             }
+
+        val intent = Intent(this, MainActivityAdmin::class.java)
+        startActivity(intent)
     }
 }
