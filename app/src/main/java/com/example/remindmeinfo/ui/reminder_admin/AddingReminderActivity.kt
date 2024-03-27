@@ -98,18 +98,18 @@ class AddingReminderActivity : AppCompatActivity() {
         var check_verified = check_b.isChecked
 
 
-        dbRegister.collection("reminders").document(email).set(hashMapOf(
+        dbRegister.collection("reminders").document(email+" " +title).set(hashMapOf(
             "title" to title,
             "subtitle" to subtitle,
             "email" to email
         ))
 
         if (check_verified){
-            dbRegister.collection("reminders").document(email).update("date", date)
+            dbRegister.collection("reminders").document(email+" " +title).update("date", date)
         }
 
         if (selectedItem != ""){
-            dbRegister.collection("reminders").document(email).update("color", selectedItem)
+            dbRegister.collection("reminders").document(email+" " +title).update("color", selectedItem)
         }
 
         dbRegister.collection("users").document(email)
@@ -117,7 +117,7 @@ class AddingReminderActivity : AppCompatActivity() {
             .addOnSuccessListener{document ->
                 if (document != null) {
                     val elder = document.getString("user_elder").toString()
-                    dbRegister.collection("reminders").document(email).update("user_elder", elder)
+                    dbRegister.collection("reminders").document(email+" " +title).update("user_elder", elder)
                 }
             }
 
