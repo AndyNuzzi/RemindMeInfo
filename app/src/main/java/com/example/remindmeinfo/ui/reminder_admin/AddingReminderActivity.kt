@@ -7,10 +7,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.MainActivityAdmin
 import com.example.remindmeinfo.R
-import com.example.remindmeinfo.ui.profile.EditProfileFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -23,6 +21,10 @@ class AddingReminderActivity : AppCompatActivity() {
 
     var date = ""
     var selectedItem = ""
+
+    var idDocumentoEncontrado = ""
+
+    var cont = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,19 +99,28 @@ class AddingReminderActivity : AppCompatActivity() {
 
         var check_verified = check_b.isChecked
 
+        val  deb = dbRegister.collection("reminders").document(email).collection("remind").document()
 
-        dbRegister.collection("reminders").document(email+" " +title).set(hashMapOf(
+        deb.set(hashMapOf(
             "title" to title,
             "subtitle" to subtitle,
             "email" to email
         ))
 
+        val id_doc = deb.id
+
         if (check_verified){
-            dbRegister.collection("reminders").document(email+" " +title).update("date", date)
+            dbRegister.collection("reminders").document(email).collection("remind").document(id_doc).update("date", date)
         }
 
         if (selectedItem != ""){
-            dbRegister.collection("reminders").document(email+" " +title).update("color", selectedItem)
+            when (selectedItem) {
+                "Rosa"       -> dbRegister.collection("reminders").document(email).collection("remind").document(id_doc).update("color", "#FFFFD2E1")
+                "Amarillo"    -> dbRegister.collection("reminders").document(email).collection("remind").document(id_doc).update("color", "#FFFFF9C3")
+                "Azul"    -> dbRegister.collection("reminders").document(email).collection("remind").document(id_doc).update("color", "#FFB0E6FF")
+                "Verde" -> dbRegister.collection("reminders").document(email).collection("remind").document(id_doc).update("color", "#FFDEFFB8")
+                else       -> "Unknown" // Caso por defecto, similar a default en un switch
+            }
         }
 
         dbRegister.collection("users").document(email)
@@ -117,7 +128,7 @@ class AddingReminderActivity : AppCompatActivity() {
             .addOnSuccessListener{document ->
                 if (document != null) {
                     val elder = document.getString("user_elder").toString()
-                    dbRegister.collection("reminders").document(email+" " +title).update("user_elder", elder)
+                    dbRegister.collection("reminders").document(email).collection("remind").document(id_doc).update("user_elder", elder)
                 }
             }
 

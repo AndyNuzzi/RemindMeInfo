@@ -2,6 +2,7 @@ package com.example.remindmeinfo.ui.reminder_admin.placeholder
 
 
 import com.example.remindmeinfo.ui.reminder_admin.AdminReminders
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.ArrayList
 
@@ -20,11 +21,13 @@ object PlaceholderContent {
 
     val dbReference = FirebaseFirestore.getInstance()
 
+    val currentUser = FirebaseAuth.getInstance().currentUser
+
 
     fun createPlaceholderItem(onDataLoaded: () -> Unit){
+        var email = currentUser?.email.toString()
 
-
-        dbReference.collection("reminders")
+        dbReference.collection("reminders").document(email).collection("remind")
             .get()
             .addOnSuccessListener { result ->
                 ITEMS.clear()
