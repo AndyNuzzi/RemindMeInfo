@@ -12,7 +12,6 @@ import android.view.MenuItem
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import com.example.remindmeinfo.ui.calendar_user.CalendarUserFragment
 import com.example.remindmeinfo.ui.calendar_user.ItemCalendarUserFragment
 import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.medical_info_user.ItemMedicalPDFFragment
