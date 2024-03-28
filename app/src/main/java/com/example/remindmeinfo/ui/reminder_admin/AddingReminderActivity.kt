@@ -22,10 +22,6 @@ class AddingReminderActivity : AppCompatActivity() {
     var date = ""
     var selectedItem = ""
 
-    var idDocumentoEncontrado = ""
-
-    var cont = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_reminder)
@@ -128,7 +124,7 @@ class AddingReminderActivity : AppCompatActivity() {
             .addOnSuccessListener{document ->
                 if (document != null) {
                     val elder = document.getString("user_elder").toString()
-                    dbRegister.collection("reminders").document(email).collection("remind").document(id_doc).update("user_elder", elder)
+                    dbRegister.collection("reminders").document(email).update("user_elder", elder)
                 }
             }
 

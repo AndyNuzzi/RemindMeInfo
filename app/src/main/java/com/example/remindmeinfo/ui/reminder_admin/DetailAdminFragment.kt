@@ -2,26 +2,29 @@ package com.example.remindmeinfo.ui.reminder_admin
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentDetailAdminBinding
 import com.example.remindmeinfo.databinding.FragmentHelpBinding
+import com.example.remindmeinfo.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import org.w3c.dom.Text
 
 
 class DetailAdminFragment : Fragment() {
+    val currentUser = FirebaseAuth.getInstance().currentUser
+    var email = currentUser?.email.toString()
 
     private var _binding: FragmentDetailAdminBinding? = null
 
-    private lateinit var message1: TextView
-
-    private var backgroundColor: Int? = null
 
     private val binding get() = _binding!!
 
@@ -29,43 +32,54 @@ class DetailAdminFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflar el layout para este fragmento
+        _binding = FragmentDetailAdminBinding.inflate(inflater, container, false)
+        val root: View = binding.root
 
-        val db = FirebaseFirestore.getInstance()
+        // Ya no necesitas declarar las variables 'message1', 'message2', 'message3' aquí
+        // debido a que puedes acceder a ellas directamente desde el binding.
 
+        val documentId = arguments?.getString("documentId")
+        if (documentId == null) {
+            Log.w("DetailViewFragment", "No se proporcionó 'documentId'.")
+            return root // Retorna aquí si no hay ID de documento, ya que no podemos proceder sin él.
+        }
 
-        db.collection("reminders")
-            .document()
-            .get()
+        // Asume que 'email' es una variable válida que ya tienes definida.
+        val db = FirebaseFirestore.getInstance().collection("reminders")
+            .document(email)
+            .collection("remind")
+            .document(documentId)
+
+        db.get()
             .addOnSuccessListener { document ->
-                if (document != null) {
-                    val colorString = document.getString("color")
-                    if (colorString != null) {
-                        try{
-                            backgroundColor = Color.parseColor(colorString)
-                        } catch(e: IllegalArgumentException){ }
+                if (document.exists()) {
+                    // Extracción y aplicación del color
+                    val color = document.getString("color") ?: "#FFFFFF" // Valor predeterminado si 'color' es null.
+                    try {
+                        root.setBackgroundColor(Color.parseColor(color)) // Usa 'root' para cambiar el color de fondo.
+                    } catch (e: IllegalArgumentException) {
+                        root.setBackgroundColor(Color.parseColor("#FFFFFF")) // Color predeterminado en caso de error.
                     }
+
+                    // Configuración de los textos
+                    binding.detailTextView.text = document.getString("title")
+                    binding.detailSubtitle.text = document.getString("subtitle")
+                    binding.detailDate.text = document.getString("date") ?: ""
+                } else {
+                    Log.w("DetailViewFragment", "El documento solicitado no existe.")
                 }
             }
+            .addOnFailureListener { e ->
+                Log.w("FirestoreError", "Error al leer el documento", e)
+            }
 
-        val view = inflater.inflate(R.layout.fragment_detail_admin, container, false)
-
-        message1 = view.findViewById(R.id.detailTextView)
-
-        return view
+        return root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // Una vez la vista ha sido creada y si el color de fondo se ha cargado, aplicar el color.
-        backgroundColor?.let { color ->
-            view.findViewById<View>(R.id.detailTextView)?.setBackgroundColor(color)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
+

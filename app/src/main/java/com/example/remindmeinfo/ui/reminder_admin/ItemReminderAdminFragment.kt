@@ -50,11 +50,16 @@ class ItemReminderAdminFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyItemReminderAdminRecyclerViewAdapter(PlaceholderContent.ITEMS){ item ->
-                    // Inicia la actividad de detalles con el ítem clicado como argumento
-                    val fragmentTransaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-                    fragmentTransaction.replace(R.id.fragment_container, DetailAdminFragment())
-                    fragmentTransaction.commit()
+                adapter = MyItemReminderAdminRecyclerViewAdapter(PlaceholderContent.ITEMS) { itemId ->
+                    val detailFragment = DetailAdminFragment().apply {
+                        arguments = Bundle().apply {
+                            putString("documentId", itemId)
+                        }
+                    }
+                    requireFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, detailFragment)
+                        .addToBackStack(null)
+                        .commit()
                 }
             }
         }
