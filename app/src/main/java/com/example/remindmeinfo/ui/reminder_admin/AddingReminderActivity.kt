@@ -71,7 +71,7 @@ class AddingReminderActivity : AppCompatActivity() {
 
         val dpd = DatePickerDialog(this, { _, year, monthOfYear, dayOfMonth ->
             // Formatear la fecha seleccionada y asignarla al EditText
-            val selectedDate = "${dayOfMonth}/${monthOfYear + 1}/$year"
+            val selectedDate = String.format("%02d/%02d/%d", dayOfMonth, monthOfYear + 1, year)
             findViewById<EditText>(R.id.editTextDate).setText(selectedDate)
 
             date = selectedDate
