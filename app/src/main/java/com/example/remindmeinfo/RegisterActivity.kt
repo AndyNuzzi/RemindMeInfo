@@ -57,6 +57,8 @@ class RegisterActivity : AppCompatActivity() {
         if (check_verified){
             dbRegister.collection("users").document(email).update(
                 "user_elder", extraField_b)
+            dbRegister.collection("users").document(extraField_b).update(
+                "user_admin", email)
         }
 
         dbRegister.collection("users").document(email).update(
