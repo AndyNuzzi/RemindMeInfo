@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.SpacesItemDecoration
+import com.example.remindmeinfo.SpacesItemDecorationGrid
 import com.example.remindmeinfo.databinding.FragmentItemListCalendarUserBinding
 import com.example.remindmeinfo.ui.calendar_user.placeholder.PlaceholderContent
 import com.example.remindmeinfo.ui.reminder_list_user.DetailUserFragment
@@ -64,6 +66,7 @@ class ItemCalendarUserFragment : Fragment() {
                 columnCount <= 1 -> LinearLayoutManager(context)
                 else -> GridLayoutManager(context, columnCount)
             }
+            addItemDecoration(SpacesItemDecorationGrid(10, 10, true))
             adapter=
                 MyItemCalendarUserRecyclerViewAdapter(PlaceholderContent.ITEMS){itemId->
                     val detailFragment = DetailUserFragment().apply{

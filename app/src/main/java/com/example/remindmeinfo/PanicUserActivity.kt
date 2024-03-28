@@ -1,4 +1,4 @@
-package com.example.remindmeinfo.ui.panic_user
+package com.example.remindmeinfo
 
 import android.content.Intent
 import android.content.pm.PackageManager

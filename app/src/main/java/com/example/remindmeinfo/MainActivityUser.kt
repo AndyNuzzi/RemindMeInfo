@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.ui.calendar_user.ItemCalendarUserFragment
 import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.medical_info_user.ItemMedicalPDFFragment
-import com.example.remindmeinfo.ui.panic_user.PanicUserActivity
 import com.example.remindmeinfo.ui.pharmacy_user.ItemFragment
 import com.example.remindmeinfo.ui.profile.ProfileUserFragment
 import com.example.remindmeinfo.ui.reminder_list_user.UserReminderFragment

@@ -20,9 +20,8 @@
         android:theme="@style/Theme.RemindMeInfo"
         tools:targetApi="31" >
         <activity
-            android:name=".ui.panic_user.PanicUserActivity"
-            android:exported="false"
-            android:label="@string/title_activity_panic_user">
+            android:name=".PanicUserActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
