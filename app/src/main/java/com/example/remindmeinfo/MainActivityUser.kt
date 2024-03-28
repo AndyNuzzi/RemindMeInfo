@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.ui.calendar_user.ItemCalendarUserFragment
 import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.medical_info_user.ItemMedicalPDFFragment
-import com.example.remindmeinfo.ui.panic_user.PanicUserFragment
+import com.example.remindmeinfo.ui.panic_user.PanicUserActivity
 import com.example.remindmeinfo.ui.pharmacy_user.ItemFragment
 import com.example.remindmeinfo.ui.profile.ProfileUserFragment
 import com.example.remindmeinfo.ui.reminder_list_user.UserReminderFragment
@@ -52,7 +52,6 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
              when (item.itemId) {
                  R.id.navigation_reminder_list -> openFragment(UserReminderFragment())
                  R.id.navigation_calendar -> openFragment(ItemCalendarUserFragment())
-                 R.id.navigation_panic -> openFragment(PanicUserFragment())
                  R.id.navigation_medical_info -> openFragment(ItemMedicalPDFFragment())
                  R.id.navigation_pharmacy_info -> openFragment(ItemFragment())
              }
@@ -76,6 +75,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.vital_control -> startVital()
+            R.id.panic_button -> startPanic()
         }
 
         return super.onOptionsItemSelected(item)
@@ -95,12 +95,20 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
         return true
     }
 
-    override fun onBackPressed() {
+    /**override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.getOnBackPressedDispatcher().onBackPressed()
         }
+    }**/
+
+    override fun onBackPressed() {
+        val startMain = Intent(Intent.ACTION_MAIN)
+        startMain.addCategory(Intent.CATEGORY_HOME)
+        startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(startMain)
+
     }
 
     private fun openFragment(fragment: Fragment) {
@@ -122,6 +130,11 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
     fun startVital(){
         val intent = Intent(this, VitalControlActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun startPanic(){
+        val intent = Intent(this, PanicUserActivity::class.java)
         startActivity(intent)
     }
 
