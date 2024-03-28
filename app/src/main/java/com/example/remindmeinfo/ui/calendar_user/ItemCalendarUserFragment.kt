@@ -9,13 +9,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.databinding.FragmentItemListCalendarUserBinding
 import com.example.remindmeinfo.ui.calendar_user.placeholder.PlaceholderContent
 import com.example.remindmeinfo.ui.reminder_list_user.DetailUserFragment
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * A fragment representing a list of Items.
  */
 class ItemCalendarUserFragment : Fragment() {
+    private var _binding: FragmentItemListCalendarUserBinding? = null
+    private val binding get() = _binding!!
 
     private var columnCount = 2
 
@@ -33,28 +38,37 @@ class ItemCalendarUserFragment : Fragment() {
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        loadReminders()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_item_list_calendar_user, container, false)
+        _binding = FragmentItemListCalendarUserBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = MyItemCalendarUserRecyclerViewAdapter(PlaceholderContent.ITEMS) { itemId ->
-                    val detailFragment = DetailUserFragment().apply {
-                        arguments = Bundle().apply {
-                            putString("documentId", itemId)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Aquí estableces la fecha de hoy como título.
+        val dateToday = SimpleDateFormat("dd/MM/yyyy").format(Date())
+        binding.tvTitle.text = dateToday
+
+        // Configura tu RecyclerView con el adaptador, etc.
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        // Aquí asumo que ya tienes un RecyclerView definido en tu layout de ViewBinding con el id 'list'.
+        with(binding.list) {
+            layoutManager = when {
+                columnCount <= 1 -> LinearLayoutManager(context)
+                else -> GridLayoutManager(context, columnCount)
+            }
+            adapter=
+                MyItemCalendarUserRecyclerViewAdapter(PlaceholderContent.ITEMS){itemId->
+                    val detailFragment = DetailUserFragment().apply{
+                        arguments=Bundle().apply{
+                            putString("documentId",itemId)
                         }
                     }
                     requireFragmentManager().beginTransaction()
@@ -62,9 +76,8 @@ class ItemCalendarUserFragment : Fragment() {
                         .addToBackStack(null)
                         .commit()
                 }
-            }
         }
-        return view
+        loadReminders()
     }
 
     companion object {
