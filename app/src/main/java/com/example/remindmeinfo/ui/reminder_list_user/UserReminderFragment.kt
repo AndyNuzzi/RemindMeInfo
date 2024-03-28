@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
-import com.example.remindmeinfo.ui.reminder_admin.DetailAdminFragment
 import com.example.remindmeinfo.ui.reminder_list_user.placeholder.PlaceholderContent
 
 /**
@@ -52,7 +51,7 @@ class UserReminderFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
                 adapter = MyUserReminderRecyclerViewAdapter(PlaceholderContent.ITEMS) { itemId ->
-                    val detailFragment = DetailAdminFragment().apply {
+                    val detailFragment = DetailUserFragment().apply {
                         arguments = Bundle().apply {
                             putString("documentId", itemId)
                         }

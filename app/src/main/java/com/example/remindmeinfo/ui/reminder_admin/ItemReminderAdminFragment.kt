@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.R
-import com.example.remindmeinfo.ui.profile.EditProfileFragment
 import com.example.remindmeinfo.ui.reminder_admin.placeholder.PlaceholderContent
 
 /**
