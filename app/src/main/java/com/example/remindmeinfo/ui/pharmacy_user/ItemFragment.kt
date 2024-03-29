@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.SpacesItemDecoration
+import com.example.remindmeinfo.SpacesItemDecorationGrid
 import com.example.remindmeinfo.ui.pharmacy_user.placeholder.PlaceholderContent
 import com.example.remindmeinfo.ui.reminder_list_user.UserReminderFragment
 
@@ -49,6 +51,7 @@ class ItemFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
 
+                addItemDecoration(SpacesItemDecoration(10))
                 adapter = MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS)
             }
         }

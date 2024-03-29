@@ -22,12 +22,9 @@ object PlaceholderContent {
 
     private val dbReference = FirebaseFirestore.getInstance()
 
-    init {
-        createPlaceholderItem()
 
-    }
 
-    private fun createPlaceholderItem(): List<PdfItem> {
+    fun createPlaceholderItem(onDataLoaded: () -> Unit) {
         var depart = ""
         var date = ""
         var url = ""
@@ -35,6 +32,7 @@ object PlaceholderContent {
         dbReference.collection("medical_info_pdfs")
             .get()
             .addOnSuccessListener { result ->
+                ITEMS.clear()
                 for (doc in result) {
                     date = doc.get("date") as String
                     depart = doc.get("department") as String
@@ -46,9 +44,9 @@ object PlaceholderContent {
                     if(pdf_Item != null){
                         ITEMS.add(pdf_Item)
                     }
+                    onDataLoaded()
                 }
             }
-        return ITEMS
     }
 
     /**

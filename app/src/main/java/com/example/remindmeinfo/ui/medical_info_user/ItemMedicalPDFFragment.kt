@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.SpacesItemDecoration
 import com.example.remindmeinfo.ui.medical_info_user.placeholder.PlaceholderContent
 
 /**
@@ -22,6 +23,17 @@ class ItemMedicalPDFFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+
+    private fun loadReminders() {
+        PlaceholderContent.createPlaceholderItem {
+            view?.findViewById<RecyclerView>(R.id.list)?.adapter?.notifyDataSetChanged()
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadReminders()
     }
 
     override fun onCreateView(
@@ -38,6 +50,7 @@ class ItemMedicalPDFFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
 
+                addItemDecoration(SpacesItemDecoration(10))
                 val adapter = MyItemMedicalPDFRecyclerViewAdapter(
                     PlaceholderContent.ITEMS,
                     object : MyItemMedicalPDFRecyclerViewAdapter.OnItemClickListener {
@@ -51,9 +64,7 @@ class ItemMedicalPDFFragment : Fragment() {
                         }
                     }
                 )
-
                 this.adapter = adapter
-
             }
         }
         return view

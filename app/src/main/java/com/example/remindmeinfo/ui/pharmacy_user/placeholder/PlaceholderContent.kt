@@ -1,6 +1,7 @@
 package com.example.remindmeinfo.ui.pharmacy_user.placeholder
 
 import android.util.Log
+import com.example.remindmeinfo.ui.calendar_user.placeholder.PlaceholderContent
 import com.example.remindmeinfo.ui.pharmacy_user.Medications
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
@@ -31,6 +32,7 @@ object PlaceholderContent {
         dbReference.collection("pharmacy_medications")
             .get()
             .addOnSuccessListener{ result ->
+                ITEMS.clear()
                 for (doc in result){
                     med_amount = doc.get("amount") as String
                     med_date = doc.get("date") as String
