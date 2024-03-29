@@ -34,6 +34,7 @@ class ProfileUserFragment : Fragment() {
         lateinit var textViewAge: TextView
         lateinit var textViewAddInfo: TextView
         lateinit var textViewEmail: TextView
+        lateinit var textViewCipa: TextView
 
 
         _binding = FragmentProfileUserBinding.inflate(inflater, container, false)
@@ -45,6 +46,7 @@ class ProfileUserFragment : Fragment() {
         textViewAge = binding.textAge
         textViewAddInfo = binding.textInfo
         textViewEmail = binding.textEmail
+        textViewCipa = binding.textCipa
 
 
         if (uid != null) {
@@ -69,6 +71,10 @@ class ProfileUserFragment : Fragment() {
 
                         val email = documento.getString("user")
                         textViewEmail.text = email
+
+                        val cipa = documento.getString("cipa_number")
+                        textViewCipa.text = cipa
+
 
                     } else {
                         Log.d("Fragment", "No such document")
