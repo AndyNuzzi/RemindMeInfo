@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:background="@drawable/item_border"
+    android:radius="10dp"
     android:padding="8dp">
 
     <TextView

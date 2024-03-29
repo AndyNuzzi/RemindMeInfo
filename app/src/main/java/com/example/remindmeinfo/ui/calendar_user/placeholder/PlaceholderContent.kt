@@ -47,7 +47,8 @@ object PlaceholderContent {
                                     if (rem_date == dateToday){
                                         val rem_title = docs.getString("title") ?: "Sin título"
                                         val rem_id = docs.id
-                                        val rem = CalendarReminders(rem_title, rem_id)
+                                        val rem_color = docs.getString("color") ?: "#FFFFFF"
+                                        val rem = CalendarReminders(rem_title, rem_id, rem_color)
                                         ITEMS.add(rem)
                                     }
                                 }
