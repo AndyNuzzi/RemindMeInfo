@@ -62,7 +62,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
 
          // show icon in action bar
-         supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
+         //supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
          supportActionBar!!.setDisplayShowHomeEnabled(true)
      }
 
