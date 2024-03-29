@@ -34,7 +34,6 @@ class MyItemMedicalPDFRecyclerViewAdapter(
         val item = values[position]
         holder.date.text = item.date
         holder.depart.text = item.depart
-        holder.url.text = item.url
 
         holder.itemView.setOnClickListener {
             itemClickListener.onItemClick(item)
@@ -46,10 +45,9 @@ class MyItemMedicalPDFRecyclerViewAdapter(
     inner class ViewHolder(binding: FragmentItemMedicalPdfBinding) : RecyclerView.ViewHolder(binding.root) {
         val date: TextView = itemView.findViewById(R.id.date)
         val depart: TextView = itemView.findViewById(R.id.depart)
-        val url: TextView = itemView.findViewById(R.id.url)
 
         override fun toString(): String {
-            return super.toString() + date.text + depart.text + url.text
+            return super.toString() + date.text + depart.text
         }
     }
 
