@@ -25,8 +25,17 @@ class RegisterActivity : AppCompatActivity() {
         var check = findViewById<CheckBox>(R.id.check_admin_app)
         var extraField = findViewById<EditText>(R.id.extraField)
 
+        var check_cipa = findViewById<CheckBox>(R.id.check_cipa)
+        var cipa_num = findViewById<EditText>(R.id.cipaData)
+
         check.setOnClickListener{
             extraField.visibility = if (check.isChecked) View.VISIBLE else View.GONE
+            check_cipa.visibility = if (check.isChecked) View.GONE else View.VISIBLE
+        }
+
+        check_cipa.setOnClickListener {
+            cipa_num.visibility = if (check_cipa.isChecked) View.VISIBLE else View.GONE
+            check.visibility = if (check_cipa.isChecked) View.GONE else View.VISIBLE
         }
     }
 
@@ -47,22 +56,34 @@ class RegisterActivity : AppCompatActivity() {
         var age = findViewById<EditText>(R.id.textAge).getText().toString()
         var genre = findViewById<EditText>(R.id.textGenre).getText().toString()
         var info = findViewById<EditText>(R.id.textMedicalInfo).getText().toString()
-        var familyName = findViewById<EditText>(R.id.familyName).getText().toString()
+
+        //user admin
         var extraField_b = findViewById<EditText>(R.id.extraField).getText().toString()
 
+        //dato user
+        var cipa_user = findViewById<EditText>(R.id.cipaData).getText().toString()
+
         var check_b = findViewById<CheckBox>(R.id.check_admin_app)
+        var check_cipa_bool = findViewById<CheckBox>(R.id.check_cipa)
 
-        var check_verified = check_b.isChecked
+        var check_admin_verified = check_b.isChecked
 
-        if (check_verified){
+        var check_cipa_verified = check_cipa_bool.isChecked
+
+        if (check_admin_verified){
             dbRegister.collection("users").document(email).update(
                 "user_elder", extraField_b)
             dbRegister.collection("users").document(extraField_b).update(
                 "user_admin", email)
         }
 
+        if (check_cipa_verified){
+            dbRegister.collection("users").document(email).update(
+                "cipa_number", cipa_user)
+        }
+
         dbRegister.collection("users").document(email).update(
-            "bool_admin", check_verified)
+            "bool_admin", check_admin_verified)
         dbRegister.collection("users").document(email).update(
             "name", name)
         dbRegister.collection("users").document(email).update(
@@ -73,8 +94,6 @@ class RegisterActivity : AppCompatActivity() {
             "genre", genre)
         dbRegister.collection("users").document(email).update(
             "aditional_info", info)
-        dbRegister.collection("users").document(email).update(
-            "family", familyName)
 
         goNext()
     }
