@@ -23,19 +23,11 @@ object PlaceholderContent {
 
     val dbReference = FirebaseFirestore.getInstance()
 
-    init {
-        //for (i in 1.. ITEMS.lastIndex){
-            createPlaceholderItem()
-       // }
-
-    }
-
-    private fun createPlaceholderItem(): List<Medications>{
+    fun createPlaceholderItem(onDataLoaded: () -> Unit){
         var med_amount = ""
         var med_date = ""
         var med_name = ""
 
-        //val db =
         dbReference.collection("pharmacy_medications")
             .get()
             .addOnSuccessListener{ result ->
@@ -49,11 +41,9 @@ object PlaceholderContent {
                     if (med != null) {
                         ITEMS.add(med)
                     }
-
+                    onDataLoaded()
                 }
-
             }
-        return ITEMS
     }
 
 }
