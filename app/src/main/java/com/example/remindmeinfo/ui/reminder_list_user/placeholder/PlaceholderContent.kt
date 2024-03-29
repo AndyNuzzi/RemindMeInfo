@@ -46,8 +46,12 @@ object PlaceholderContent {
                                     val rem_title = docs.getString("title") ?: "Sin título"
                                     val rem_id = docs.id
                                     val rem_color = docs.getString("color") ?: "#FFFFFF"
-                                    val rem = UserReminders(rem_title, rem_id, rem_color)
-                                    ITEMS.add(rem)
+                                    val rem_fecha = docs.getString("date")
+
+                                    if (rem_fecha == null){
+                                        val rem = UserReminders(rem_title, rem_id, rem_color)
+                                        ITEMS.add(rem)
+                                    }
                                 }
                                 onDataLoaded()
                             }
