@@ -2,6 +2,7 @@ package com.example.remindmeinfo
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -66,6 +67,19 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         // show icon in action bar
         supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.profile_menu_admin, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.profileAdmin -> openFragment(ProfileAdminFragment())
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem):Boolean{
