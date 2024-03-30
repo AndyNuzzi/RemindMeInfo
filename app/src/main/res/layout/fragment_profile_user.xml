@@ -14,7 +14,6 @@
         android:orientation="vertical"
         tools:context=".ui.profile.ProfileUserFragment">
 
-
         <LinearLayout
             android:id="@+id/profile_titles"
             style="@style/viewCustom"
@@ -46,7 +45,7 @@
                 <TextView
                     android:id="@+id/text_name"
                     style="@style/viewCustom"
-                    android:layout_width="114dp"
+                    android:layout_width="217dp"
                     android:layout_height="39dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
@@ -54,8 +53,8 @@
                     android:backgroundTint="@color/gray"
                     android:inputType="text"
                     android:textColor="@color/gray"
-                    android:textSize="25sp"
                     android:textColorHint="@color/gray"
+                    android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.062"
@@ -91,7 +90,7 @@
                 <TextView
                     android:id="@+id/text_surname"
                     style="@style/viewCustom"
-                    android:layout_width="195dp"
+                    android:layout_width="219dp"
                     android:layout_height="39dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
@@ -219,8 +218,13 @@
             android:layout_height="1dp"
             android:background="@android:color/darker_gray" />
 
+        <LinearLayout
+            android:id="@+id/profile_titles3"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
 
-        <TextView
+            <TextView
             android:id="@+id/text_user_cipa"
             android:layout_width="192dp"
             android:layout_height="34dp"
@@ -238,7 +242,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.079" />
 
-        <TextView
+            <TextView
             android:id="@+id/text_cipa"
             style="@style/viewCustom"
             android:layout_width="354dp"
@@ -256,13 +260,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.165" />
 
+        </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray" />
 
+        <LinearLayout
+            android:id="@+id/profile_titles4"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
 
-        <TextView
+            <TextView
             android:id="@+id/text_user_email"
             android:layout_width="115dp"
             android:layout_height="34dp"
@@ -280,7 +291,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.079" />
 
-        <TextView
+            <TextView
             android:id="@+id/text_email"
             style="@style/viewCustom"
             android:layout_width="360dp"
@@ -297,13 +308,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.165" />
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/profile_titles5"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
+            <TextView
             android:id="@+id/text_user_info"
             android:layout_width="310dp"
             android:layout_height="40dp"
@@ -321,23 +339,25 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.724" />
 
-        <TextView
-            android:id="@+id/text_info"
-            style="@style/viewCustom"
-            android:layout_width="363dp"
-            android:layout_height="77dp"
-            android:backgroundTint="@color/gray"
-            android:inputType="text"
-            android:paddingTop="10sp"
-            android:textColor="@color/gray"
-            android:textSize="25sp"
-            android:textColorHint="@color/gray"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.209"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.866" />
+            <TextView
+                android:id="@+id/text_info"
+                style="@style/viewCustom"
+                android:layout_width="363dp"
+                android:layout_height="77dp"
+                android:backgroundTint="@color/gray"
+                android:inputType="text"
+                android:paddingTop="10sp"
+                android:textColor="@color/gray"
+                android:textSize="25sp"
+                android:textColorHint="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.209"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.866" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

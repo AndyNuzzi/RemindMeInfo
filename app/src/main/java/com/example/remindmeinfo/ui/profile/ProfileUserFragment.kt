@@ -48,40 +48,43 @@ class ProfileUserFragment : Fragment() {
         textViewEmail = binding.textEmail
         textViewCipa = binding.textCipa
 
-
         if (uid != null) {
             dbReference.collection("users").document(uid)
                 .get()
                 .addOnSuccessListener { documento ->
                     if (documento != null) {
-                        val nombre = documento.getString("name")
-                        textViewName.text = nombre
+                        val user_elder = documento.getString("user_elder")
+                        if (user_elder != null) {
+                            dbReference.collection("users").document(user_elder)
+                                .get()
+                                .addOnSuccessListener { doc ->
+                                    val nombre = doc.getString("name")
+                                    textViewName.text = nombre
 
-                        val apellido = documento.getString("surname")
-                        textViewSurname.text = apellido
+                                    val apellido = doc.getString("surname")
+                                    textViewSurname.text = apellido
 
-                        val genero = documento.getString("genre")
-                        textViewGenre.text = genero
+                                    val genero = doc.getString("genre")
+                                    textViewGenre.text = genero
 
-                        val edad = documento.getString("age")
-                        textViewAge.text = edad
+                                    val edad = doc.getString("age")
+                                    textViewAge.text = edad
 
-                        val infoAdd = documento.getString("aditional_info")
-                        textViewAddInfo.text = infoAdd
+                                    val cipa = doc.getString("cipa_number")
+                                    textViewCipa.text = cipa
 
-                        val email = documento.getString("user")
-                        textViewEmail.text = email
+                                    val email = doc.getString("user")
+                                    textViewEmail.text = email
 
-                        val cipa = documento.getString("cipa_number")
-                        textViewCipa.text = cipa
-
-
+                                    val infoAdd = doc.getString("aditional_info")
+                                    textViewAddInfo.text = infoAdd
+                                }
+                        }
                     } else {
                         Log.d("Fragment", "No such document")
                     }
                 }
         }
-
         return root
     }
 
