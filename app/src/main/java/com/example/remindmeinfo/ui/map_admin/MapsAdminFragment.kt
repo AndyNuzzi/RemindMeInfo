@@ -7,37 +7,43 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.ui.calendar_user.placeholder.PlaceholderContent.currentUser
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MapsAdminFragment : Fragment() {
 
     private val callback = OnMapReadyCallback { googleMap ->
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
-        val sydney = LatLng(40.31183238822568, -3.79119737517464)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker at home"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+        var email = currentUser?.email.toString()
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("users").document(email)
+            .get()
+            .addOnSuccessListener { doc ->
+                if (doc != null) {
+                    val user_elder = doc.getString("user_elder")
+
+                    if (user_elder != null) {
+                        db.collection("users").document(user_elder)
+                            .get()
+                            .addOnSuccessListener {docs ->
+                                val latitud = docs.get("latitud")
+                                val longitud = docs.get("longitud")
+
+                                val user_loc = LatLng(latitud as Double, longitud as Double)
+                                googleMap.addMarker(MarkerOptions().position(user_loc).title("Marcador del Usuario"))
+                                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(user_loc, 15f))
+
+                            }
+                    }
+                }
+            }
     }
 
     override fun onCreateView(
