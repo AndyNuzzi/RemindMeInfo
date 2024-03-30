@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/gray">
+    android:background="?attr/colorSecondaryVariant">
 
     <ImageView
         android:id="@+id/Image"
@@ -25,24 +25,24 @@
             style="@style/viewCustom"
             android:layout_width="155dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Nombre"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
         <EditText
             android:id="@+id/textSurname"
             style="@style/viewCustom"
             android:layout_width="155dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Apellidos"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
     </LinearLayout>
 
@@ -58,12 +58,12 @@
             android:layout_width="160dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Edad"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
 
 
@@ -73,12 +73,12 @@
             android:layout_width="160dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Género"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
     </LinearLayout>
 
@@ -89,12 +89,12 @@
         android:layout_width="370dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="0dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:hint="Información médica adicional"
         android:inputType="text"
         android:paddingTop="25dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="?attr/colorOnPrimary"
+        android:textColorHint="?attr/colorOnPrimary"
         android:textSize="18sp" />
 
     <CheckBox
@@ -104,7 +104,7 @@
         android:layout_marginLeft="8dp"
         android:gravity="center"
         android:text="Soy usuario de la aplicación"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp" />
 
     <EditText
@@ -113,12 +113,12 @@
         android:layout_width="368dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="0dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:hint="Número CIPA (en la tarjeta sanitaria)"
         android:inputType="text"
         android:paddingTop="25dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="?attr/colorOnPrimary"
+        android:textColorHint="?attr/colorOnPrimary"
         android:textSize="18sp"
         android:visibility="gone"/>
 
@@ -130,7 +130,7 @@
         android:layout_marginLeft="8dp"
         android:gravity="center"
         android:text="Soy usuario administrador de la aplicación"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp" />
 
     <EditText
@@ -138,25 +138,25 @@
         style="@style/viewCustom"
         android:layout_width="370dp"
         android:layout_marginTop="0dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:hint="Correo electrónico del usuario anciano"
         android:inputType="text"
         android:paddingTop="25dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="?attr/colorOnPrimary"
+        android:textColorHint="?attr/colorOnPrimary"
         android:visibility="gone"/>
 
     <TextView
         android:id="@+id/buttonSaveRegister"
         style="@style/viewCustom"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:textAlignment="center"
         android:text="Guardar información"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:onClick="saveRegister" />
 </LinearLayout>

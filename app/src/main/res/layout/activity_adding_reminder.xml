@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/medium_gray">
+    android:background="?attr/colorOnSecondary">
 
 
     <LinearLayout
@@ -19,12 +19,12 @@
             style="@style/viewCustom"
             android:layout_width="356dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Titulo del Recordatorio"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
     </LinearLayout>
 
@@ -39,12 +39,12 @@
             style="@style/viewCustom"
             android:layout_width="358dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Información relevante"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
     </LinearLayout>
 
@@ -61,11 +61,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Escoja el color del Recordatorio"
             android:paddingTop="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -77,7 +77,7 @@
         android:layout_marginLeft="8dp"
         android:gravity="center"
         android:text="Recordatorio lleva Fecha asociada"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp" />
 
 
@@ -88,11 +88,11 @@
         android:layout_width="358dp"
         android:layout_marginTop="0dp"
         android:hint="Introduzca Fecha"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:inputType="date"
         android:paddingTop="25dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="?attr/colorOnPrimary"
+        android:textColorHint="?attr/colorOnPrimary"
         android:focusable="false"
         android:visibility="gone"/>
 
@@ -101,13 +101,13 @@
         android:id="@+id/buttonSaveReminder"
         style="@style/viewCustom"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:onClick="saveNewRemind"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:text="Guardar información"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         android:textStyle="bold" />
 </LinearLayout>

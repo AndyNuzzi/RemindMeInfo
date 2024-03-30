@@ -21,6 +21,7 @@ class PanicUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_panic_user)
 
+
         binding = ActivityPanicUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

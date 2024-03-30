@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.profile.EditProfileFragment"
-    android:background="@color/gray">
+    android:background="?attr/colorSecondaryVariant">
 
 
     <LinearLayout
@@ -26,12 +26,12 @@
             style="@style/viewCustom"
             android:layout_width="155dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Nombre"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
         <EditText
             android:id="@+id/textAgeP"
@@ -39,12 +39,12 @@
             android:layout_width="160dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Edad"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
     </LinearLayout>
 
@@ -64,12 +64,12 @@
             style="@style/viewCustom"
             android:layout_width="155dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Apellidos"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
         <EditText
             android:id="@+id/textGenreP"
@@ -77,12 +77,12 @@
             android:layout_width="160dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:hint="Género"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary" />
 
     </LinearLayout>
 
@@ -92,12 +92,12 @@
         android:layout_width="386dp"
         android:layout_height="60dp"
         android:layout_marginTop="120dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:hint="Información médica adicional"
         android:inputType="text"
         android:paddingTop="25dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="?attr/colorOnPrimary"
+        android:textColorHint="?attr/colorOnPrimary"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,12 +111,12 @@
         android:layout_width="375dp"
         android:layout_height="52dp"
         android:layout_marginTop="128dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:hint="Nombre del grupo familiar"
         android:inputType="text"
         android:paddingTop="25dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="?attr/colorOnPrimary"
+        android:textColorHint="?attr/colorOnPrimary"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,13 +130,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="112dp"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:onClick="saveEdit"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:text="Guardar información"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSecondaryVariant"
     tools:context=".VitalControlActivity">
 
     <TextView
@@ -14,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Diabetes"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +33,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Pulso cardíaco"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +51,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Tensión"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,12 +78,12 @@
             android:id="@+id/textDataHeart"
             style="@style/viewCustom"
             android:layout_width="285dp"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Datos del pulso cardíaco"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="372dp" />
     </LinearLayout>
@@ -105,12 +106,12 @@
             android:id="@+id/textDataTension"
             style="@style/viewCustom"
             android:layout_width="wrap_content"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Tensión Alta"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="372dp" />
 
@@ -118,12 +119,12 @@
             android:id="@+id/textDataTension2"
             style="@style/viewCustom"
             android:layout_width="wrap_content"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Tensión Baja"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="372dp" />
     </LinearLayout>
@@ -147,12 +148,12 @@
             style="@style/viewCustom"
             android:layout_width="285dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Datos de diabetes"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray" />
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
     </LinearLayout>
 
     <TextView
@@ -161,7 +162,7 @@
         android:layout_width="317dp"
         android:layout_height="35dp"
         android:layout_marginTop="100dp"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:onClick="saveVitalInfo"
         android:text="Guardar información"
         android:textAlignment="center"
