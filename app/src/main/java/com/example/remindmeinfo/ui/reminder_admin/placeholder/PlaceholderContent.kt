@@ -34,7 +34,8 @@ object PlaceholderContent {
                 for (doc in result) {
                     val rem_title = doc.getString("title") ?: "Sin título"
                     val rem_id = doc.id
-                    val rem = AdminReminders(rem_title, rem_id)
+                    val rem_color = doc.getString("color") ?: "#FFFFFF"
+                    val rem = AdminReminders(rem_title, rem_id, rem_color)
                     ITEMS.add(rem)
                 }
                 onDataLoaded()
