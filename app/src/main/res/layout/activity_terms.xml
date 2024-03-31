@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="?attr/colorOnSecondary">
 
 
     <TextView
@@ -14,7 +15,7 @@
         android:layout_margin="8dp"
         android:layout_marginTop="20dp"
         android:text="Pantalla de "
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="12sp" />
 
     <TextView
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Terminos y condiciones de uso"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="12sp"
         android:layout_margin="8dp"/>
 

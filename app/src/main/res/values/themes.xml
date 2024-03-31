@@ -5,7 +5,8 @@
         <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryVariant">@color/pink</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnBackground">@color/black</item>
+        <item name="colorOnBackground">@color/gray</item>
+        <item name="colorButtonNormal">@color/medium_gray</item>
         <!--Secondarybrandcolor.-->
         <item name="colorSecondary">@color/orange</item>
         <item name="colorSecondaryVariant">@color/gray</item>

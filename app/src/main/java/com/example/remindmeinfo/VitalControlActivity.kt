@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.remindmeinfo.databinding.ActivityPanicUserBinding
+import com.example.remindmeinfo.databinding.ActivityVitalControlBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -15,10 +17,16 @@ class VitalControlActivity : AppCompatActivity() {
 
     val currentUser = FirebaseAuth.getInstance().currentUser
 
+    private lateinit var binding: ActivityVitalControlBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vital_control)
+
+        binding = ActivityVitalControlBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
     }
 
     fun saveVitalInfo(view: View){

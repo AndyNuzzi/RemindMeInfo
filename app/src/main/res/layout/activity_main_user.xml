@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bottomAppBar"
                 android:layout_gravity="bottom"
-                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:backgroundTint="?attr/colorOnBackground"
                 app:fabCradleMargin="10dp"
                 app:fabCradleRoundedCornerRadius="50dp">
 

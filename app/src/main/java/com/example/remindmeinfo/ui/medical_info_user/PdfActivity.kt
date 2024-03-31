@@ -16,6 +16,8 @@ class PdfActivity : AppCompatActivity() {
         binding = ActivityPdfBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
         val url = intent.getStringExtra("pdfUrl")!!
 
         cargarInfoPDF(url)

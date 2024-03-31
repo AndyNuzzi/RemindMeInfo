@@ -7,10 +7,10 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.ActivityPanicUserBinding
 
 class PanicUserActivity : AppCompatActivity() {
@@ -19,11 +19,11 @@ class PanicUserActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_panic_user)
-
 
         binding = ActivityPanicUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
 
         val imageView: ImageView = binding.ImageButton
         imageView.setOnClickListener {

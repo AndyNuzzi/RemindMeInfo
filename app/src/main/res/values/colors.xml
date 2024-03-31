@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue">#40BAFB</color>
+    <color name="blue">#009CF0</color>
     <color name="pink">#FE70AE</color>
     <color name="purple">#9A7DFE</color>
     <color name="orange">#F6854F</color>
+    <color name="dark_orange">#DD6D38</color>
+    <color name="dark_gray">#434343</color>
     <color name="gray">#6A6969</color>
     <color name="light_gray">#E6E6E6</color>
     <color name="medium_gray">#959595</color>

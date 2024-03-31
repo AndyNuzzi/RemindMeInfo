@@ -22,9 +22,9 @@
         android:inputType="textEmailAddress"
         android:paddingTop="30dp"
         android:layout_marginTop="0dp"
-        android:textColor="?attr/colorOnPrimary"
-        android:textColorHint="?attr/colorOnPrimary"
-        android:backgroundTint="?attr/colorOnPrimary"/>
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/textPassword"
@@ -33,9 +33,9 @@
         android:inputType="textPassword"
         android:paddingTop="30dp"
         android:layout_marginTop="0dp"
-        android:textColor="?attr/colorOnPrimary"
-        android:textColorHint="?attr/colorOnPrimary"
-        android:backgroundTint="?attr/colorOnPrimary"/>
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
     
     <TextView
         android:id="@+id/buttonLogin"
@@ -47,7 +47,7 @@
         android:paddingBottom="7dp"
         android:textAlignment="center"
         android:text="Iniciar Sesión"
-        android:textColor="?attr/colorOnPrimary"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:onClick="login"/>
 
@@ -83,7 +83,7 @@
         android:drawableLeft="@drawable/google"
         android:text="GOOGLE"
         android:textAlignment="textStart"
-        android:textColor="?attr/colorOnBackground"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="16sp"
         android:paddingLeft="30dp"
         android:onClick="signInGoogle"/>
