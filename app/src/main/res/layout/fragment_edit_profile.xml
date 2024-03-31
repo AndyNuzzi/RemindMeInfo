@@ -5,53 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.profile.EditProfileFragment"
-    android:background="?attr/colorSecondaryVariant">
+    android:background="?attr/colorOnSecondary">
 
 
     <LinearLayout
         android:id="@+id/personal_info1"
         style="@style/viewCustom"
-        android:layout_width="397dp"
+        android:layout_width="359dp"
+        android:layout_height="84dp"
         android:layout_marginTop="72dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149">
+        app:layout_constraintVertical_bias="0.095">
 
         <EditText
             android:id="@+id/textNameP"
             style="@style/viewCustom"
             android:layout_width="155dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="?attr/colorOnPrimary"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Nombre"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="?attr/colorOnPrimary"
-            android:textColorHint="?attr/colorOnPrimary" />
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
 
         <EditText
-            android:id="@+id/textAgeP"
+            android:id="@+id/textSurnameP"
             style="@style/viewCustom"
-            android:layout_width="160dp"
+            android:layout_width="155dp"
             android:layout_marginTop="0dp"
-            android:layout_marginRight="10dp"
-            android:backgroundTint="?attr/colorOnPrimary"
-            android:hint="Edad"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Apellidos"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="?attr/colorOnPrimary"
-            android:textColorHint="?attr/colorOnPrimary" />
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
+
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/personal_info2"
         style="@style/viewCustom"
-        android:layout_width="397dp"
+        android:layout_width="359dp"
+        android:layout_height="84dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,87 +61,67 @@
         app:layout_constraintVertical_bias="0.037">
 
         <EditText
-            android:id="@+id/textSurnameP"
-            style="@style/viewCustom"
-            android:layout_width="155dp"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="?attr/colorOnPrimary"
-            android:hint="Apellidos"
-            android:inputType="text"
-            android:paddingTop="25dp"
-            android:textColor="?attr/colorOnPrimary"
-            android:textColorHint="?attr/colorOnPrimary" />
-
-        <EditText
             android:id="@+id/textGenreP"
             style="@style/viewCustom"
             android:layout_width="160dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="?attr/colorOnPrimary"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Género"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="?attr/colorOnPrimary"
-            android:textColorHint="?attr/colorOnPrimary" />
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
+
+        <EditText
+            android:id="@+id/textAgeP"
+            style="@style/viewCustom"
+            android:layout_width="160dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Edad"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
 
     </LinearLayout>
 
     <EditText
-        android:id="@+id/textMedicalInfoP"
+        android:id="@+id/textUserElder"
         style="@style/viewCustom"
-        android:layout_width="386dp"
-        android:layout_height="60dp"
+        android:layout_width="341dp"
+        android:layout_height="63dp"
         android:layout_marginTop="120dp"
-        android:backgroundTint="?attr/colorOnPrimary"
-        android:hint="Información médica adicional"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:hint="Usuario Receptor"
         android:inputType="text"
         android:paddingTop="25dp"
-        android:textColor="?attr/colorOnPrimary"
-        android:textColorHint="?attr/colorOnPrimary"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/personal_info2"
-        app:layout_constraintVertical_bias="0.14" />
-
-    <EditText
-        android:id="@+id/familyNameP"
-        style="@style/viewCustom"
-        android:layout_width="375dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="128dp"
-        android:backgroundTint="?attr/colorOnPrimary"
-        android:hint="Nombre del grupo familiar"
-        android:inputType="text"
-        android:paddingTop="25dp"
-        android:textColor="?attr/colorOnPrimary"
-        android:textColorHint="?attr/colorOnPrimary"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/personal_info2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <Button
         android:id="@+id/buttonSaveEdit"
         style="@style/viewCustom"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="112dp"
-        android:background="?attr/color"
+        android:layout_marginTop="96dp"
         android:onClick="saveEdit"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:text="Guardar información"
         android:textAlignment="center"
-        android:textColor="?attr/colorOnPrimary"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMedicalInfoP" />
+        app:layout_constraintTop_toBottomOf="@+id/textUserElder"
+        tools:layout_editor_absoluteX="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

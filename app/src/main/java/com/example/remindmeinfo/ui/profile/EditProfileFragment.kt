@@ -1,5 +1,6 @@
 package com.example.remindmeinfo.ui.profile
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +25,7 @@ class EditProfileFragment : Fragment() {
 
     private val binding get() = _binding!!
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,21 +42,33 @@ class EditProfileFragment : Fragment() {
             var surname = view.findViewById<EditText>(R.id.textSurnameP).getText().toString()
             var age = view.findViewById<EditText>(R.id.textAgeP).getText().toString()
             var genre = view.findViewById<EditText>(R.id.textGenreP).getText().toString()
-            var info = view.findViewById<EditText>(R.id.textMedicalInfoP).getText().toString()
-            var familyName = view.findViewById<EditText>(R.id.familyNameP).getText().toString()
+            var user_elder = view.findViewById<EditText>(R.id.textUserElder).getText().toString()
 
-            dbRegister.collection("users").document(email).update(
-                "name", name)
-            dbRegister.collection("users").document(email).update(
-                "surname", surname)
-            dbRegister.collection("users").document(email).update(
-                "age", age)
-            dbRegister.collection("users").document(email).update(
-                "genre", genre)
-            dbRegister.collection("users").document(email).update(
-                "aditional_info", info)
-            dbRegister.collection("users").document(email).update(
-                "family", familyName)
+            if (name != ""){
+                dbRegister.collection("users").document(email).update(
+                    "name", name)
+            }
+
+            if (surname != ""){
+                dbRegister.collection("users").document(email).update(
+                    "surname", surname)
+            }
+
+            if (age != ""){
+                dbRegister.collection("users").document(email).update(
+                    "age", age)
+            }
+
+            if (genre != ""){
+                dbRegister.collection("users").document(email).update(
+                    "genre", genre)
+            }
+
+            if (user_elder != ""){
+                dbRegister.collection("users").document(email).update(
+                    "user_elder", user_elder)
+            }
+
             saveEdit()
         }
 
