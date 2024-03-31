@@ -36,108 +36,108 @@
         app:layout_constraintVertical_bias="0.109" />
 
     <TextView
-                    android:id="@+id/text_medical_info_heart"
-                    android:layout_width="238dp"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Pulso cardíaco"
-                    android:textColor="?attr/colorSecondaryVariant"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.05"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.323" />
+        android:id="@+id/text_medical_info_heart"
+        android:layout_width="238dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Pulso cardíaco"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
 
     <TextView
-                    android:id="@+id/text_medical_info_tension"
-                    android:layout_width="238dp"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Tensión"
-                    android:textColor="?attr/colorSecondaryVariant"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.101"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.568" />
+        android:id="@+id/text_medical_info_tension"
+        android:layout_width="238dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Tensión"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.519" />
 
     <LinearLayout
-                    android:id="@+id/data_heart"
-                    style="@style/viewCustom"
-                    android:layout_width="319dp"
-                    android:layout_height="74dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.13"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.433">
+        android:id="@+id/data_heart"
+        style="@style/viewCustom"
+        android:layout_width="319dp"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41">
 
-                    <EditText
-                        android:id="@+id/textDataHeart"
-                        style="@style/viewCustom"
-                        android:layout_width="285dp"
-                        android:backgroundTint="?attr/colorSecondaryVariant"
-                        android:hint="Datos del pulso cardíaco"
-                        android:inputType="text"
-                        android:paddingTop="25dp"
-                        android:textColor="?attr/colorSecondaryVariant"
-                        android:textColorHint="?attr/colorSecondaryVariant"
-                        tools:layout_editor_absoluteX="18dp"
-                        tools:layout_editor_absoluteY="372dp" />
-                </LinearLayout>
+        <EditText
+            android:id="@+id/textDataHeart"
+            style="@style/viewCustom"
+            android:layout_width="285dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Datos del pulso cardíaco"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="372dp" />
+    </LinearLayout>
 
     <LinearLayout
-                    android:id="@+id/data_tension"
-                    style="@style/viewCustom"
-                    android:layout_width="319dp"
-                    android:layout_height="74dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.173"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.698"
-                    tools:ignore="MissingConstraints">
+        android:id="@+id/data_tension"
+        style="@style/viewCustom"
+        android:layout_width="319dp"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622"
+        tools:ignore="MissingConstraints">
 
-                    <EditText
-                        android:id="@+id/textDataTension"
-                        style="@style/viewCustom"
-                        android:layout_width="wrap_content"
-                        android:backgroundTint="?attr/colorSecondaryVariant"
-                        android:hint="Tensión Alta"
-                        android:inputType="text"
-                        android:paddingTop="25dp"
-                        android:textColor="?attr/colorSecondaryVariant"
-                        android:textColorHint="?attr/colorSecondaryVariant"
-                        tools:layout_editor_absoluteX="18dp"
-                        tools:layout_editor_absoluteY="372dp" />
+        <EditText
+            android:id="@+id/textDataTension"
+            style="@style/viewCustom"
+            android:layout_width="wrap_content"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Tensión Alta"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="372dp" />
 
-                    <EditText
-                        android:id="@+id/textDataTension2"
-                        style="@style/viewCustom"
-                        android:layout_width="wrap_content"
-                        android:backgroundTint="?attr/colorSecondaryVariant"
-                        android:hint="Tensión Baja"
-                        android:inputType="text"
-                        android:paddingTop="25dp"
-                        android:textColor="?attr/colorSecondaryVariant"
-                        android:textColorHint="?attr/colorSecondaryVariant"
-                        tools:layout_editor_absoluteX="18dp"
-                        tools:layout_editor_absoluteY="372dp" />
-                </LinearLayout>
+        <EditText
+            android:id="@+id/textDataTension2"
+            style="@style/viewCustom"
+            android:layout_width="wrap_content"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Tensión Baja"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="372dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/data_diab"
@@ -147,10 +147,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178"
+        app:layout_constraintVertical_bias="0.185"
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -166,22 +166,22 @@
     </LinearLayout>
 
     <TextView
-                    android:id="@+id/buttonSaveVitalInfo"
-                    style="@style/viewCustom"
-                    android:layout_width="317dp"
-                    android:layout_height="35dp"
-                    android:layout_marginTop="100dp"
-                    android:background="?attr/color"
-                    android:onClick="saveVitalInfo"
-                    android:text="Guardar información"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.849" />
+        android:id="@+id/buttonSaveVitalInfo"
+        style="@style/viewCustom"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="100dp"
+        android:background="?attr/color"
+        android:onClick="saveVitalInfo"
+        android:text="Guardar información"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
