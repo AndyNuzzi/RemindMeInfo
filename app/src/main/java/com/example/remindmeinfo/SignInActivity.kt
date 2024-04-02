@@ -81,7 +81,8 @@ class SignInActivity : AppCompatActivity() {
                     var dbRegister = FirebaseFirestore.getInstance()
                     dbRegister.collection("users").document(emailS).set(hashMapOf(
                         "user" to emailS,
-                        "dateRegister" to dateRegister
+                        "dateRegister" to dateRegister,
+                        "terms_acepted" to cbAcept.isChecked
                     ))
                     goRegister(emailS, "email")
                 } else {
