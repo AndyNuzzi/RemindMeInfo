@@ -40,8 +40,6 @@ class EditProfileFragment : Fragment() {
         myButton.setOnClickListener {
             var name = view.findViewById<EditText>(R.id.textNameP).getText().toString()
             var surname = view.findViewById<EditText>(R.id.textSurnameP).getText().toString()
-            var age = view.findViewById<EditText>(R.id.textAgeP).getText().toString()
-            var genre = view.findViewById<EditText>(R.id.textGenreP).getText().toString()
             var user_elder = view.findViewById<EditText>(R.id.textUserElder).getText().toString()
 
             if (name != ""){
@@ -52,16 +50,6 @@ class EditProfileFragment : Fragment() {
             if (surname != ""){
                 dbRegister.collection("users").document(email).update(
                     "surname", surname)
-            }
-
-            if (age != ""){
-                dbRegister.collection("users").document(email).update(
-                    "age", age)
-            }
-
-            if (genre != ""){
-                dbRegister.collection("users").document(email).update(
-                    "genre", genre)
             }
 
             if (user_elder != ""){

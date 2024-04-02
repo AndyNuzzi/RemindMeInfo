@@ -33,9 +33,6 @@ class ProfileAdminFragment : Fragment() {
 
         lateinit var textViewName: TextView
         lateinit var textViewSurname: TextView
-        lateinit var textViewGenre: TextView
-        lateinit var textViewAge: TextView
-        lateinit var textViewAddInfo: TextView
         lateinit var textViewEmail: TextView
         lateinit var textViewElder: TextView
 
@@ -46,9 +43,6 @@ class ProfileAdminFragment : Fragment() {
 
         textViewName = binding.textNameAdmin
         textViewSurname = binding.textSurnameAdmin
-        textViewGenre = binding.textGenreAdmin
-        textViewAge = binding.textAgeAdmin
-        textViewAddInfo = binding.textInfoAdmin
         textViewEmail = binding.textEmailAdmin
         textViewElder = binding.textUserElderAdmin
 
@@ -62,15 +56,6 @@ class ProfileAdminFragment : Fragment() {
 
                         val apellido = documento.getString("surname")
                         textViewSurname.text = apellido
-
-                        val genero = documento.getString("genre")
-                        textViewGenre.text = genero
-
-                        val edad = documento.getString("age")
-                        textViewAge.text = edad
-
-                        val infoAdd = documento.getString("aditional_info")
-                        textViewAddInfo.text = infoAdd
 
                         val email = documento.getString("user")
                         textViewEmail.text = email

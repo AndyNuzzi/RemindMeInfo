@@ -5,8 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentProfileUserBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -90,5 +93,20 @@ class ProfileUserFromFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val myButton: Button = view.findViewById(R.id.buttonEditProfileUser)
+        myButton.setOnClickListener {
+            // Aquí manejas el evento clic del botón
+            editProfile()
+        }
+    }
+
+    fun editProfile(){
+        val fragmentTransaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, EditProfileUserAdminFragment())
+        fragmentTransaction.commit()
     }
 }
