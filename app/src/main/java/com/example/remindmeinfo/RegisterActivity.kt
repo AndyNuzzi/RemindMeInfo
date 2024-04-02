@@ -28,6 +28,10 @@ class RegisterActivity : AppCompatActivity() {
         var check_cipa = findViewById<CheckBox>(R.id.check_cipa)
         var cipa_num = findViewById<EditText>(R.id.cipaData)
 
+        var age = findViewById<EditText>(R.id.textAge)
+        var genre = findViewById<EditText>(R.id.textGenre)
+        var info = findViewById<EditText>(R.id.textMedicalInfo)
+
         check.setOnClickListener{
             extraField.visibility = if (check.isChecked) View.VISIBLE else View.GONE
             check_cipa.visibility = if (check.isChecked) View.GONE else View.VISIBLE
@@ -35,6 +39,10 @@ class RegisterActivity : AppCompatActivity() {
 
         check_cipa.setOnClickListener {
             cipa_num.visibility = if (check_cipa.isChecked) View.VISIBLE else View.GONE
+            age.visibility = if (check_cipa.isChecked) View.VISIBLE else View.GONE
+            genre.visibility = if (check_cipa.isChecked) View.VISIBLE else View.GONE
+            info.visibility = if (check_cipa.isChecked) View.VISIBLE else View.GONE
+            //ocultar check del admin
             check.visibility = if (check_cipa.isChecked) View.GONE else View.VISIBLE
         }
     }
@@ -71,10 +79,16 @@ class RegisterActivity : AppCompatActivity() {
         var check_cipa_verified = check_cipa_bool.isChecked
 
         if (check_admin_verified){
-            dbRegister.collection("users").document(email).update(
-                "user_elder", extraField_b)
-            dbRegister.collection("users").document(extraField_b).update(
-                "user_admin", email)
+            if (extraField_b == ""){
+                Toast.makeText(this, "Introduzca el email del usuario receptor", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, RegisterActivity::class.java)
+                startActivity(intent)
+            } else {
+                dbRegister.collection("users").document(email).update(
+                    "user_elder", extraField_b)
+                dbRegister.collection("users").document(extraField_b).update(
+                    "user_admin", email)
+            }
         }
 
         if (check_cipa_verified){
@@ -109,7 +123,7 @@ class RegisterActivity : AppCompatActivity() {
                     if (bool == true){
                         val intent = Intent(this, MainActivityAdmin::class.java)
                         startActivity(intent)
-                    } else{
+                    } else {
                         val intent = Intent(this, MainActivityUser::class.java)
                         startActivity(intent)
                     }

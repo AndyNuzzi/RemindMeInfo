@@ -46,6 +46,16 @@
 
     </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/check_cipa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:gravity="center"
+        android:text="Soy usuario de la aplicación"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textSize="18sp" />
+
     <LinearLayout
         android:id="@+id/personal_info2"
         style="@style/viewCustom"
@@ -63,9 +73,8 @@
             android:inputType="text"
             android:paddingTop="25dp"
             android:textColor="?attr/colorSecondaryVariant"
-            android:textColorHint="?attr/colorSecondaryVariant" />
-
-
+            android:textColorHint="?attr/colorSecondaryVariant"
+            android:visibility="gone"/>
 
         <EditText
             android:id="@+id/textGenre"
@@ -78,10 +87,10 @@
             android:inputType="text"
             android:paddingTop="25dp"
             android:textColor="?attr/colorSecondaryVariant"
-            android:textColorHint="?attr/colorSecondaryVariant" />
+            android:textColorHint="?attr/colorSecondaryVariant"
+            android:visibility="gone"/>
 
     </LinearLayout>
-
 
     <EditText
         android:id="@+id/textMedicalInfo"
@@ -95,17 +104,8 @@
         android:paddingTop="25dp"
         android:textColor="?attr/colorSecondaryVariant"
         android:textColorHint="?attr/colorSecondaryVariant"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/check_cipa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:gravity="center"
-        android:text="Soy usuario de la aplicación"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone"/>
 
     <EditText
         android:id="@+id/cipaData"

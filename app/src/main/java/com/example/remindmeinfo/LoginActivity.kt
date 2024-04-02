@@ -94,6 +94,9 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
+                else{
+                    Toast.makeText(this, "No existe una cuenta con ese email", Toast.LENGTH_LONG).show()
+                }
             }
     }
 
