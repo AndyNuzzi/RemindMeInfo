@@ -88,26 +88,31 @@ class RegisterActivity : AppCompatActivity() {
                     "user_elder", extraField_b)
                 dbRegister.collection("users").document(extraField_b).update(
                     "user_admin", email)
+                dbRegister.collection("users").document(email).update(
+                    "name", name)
+                dbRegister.collection("users").document(email).update(
+                    "surname", surname)
+                dbRegister.collection("users").document(email).update(
+                    "bool_admin", check_admin_verified)
             }
         }
 
         if (check_cipa_verified){
             dbRegister.collection("users").document(email).update(
                 "cipa_number", cipa_user)
+            dbRegister.collection("users").document(email).update(
+                "name", name)
+            dbRegister.collection("users").document(email).update(
+                "surname", surname)
+            dbRegister.collection("users").document(email).update(
+                "bool_admin", check_admin_verified)
+            dbRegister.collection("users").document(email).update(
+                "age", age)
+            dbRegister.collection("users").document(email).update(
+                "genre", genre)
+            dbRegister.collection("users").document(email).update(
+                "aditional_info", info)
         }
-
-        dbRegister.collection("users").document(email).update(
-            "bool_admin", check_admin_verified)
-        dbRegister.collection("users").document(email).update(
-            "name", name)
-        dbRegister.collection("users").document(email).update(
-            "surname", surname)
-        dbRegister.collection("users").document(email).update(
-            "age", age)
-        dbRegister.collection("users").document(email).update(
-            "genre", genre)
-        dbRegister.collection("users").document(email).update(
-            "aditional_info", info)
 
         goNext()
     }
