@@ -8,6 +8,25 @@
     android:background="?attr/colorOnSecondary">
 
 
+    <TextView
+        android:id="@+id/InfoTitle"
+        style="@style/viewCustom"
+        android:layout_width="355dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:hint="RELLENA LOS CAMPOS QUE QUIERES CAMBIAR"
+        android:inputType="text"
+        android:paddingTop="25dp"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/personal_info1"
         style="@style/viewCustom"
@@ -19,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095">
+        app:layout_constraintVertical_bias="0.198">
 
         <EditText
             android:id="@+id/textNameP"
@@ -63,16 +82,15 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/personal_info1"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonSaveEdit"
         style="@style/viewCustom"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="152dp"
         android:onClick="saveEdit"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
@@ -82,6 +100,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/textUserElder"
-        tools:layout_editor_absoluteX="8dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
