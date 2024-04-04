@@ -10,12 +10,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.R
-import com.example.remindmeinfo.databinding.FragmentProfileUserBinding
+import com.example.remindmeinfo.databinding.FragmentProfileUserFromBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileUserFromFragment : Fragment() {
-    private var _binding: FragmentProfileUserBinding? = null
+    private var _binding: FragmentProfileUserFromBinding? = null
 
     private val binding get() = _binding!!
 
@@ -39,7 +39,7 @@ class ProfileUserFromFragment : Fragment() {
         lateinit var textViewCipa: TextView
 
 
-        _binding = FragmentProfileUserBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileUserFromBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         textViewName = binding.textName

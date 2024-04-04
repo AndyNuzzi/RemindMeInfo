@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.profile.ProfileUserFragment">
+        tools:context=".ui.profile.ProfileUserFromFragment">
 
         <LinearLayout
             android:id="@+id/profile_titles"
@@ -226,40 +226,40 @@
             android:orientation="vertical">
 
             <TextView
-            android:id="@+id/text_user_cipa"
-            android:layout_width="192dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="Número CIPA: "
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.85"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.079" />
+                android:id="@+id/text_user_cipa"
+                android:layout_width="192dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Número CIPA: "
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.079" />
 
             <TextView
-            android:id="@+id/text_cipa"
-            style="@style/viewCustom"
-            android:layout_width="354dp"
-            android:layout_height="44dp"
-            android:backgroundTint="?attr/colorSecondaryVariant"
-            android:inputType="text"
-            android:paddingTop="10sp"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textColorHint="?attr/colorSecondaryVariant"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.931"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.165" />
+                android:id="@+id/text_cipa"
+                style="@style/viewCustom"
+                android:layout_width="354dp"
+                android:layout_height="44dp"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:inputType="text"
+                android:paddingTop="10sp"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.931"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.165" />
 
         </LinearLayout>
 
@@ -275,40 +275,40 @@
             android:orientation="vertical">
 
             <TextView
-            android:id="@+id/text_user_email"
-            android:layout_width="115dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="Email: "
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.85"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.079" />
+                android:id="@+id/text_user_email"
+                android:layout_width="115dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Email: "
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.079" />
 
             <TextView
-            android:id="@+id/text_email"
-            style="@style/viewCustom"
-            android:layout_width="360dp"
-            android:layout_height="44dp"
-            android:backgroundTint="?attr/colorSecondaryVariant"
-            android:inputType="text"
-            android:paddingTop="10sp"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textColorHint="?attr/colorSecondaryVariant"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.931"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.165" />
+                android:id="@+id/text_email"
+                style="@style/viewCustom"
+                android:layout_width="360dp"
+                android:layout_height="44dp"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:inputType="text"
+                android:paddingTop="10sp"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.931"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.165" />
         </LinearLayout>
 
         <View
@@ -323,22 +323,22 @@
             android:orientation="vertical">
 
             <TextView
-            android:id="@+id/text_user_info"
-            android:layout_width="310dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="Información Adicional: "
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.211"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.724" />
+                android:id="@+id/text_user_info"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Información Adicional: "
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.211"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.724" />
 
             <TextView
                 android:id="@+id/text_info"
@@ -364,6 +364,25 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="?attr/colorSecondaryVariant" />
+
+        <Button
+            android:id="@+id/buttonEditProfileUser"
+            style="@style/viewCustom"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="52dp"
+            android:color="@color/blue"
+            android:onClick="editProfile"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:text="Editar Perfil Usuario Receptor"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.702" />
 
 
     </LinearLayout>

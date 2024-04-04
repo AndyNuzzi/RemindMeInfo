@@ -62,8 +62,11 @@ class DetailAdminFragment : Fragment() {
                     }
 
                     // Configuración de los textos
+                    val info = document.getString("subtitle")
+                    val info_saltos = info?.replace(", ", "\n ")
+
                     binding.detailTextView.text = document.getString("title")
-                    binding.detailSubtitle.text = document.getString("subtitle")
+                    binding.detailSubtitle.text = info_saltos
                     binding.detailDate.text = document.getString("date") ?: ""
                 } else {
                     Log.w("DetailViewFragment", "El documento solicitado no existe.")
