@@ -346,9 +346,10 @@
                 android:layout_width="363dp"
                 android:layout_height="77dp"
                 android:backgroundTint="?attr/colorSecondaryVariant"
-                android:inputType="text"
+                android:ellipsize="end"
+                android:maxLines="20"
+                android:singleLine="false"
                 android:paddingTop="10sp"
-                android:textColor="?attr/colorSecondaryVariant"
                 android:textSize="25sp"
                 android:textColorHint="?attr/colorSecondaryVariant"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -356,7 +357,7 @@
                 app:layout_constraintHorizontal_bias="0.209"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.866" />
+                app:layout_constraintVertical_bias="0.866"/>
 
         </LinearLayout>
 
