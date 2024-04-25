@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.ui.calendar_user.ItemCalendarUserFragment
 import com.example.remindmeinfo.ui.calendar_user.placeholder.PlaceholderContent.currentUser
 import com.example.remindmeinfo.ui.help.HelpFragment
+import com.example.remindmeinfo.ui.help.HelpUserFragment
 import com.example.remindmeinfo.ui.medical_info_user.ItemMedicalPDFFragment
 import com.example.remindmeinfo.ui.pharmacy_user.ItemFragment
 import com.example.remindmeinfo.ui.profile.ProfileUserFragment
@@ -98,7 +99,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.navigation_help -> openFragment(HelpFragment())
+            R.id.navigation_help -> openFragment(HelpUserFragment())
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
             R.id.navigation_profile_user -> openFragment(ProfileUserFragment())

@@ -7,7 +7,7 @@ import android.webkit.WebView
 import androidx.fragment.app.Fragment
 import com.example.remindmeinfo.R
 
-class HelpFragment : Fragment() {
+class HelpUserFragment : Fragment() {
 
     private lateinit var webView: WebView
 
@@ -27,18 +27,16 @@ class HelpFragment : Fragment() {
 
     private fun loadYoutubeVideo() {
         // El ID del video de YouTube que quieres cargar
-        val youtubeVideoIdAdmin = "zMj1cBUOv_k?si=8EOkjnDE9v73vKfE"
+        val youtubeVideoIdReceptor = "mxytZlK6lSc?si=xJbHoDMjKncj2YES"
 
         // Cadena HTML que contiene el IFrame de YouTube
         val html = """
             <!DOCTYPE html>
             <html>
             <body>
-            <!-- Incluir el IFrame Player API de YouTube -->
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/$youtubeVideoIdAdmin" 
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/$youtubeVideoIdReceptor" 
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
-            
             </body>
             </html>
             """.trimIndent()
