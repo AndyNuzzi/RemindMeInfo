@@ -19,17 +19,15 @@ class HelpUserFragment : Fragment() {
         webView = view.findViewById(R.id.webview)
         webView.settings.javaScriptEnabled = true
 
-        // Cargar el contenido HTML con el IFrame de YouTube
         loadYoutubeVideo()
 
         return view
     }
 
     private fun loadYoutubeVideo() {
-        // El ID del video de YouTube que quieres cargar
         val youtubeVideoIdReceptor = "mxytZlK6lSc?si=xJbHoDMjKncj2YES"
 
-        // Cadena HTML que contiene el IFrame de YouTube
+
         val html = """
             <!DOCTYPE html>
             <html>

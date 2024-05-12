@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.remindmeinfo.databinding.ActivityPanicUserBinding
 import com.example.remindmeinfo.databinding.ActivityVitalControlBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

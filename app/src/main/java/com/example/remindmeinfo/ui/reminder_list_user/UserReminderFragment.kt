@@ -9,13 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
-import com.example.remindmeinfo.SpacesItemDecoration
 import com.example.remindmeinfo.SpacesItemDecorationGrid
 import com.example.remindmeinfo.ui.reminder_list_user.placeholder.PlaceholderContent
 
-/**
- * A fragment representing a list of Items.
- */
 class UserReminderFragment : Fragment() {
 
     private var columnCount = 2

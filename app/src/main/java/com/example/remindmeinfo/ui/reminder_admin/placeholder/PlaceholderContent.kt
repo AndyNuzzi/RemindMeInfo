@@ -1,22 +1,12 @@
 package com.example.remindmeinfo.ui.reminder_admin.placeholder
 
-
 import com.example.remindmeinfo.ui.reminder_admin.AdminReminders
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.ArrayList
 
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- *
- * TODO: Replace all uses of this class before publishing your app.
- */
 object PlaceholderContent {
 
-    /**
-     * An array of sample (placeholder) items.
-     */
     val ITEMS: MutableList<AdminReminders> = ArrayList()
 
     val dbReference = FirebaseFirestore.getInstance()
@@ -41,7 +31,6 @@ object PlaceholderContent {
                 onDataLoaded()
             }
             .addOnFailureListener { exception ->
-                // Aquí manejarías el error, como mostrar un mensaje al usuario.
             }
     }
 

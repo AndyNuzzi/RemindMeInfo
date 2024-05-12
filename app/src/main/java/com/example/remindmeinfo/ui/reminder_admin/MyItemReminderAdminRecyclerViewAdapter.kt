@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.remindmeinfo.databinding.FragmentItemReminderAdminBinding
@@ -40,7 +39,7 @@ class MyItemReminderAdminRecyclerViewAdapter(
             holder.itemView.setBackgroundColor(color)
         } catch (e: IllegalArgumentException) {
             Log.e("MyItemRecyclerViewAdapter", "Formato de color no válido: $item.color", e)
-            // Opcionalmente, puedes establecer un color predeterminado si el formato no es válido
+            // Opcionalmente, se puede establecer un color predeterminado si el formato no es válido
             holder.itemView.setBackgroundColor(Color.WHITE)
         }
 

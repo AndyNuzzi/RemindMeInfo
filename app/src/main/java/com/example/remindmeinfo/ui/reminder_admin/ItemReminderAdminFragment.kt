@@ -12,9 +12,6 @@ import com.example.remindmeinfo.R
 import com.example.remindmeinfo.SpacesItemDecorationGrid
 import com.example.remindmeinfo.ui.reminder_admin.placeholder.PlaceholderContent
 
-/**
- * A fragment representing a list of Items.
- */
 class ItemReminderAdminFragment : Fragment() {
 
     private var columnCount = 2

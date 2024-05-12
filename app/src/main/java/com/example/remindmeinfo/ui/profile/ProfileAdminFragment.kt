@@ -37,7 +37,6 @@ class ProfileAdminFragment : Fragment() {
         lateinit var textViewElder: TextView
 
 
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -82,7 +81,7 @@ class ProfileAdminFragment : Fragment() {
 
         val myButton: Button = view.findViewById(R.id.buttonEditProfile)
         myButton.setOnClickListener {
-            // Aquí manejas el evento clic del botón
+            // Manejo el evento clic del botón
             editProfile()
         }
     }

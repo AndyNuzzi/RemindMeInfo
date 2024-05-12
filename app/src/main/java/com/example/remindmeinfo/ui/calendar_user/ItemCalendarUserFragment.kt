@@ -16,9 +16,6 @@ import com.example.remindmeinfo.ui.reminder_list_user.DetailUserFragment
 import java.text.SimpleDateFormat
 import java.util.*
 
-/**
- * A fragment representing a list of Items.
- */
 class ItemCalendarUserFragment : Fragment() {
     private var _binding: FragmentItemListCalendarUserBinding? = null
     private val binding get() = _binding!!
@@ -50,16 +47,13 @@ class ItemCalendarUserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Aquí estableces la fecha de hoy como título.
         val dateToday = SimpleDateFormat("dd/MM/yyyy").format(Date())
         binding.tvTitle.text = dateToday
 
-        // Configura tu RecyclerView con el adaptador, etc.
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
-        // Aquí asumo que ya tienes un RecyclerView definido en tu layout de ViewBinding con el id 'list'.
         with(binding.list) {
             layoutManager = when {
                 columnCount <= 1 -> LinearLayoutManager(context)

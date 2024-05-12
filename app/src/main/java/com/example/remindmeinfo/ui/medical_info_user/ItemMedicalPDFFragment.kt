@@ -1,7 +1,6 @@
 package com.example.remindmeinfo.ui.medical_info_user
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -14,9 +13,6 @@ import com.example.remindmeinfo.R
 import com.example.remindmeinfo.SpacesItemDecoration
 import com.example.remindmeinfo.ui.medical_info_user.placeholder.PlaceholderContent
 
-/**
- * A fragment representing a list of Items.
- */
 class ItemMedicalPDFFragment : Fragment() {
 
     private var columnCount = 1

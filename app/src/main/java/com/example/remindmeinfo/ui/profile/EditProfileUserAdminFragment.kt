@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentEditProfileUserAdminBinding

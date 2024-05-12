@@ -2,18 +2,11 @@ package com.example.remindmeinfo.ui.calendar_user.placeholder
 
 import com.example.remindmeinfo.ui.calendar_user.CalendarReminders
 import com.example.remindmeinfo.ui.reminder_admin.placeholder.PlaceholderContent
-import com.example.remindmeinfo.ui.reminder_list_user.UserReminders
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*
 
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- *
- * TODO: Replace all uses of this class before publishing your app.
- */
 object PlaceholderContent {
 
 
@@ -55,7 +48,7 @@ object PlaceholderContent {
                                 onDataLoaded()
                             }
                             .addOnFailureListener { exception ->
-                                // Aquí manejarías el error, como mostrar un mensaje al usuario.
+
                             }
                     }
                 }

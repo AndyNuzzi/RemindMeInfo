@@ -99,7 +99,7 @@ class ProfileUserFromFragment : Fragment() {
 
         val myButton: Button = view.findViewById(R.id.buttonEditProfileUser)
         myButton.setOnClickListener {
-            // Aquí manejas el evento clic del botón
+            // Manejo el evento clic del botón
             editProfile()
         }
     }

@@ -3,7 +3,6 @@ package com.example.remindmeinfo.ui.medical_info_user
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.remindmeinfo.databinding.ActivityPdfBinding
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 
 class PdfActivity : AppCompatActivity() {

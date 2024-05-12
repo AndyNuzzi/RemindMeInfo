@@ -10,13 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
 import com.example.remindmeinfo.SpacesItemDecoration
-import com.example.remindmeinfo.SpacesItemDecorationGrid
 import com.example.remindmeinfo.ui.pharmacy_user.placeholder.PlaceholderContent
-import com.example.remindmeinfo.ui.reminder_list_user.UserReminderFragment
 
-/**
- * A fragment representing a list of Items.
- */
 class ItemFragment : Fragment() {
 
     private var columnCount = 1

@@ -6,13 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentItemMedicalPdfBinding
-import com.example.remindmeinfo.ui.medical_info_user.placeholder.PlaceholderContent
 import com.example.remindmeinfo.ui.medical_info_user.placeholder.PlaceholderContent.PdfItem
 
-/**
- * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
- */
+
 class MyItemMedicalPDFRecyclerViewAdapter(
     private val values: List<PdfItem>,
     private val itemClickListener: OnItemClickListener

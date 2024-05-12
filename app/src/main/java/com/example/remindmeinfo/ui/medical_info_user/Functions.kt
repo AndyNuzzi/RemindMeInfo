@@ -1,7 +1,6 @@
 package com.example.remindmeinfo.ui.medical_info_user
 
 import android.app.Application
-import android.widget.ProgressBar
 import com.github.barteksc.pdfviewer.PDFView
 import com.google.firebase.storage.FirebaseStorage
 

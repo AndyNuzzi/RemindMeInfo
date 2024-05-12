@@ -1,25 +1,11 @@
 package com.example.remindmeinfo.ui.pharmacy_user.placeholder
 
-import android.util.Log
-import com.example.remindmeinfo.ui.calendar_user.placeholder.PlaceholderContent
 import com.example.remindmeinfo.ui.pharmacy_user.Medications
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QueryDocumentSnapshot
-import com.google.firebase.firestore.ktx.toObject
 import java.util.ArrayList
-import java.util.HashMap
 
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- *
- * TODO: Replace all uses of this class before publishing your app.
- */
 object PlaceholderContent {
 
-    /**
-     * An array of sample (placeholder) items.
-     */
     val ITEMS: MutableList<Medications> = ArrayList()
 
     val dbReference = FirebaseFirestore.getInstance()

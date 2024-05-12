@@ -18,7 +18,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.remindmeinfo.ui.calendar_user.ItemCalendarUserFragment
 import com.example.remindmeinfo.ui.calendar_user.placeholder.PlaceholderContent.currentUser
-import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.help.HelpUserFragment
 import com.example.remindmeinfo.ui.medical_info_user.ItemMedicalPDFFragment
 import com.example.remindmeinfo.ui.pharmacy_user.ItemFragment
@@ -159,7 +158,7 @@ class MainActivityUser : AppCompatActivity(), NavigationView.OnNavigationItemSel
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 obtenerUbicacion()
             } else {
-                // El usuario no concedió los permisos. Puedes mostrar un mensaje explicativo aquí.
+                // El usuario no concedió los permisos.
             }
         }
     }
