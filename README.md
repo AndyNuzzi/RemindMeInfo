@@ -5,7 +5,7 @@ RemindMeInfo es una aplicación desarrollada para un Trabajo de Fin de Grado en 
 
 El objetivo de este Trabajo de Fin de Grado es intentar cerrar la brecha digital generacional e introducir las nuevas tecnologías a un sector de población en concreto, la tercera edad. Para que no se sientan excluidos y sean independientes, haciendo que mejore la calidad de vida de estas personas y su autonomía en la era digital.
 
-## ¿Cómo instalar RemindMeInfo en mi ordenador?
+## ¿Cómo instalar *RemindMeInfo* en mi ordenador?
 
 Lo primero que se debe hacer para poder usar *RemindMeInfo* en un ordenador es tener instalado Android Studio.
 
@@ -22,7 +22,7 @@ Una vez que el repositorio se haya clonado correctamente, Android Studio deberí
 
 RemindMeInfo tiene dependencias especificadas en el archivo `build.gradle`, Android Studio preguntará si se desea descargarlas. Se debe aceptar para asegurarse de que todas las librerías y herramientas necesarias estén instaladas y configuradas.
 
-## ¿Cómo usar el emulador de Android Studio con RemindMeInfo?
+## ¿Cómo usar el emulador de Android Studio con *RemindMeInfo*?
 
 El emulador en Android Studio permite ejecutar y probar aplicaciones Android en una computadora sin necesidad de un dispositivo físico. Estos pasos conforman una guía clara para configurar un emulador en Android Studio:
 
@@ -44,7 +44,7 @@ El emulador en Android Studio permite ejecutar y probar aplicaciones Android en 
 
   Una vez que el emulador está en funcionamiento, se puede instalar y ejecutar la aplicación desde Android Studio. Se selecciona el emulador como el destino de implementación cuando se ejecuta la aplicación.
 
-## ¿Cómo conectar un dispositivo móvil Android a Android Studio?
+## ¿Cómo conectar un dispositivo móvil Android a Android Studio para probar *RemindMeInfo*?
 
 Conectar un dispositivo Android a Android Studio es un paso esencial para probar y depurar aplicaciones directamente en un dispositivo f ́ısico. Aqu ́ı esta ́n los pasos b ́asicos para conectar un dispositivo Android a Android Studio:
 
