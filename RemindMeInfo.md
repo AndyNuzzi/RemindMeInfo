@@ -16,3 +16,40 @@ Una vez que el repositorio se haya clonado correctamente, Android Studio deberí
 
 RemindMeInfo tiene dependencias especificadas en el archivo `build.gradle`, Android Studio preguntará si se desea descargarlas. Se debe aceptar para asegurarse de que todas las librerías y herramientas necesarias estén instaladas y configuradas.
 
+## ¿Cómo usar el emulador de Android Studio con RemindMeInfo?
+
+El emulador en Android Studio permite ejecutar y probar aplicaciones Android en una computadora sin necesidad de un dispositivo físico. Estos pasos conforman una guía clara para configurar un emulador en Android Studio:
+
+- <u>Paso 1: Acceder al AVD Manager (Administrador de Dispositivos Virtuales)</u>
+  En la barra de herramientas superior, se encuentra el  icono del AVD Manager. Es un  icono que se parece a un dispositivo mívil con un pequeño monitor.
+  Al hacer clic en él se abre el `Administrador de Dispositivos Virtuales` (AVD Manager).
+  
+- <u>Paso 2: Crear un Nuevo Emulador en el AVD Manager</u>
+  Para crear un nuevo emualdor en el AVD Manager, se hace clic en `Create Virtual Device`. Después, se selecciona el tipo de dispositivo que se desea emular (por ejemplo, Pixel 4) y se hace clic en `Next`.
+  Se elige una imagen de sistema (una versión de Android) y se hace clic en `Next`. Entonces se configuran las opciones del hardware del emulador, como la cantidad de RAM, y se hace clic en `Next`. Para finalizar, se revisa la configuración y se hace clic en `Finish` para crear el emulador.
+  
+- <u>Paso 3: Iniciar el Emulador</u>
+  En el AVD Manager, se ve el emulador que se acaba de crear. Se hace clic en el botón `Play` (triángulo verde) para iniciar el emulador. Se debe esperar a que el emulador se inicie. Puede llevar un tiempo la primera vez.
+  
+- <u>Paso 4: Instalar y Ejecutar la Aplicación</u>
+  Una vez que el emulador está en funcionamiento, se puede instalar y ejecutar la aplicación desde Android Studio. Se selecciona el emulador como el destino de implementación cuando se ejecuta la aplicación.
+
+## ¿Cómo conectar un dispositivo móvil Android a Android Studio?
+
+Conectar un dispositivo Android a Android Studio es un paso esencial para probar y depurar aplicaciones directamente en un dispositivo f ́ısico. Aqu ́ı esta ́n los pasos b ́asicos para conectar un dispositivo Android a Android Studio:
+
+- <u>Paso 1: Se debe preparar el Dispositivo Android</u>
+Se debe habilitar la Depuración USB. En el dispositivo Android, en la pantalla de ajustes, se accede a `Configuración > Acerca del teléfono > Información de software`. Se debe tocar repetidamente el número de compilación hasta que se active el modo de desarrollador. Después, se vuelve a la configuración principal y se selecciona `Opciones de desarrollador` y se habilita la opción `Depuración USB`. A continuación, se conecta el dispositivo al ordenador. Se debe usar un cable USB.
+
+- <u>Paso 2: Configuración de Android Studio</u>
+Se abre Android Studio en el ordenador. Se verifica la `Instalación del Controlador`, pero es opcional. En algunos casos, es posible que se necesite instalar controladores USB específicos para el dispositivo. Se consulta el sitio web del fabricante del dispositivo para obtener información sobre los controladores.
+
+- <u>Paso 3: Configuracio ́n de Android Studio para Depuraci ́on USB</u>
+Primero se debe habilitar la `Depuración USB` en Android Studio. Se busca `Run` en la barra de menú de Android Studio. Android Studio debería detectar automáticamente el dispositivo conectado y desplegar la aplicació en  él. A continuaci ́on, se verifica la conexión, asegurándose de que Android Studio ha identificado correctamente el dispositivo en la parte superior de la ventana.
+
+- <u>Paso 4: Aceptar la Confirmación de Depuración USB en el Dispositivo</u>
+Después de habilitar la Depuración USB, el dispositivo podría mostrar una ventana emergente solicitando permiso para la Depuración USB. Se tiene que aceptar esta confirmación.
+
+
+
+
