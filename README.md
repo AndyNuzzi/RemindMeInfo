@@ -1,4 +1,10 @@
 # *RemindMeInfo*
+## ¿Qué es *RemindMeInfo*?
+
+RemindMeInfo es una aplicación desarrollada para un Trabajo de Fin de Grado en la universidad Rey Juan Carlos de Madrid, España. Se ha desarrollado pensada para dispositivos Android, programada en Kotlin y con almacenamiento en la nube de Google, usando los servicios de Firebase. Además el código fuente se distribuye bajo una licencia GNU General Public License.
+
+El objetivo de este Trabajo de Fin de Grado es intentar cerrar la brecha digital generacional e introducir las nuevas tecnologías a un sector de población en concreto, la tercera edad. Para que no se sientan excluidos y sean independientes, haciendo que mejore la calidad de vida de estas personas y su autonomía en la era digital.
+
 ## ¿Cómo instalar RemindMeInfo en mi ordenador?
 
 Lo primero que se debe hacer para poder usar *RemindMeInfo* en un ordenador es tener instalado Android Studio.
