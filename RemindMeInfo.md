@@ -21,17 +21,21 @@ RemindMeInfo tiene dependencias especificadas en el archivo `build.gradle`, Andr
 El emulador en Android Studio permite ejecutar y probar aplicaciones Android en una computadora sin necesidad de un dispositivo físico. Estos pasos conforman una guía clara para configurar un emulador en Android Studio:
 
 - **Paso 1: Acceder al AVD Manager (Administrador de Dispositivos Virtuales)**
+  
   En la barra de herramientas superior, se encuentra el  icono del AVD Manager. Es un  icono que se parece a un dispositivo mívil con un pequeño monitor.
   Al hacer clic en él se abre el `Administrador de Dispositivos Virtuales` (AVD Manager).
   
 - **Paso 2: Crear un Nuevo Emulador en el AVD Manager**
+
   Para crear un nuevo emualdor en el AVD Manager, se hace clic en `Create Virtual Device`. Después, se selecciona el tipo de dispositivo que se desea emular (por ejemplo, Pixel 4) y se hace clic en `Next`.
   Se elige una imagen de sistema (una versión de Android) y se hace clic en `Next`. Entonces se configuran las opciones del hardware del emulador, como la cantidad de RAM, y se hace clic en `Next`. Para finalizar, se revisa la configuración y se hace clic en `Finish` para crear el emulador.
   
 - **Paso 3: Iniciar el Emulador**
+
   En el AVD Manager, se ve el emulador que se acaba de crear. Se hace clic en el botón `Play` (triángulo verde) para iniciar el emulador. Se debe esperar a que el emulador se inicie. Puede llevar un tiempo la primera vez.
   
 - **Paso 4: Instalar y Ejecutar la Aplicación**
+
   Una vez que el emulador está en funcionamiento, se puede instalar y ejecutar la aplicación desde Android Studio. Se selecciona el emulador como el destino de implementación cuando se ejecuta la aplicación.
 
 ## ¿Cómo conectar un dispositivo móvil Android a Android Studio?
@@ -40,7 +44,7 @@ Conectar un dispositivo Android a Android Studio es un paso esencial para probar
 
 - **Paso 1: Se debe preparar el Dispositivo Android**
 
-Se debe habilitar la Depuración USB. En el dispositivo Android, en la pantalla de ajustes, se accede a `Configuración > Acerca del teléfono > Información de software`. Se debe tocar repetidamente el número de compilación hasta que se active el modo de desarrollador. Después, se vuelve a la configuración principal y se selecciona `Opciones de desarrollador` y se habilita la opción `Depuración USB`. A continuación, se conecta el dispositivo al ordenador. Se debe usar un cable USB.
+  Se debe habilitar la Depuración USB. En el dispositivo Android, en la pantalla de ajustes, se accede a `Configuración > Acerca del teléfono > Información de software`. Se debe tocar repetidamente el número de compilación hasta que se active el modo de desarrollador. Después, se vuelve a la configuración principal y se selecciona `Opciones de desarrollador` y se habilita la opción `Depuración USB`. A continuación, se conecta el dispositivo al ordenador. Se debe usar un cable USB.
 
 - **Paso 2: Configuración de Android Studio**
   
