@@ -1,9 +1,9 @@
-#*RemindMeInfo*
-##¿Cómo instalar RemindMeInfo en mi ordenador?
+# *RemindMeInfo*
+## ¿Cómo instalar RemindMeInfo en mi ordenador?
 
 Lo primero que se debe hacer para poder usar *RemindMeInfo* en un ordenador es tener instalado Android Studio.
 
-A continuación, se inicia Android Studio. Si hay un proyecto abierto, se puede ir a `File > New > Project` from Version Control.
+A continuación, se inicia Android Studio. Si hay un proyecto abierto, se puede ir a `File > New > Project from Version Control`.
 Si no hay proyecto abierto, desde la pantalla de bienvenida, se selecciona `Get from VCS`.
 
 Después en la ventana que aparece, hay que asegurarse de que la opción seleccionada en el desplegable es Git. Esto indica que se va a clonar un repositorio que utiliza Git para el control de versiones. 
