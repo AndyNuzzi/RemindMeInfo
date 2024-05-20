@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple">
+    android:background="?attr/colorPrimary">
     
     <ImageView
         android:id="@+id/Image"
@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/buttonLogin"
         style="@style/viewCustom"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:paddingTop="7dp"
@@ -49,7 +49,7 @@
         android:text="Iniciar Sesión"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:onClick="login" />
+        android:onClick="login"/>
 
     <TextView
         android:id="@+id/forgottenPassword"
@@ -59,42 +59,19 @@
         android:paddingTop="0dp"
         android:gravity="center_horizontal"
         android:text="¿Ha olvidado su contraseña?"
-        android:textColor="@color/white"
-        android:onClick="forgotten" />
+        android:textColor="?attr/colorOnPrimary"
+        android:onClick="forgottenPsswrd" />
 
     <TextView
-        android:id="@+id/register"
+        android:id="@+id/signIn"
         style="@style/viewCustom"
+        android:layout_below="@id/buttonLogin"
         android:textSize="12sp"
         android:paddingTop="0dp"
         android:gravity="center_horizontal"
-        android:text="Sino tiene cuenta, registrese aquí"
-        android:textColor="@color/white"
-        android:onClick="register" />
-    
-    <LinearLayout
-        android:id="@+id/legalTerms"
-        style="@style/viewCustom"
-        android:orientation="horizontal">
-        <CheckBox
-            android:id="@+id/check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:text="He leido y acepto los"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:id="@+id/link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:text="términos y condiciones de uso"
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/orange"
-            android:onClick="goTerms" />
-
-    </LinearLayout>
+        android:text="¿Todavía no tiene cuenta en la aplicación?"
+        android:textColor="?attr/colorOnPrimary"
+        android:onClick="signIn_Act"/>
 
     <Button
         android:id="@+id/btnGoogle"
@@ -102,13 +79,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:drawableLeft="@drawable/google"
         android:text="GOOGLE"
         android:textAlignment="textStart"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="16sp"
-        android:paddingLeft="30dp"/>
+        android:paddingLeft="30dp"
+        android:onClick="signInGoogle"/>
 
 
 </LinearLayout>

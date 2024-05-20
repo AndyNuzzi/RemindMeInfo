@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorOnSecondary"
+    tools:context=".ui.reminder_admin.AddingReminderActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-1dp" />
+
+
+    <EditText
+        android:id="@+id/textTitle"
+        style="@style/viewCustom"
+        android:layout_width="308dp"
+        android:layout_height="62dp"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:hint="Titulo del Recordatorio"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:paddingTop="25dp"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <EditText
+        android:id="@+id/textSubtitle"
+        style="@style/viewCustom"
+        android:layout_width="308dp"
+        android:layout_height="62dp"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:hint="Información relevante"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:paddingTop="25dp"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.266" />
+
+    <CheckBox
+        android:id="@+id/check_admin_reminder"
+        android:layout_width="331dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="8dp"
+        android:gravity="center"
+        android:text="Recordatorio lleva Fecha asociada"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="308dp"
+        android:layout_height="62dp"
+        android:hint="Escoja el color del Recordatorio"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        style="@style/viewCustom"
+        android:layout_width="330dp"
+        android:layout_height="66dp"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="Introduzca Fecha"
+        android:inputType="date"
+        android:paddingTop="25dp"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+    <TextView
+        android:id="@+id/buttonSaveReminder"
+        style="@style/viewCustom"
+        android:layout_width="286dp"
+        android:layout_height="36dp"
+        android:background="?attr/color"
+        android:onClick="saveNewRemind"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:text="Guardar información"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.804" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

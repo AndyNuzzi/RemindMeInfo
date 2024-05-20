@@ -1,4 +1,15 @@
 <resources>
+
+
+    <string-array name="dropdown_items">
+        <item>Seleccione una opción</item>
+        <item>Rosa</item>
+        <item>Amarillo</item>
+        <item>Azul</item>
+        <item>Verde</item>
+    </string-array>
+
+
     <string name="app_name">RemindMeInfo</string>
     <string name="title_home">Home</string>
     <string name="title_reminder">Recordatorios</string>
@@ -34,4 +45,24 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+
+    <string name="bar_title_terms">Términos y condiciones de uso</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_panic_user">PanicUserActivity</string>
 </resources>

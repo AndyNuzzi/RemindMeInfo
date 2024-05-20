@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.EditProfileUserAdminFragment"
+    android:background="?attr/colorOnSecondary">
+
+    <TextView
+        android:id="@+id/InfoTitle"
+        style="@style/viewCustom"
+        android:layout_width="355dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:hint="RELLENA LOS CAMPOS QUE QUIERES CAMBIAR"
+        android:inputType="text"
+        android:paddingTop="25dp"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/personal_info1"
+        style="@style/viewCustom"
+        android:layout_width="359dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="72dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22">
+
+        <EditText
+            android:id="@+id/textNameProf"
+            style="@style/viewCustom"
+            android:layout_width="155dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Nombre"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
+
+        <EditText
+            android:id="@+id/textSurnameProf"
+            style="@style/viewCustom"
+            android:layout_width="155dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Apellidos"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/personal_info2"
+        style="@style/viewCustom"
+        android:layout_width="359dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="72dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389">
+
+        <EditText
+            android:id="@+id/textAgeProf"
+            style="@style/viewCustom"
+            android:layout_width="155dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Edad"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
+
+        <EditText
+            android:id="@+id/textGenreProf"
+            style="@style/viewCustom"
+            android:layout_width="155dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:hint="Género"
+            android:inputType="text"
+            android:paddingTop="25dp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/textUserCipaProf"
+        style="@style/viewCustom"
+        android:layout_width="341dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:hint="Número CIPA"
+        android:inputType="text"
+        android:paddingTop="25dp"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personal_info2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/textUserInfoProf"
+        style="@style/viewCustom"
+        android:layout_width="341dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="?attr/colorSecondaryVariant"
+        android:hint="Información Adicional"
+        android:inputType="text"
+        android:paddingTop="25dp"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textUserCipaProf"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonSaveEdit"
+        style="@style/viewCustom"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:onClick="saveEdit"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:text="Guardar información"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textUserInfoProf"
+        tools:layout_editor_absoluteX="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

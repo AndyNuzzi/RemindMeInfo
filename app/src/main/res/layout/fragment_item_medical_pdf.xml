@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/item_border"
+    android:padding="10dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="Fecha"
+        android:textColor="?attr/colorOnBackground"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <TextView
+        android:id="@+id/depart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="Departamento"
+        android:textColor="?attr/colorOnBackground"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+</LinearLayout>
