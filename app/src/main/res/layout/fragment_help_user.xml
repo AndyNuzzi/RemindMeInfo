@@ -5,8 +5,7 @@
     android:id="@+id/help"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.help.HelpFragment">
-
+    tools:context=".ui.help.HelpUserFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,6 +39,5 @@
             android:backgroundTint="@color/light_gray"/>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

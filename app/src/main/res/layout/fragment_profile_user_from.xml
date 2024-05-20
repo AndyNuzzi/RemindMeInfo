@@ -9,11 +9,11 @@
     android:background="?attr/colorOnSecondary">
 
     <LinearLayout
-        android:id="@+id/profile_user_admin"
+        android:id="@+id/profile_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.profile.ProfileUserFragment">
+        tools:context=".ui.profile.ProfileUserFromFragment">
 
         <LinearLayout
             android:id="@+id/profile_titles"
@@ -26,7 +26,7 @@
                 android:layout_width="397dp">
 
                 <TextView
-                    android:id="@+id/text_admin_name"
+                    android:id="@+id/text_user_name"
                     android:layout_width="114dp"
                     android:layout_height="39dp"
                     android:layout_marginStart="8dp"
@@ -44,7 +44,7 @@
                     app:layout_constraintVertical_bias="0.08" />
 
                 <TextView
-                    android:id="@+id/textNameAdmin"
+                    android:id="@+id/text_name"
                     style="@style/viewCustom"
                     android:layout_width="217dp"
                     android:layout_height="39dp"
@@ -89,7 +89,7 @@
                     app:layout_constraintVertical_bias="0.08"  />
 
                 <TextView
-                    android:id="@+id/textSurnameAdmin"
+                    android:id="@+id/text_surname"
                     style="@style/viewCustom"
                     android:layout_width="219dp"
                     android:layout_height="39dp"
@@ -115,16 +115,167 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+            android:background="?attr/colorSecondaryVariant" />
 
         <LinearLayout
-            android:id="@+id/profile_titles9"
+            android:id="@+id/profile_titles2"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/viewCustom"
+                android:layout_width="397dp">
+
+                <TextView
+                    android:id="@+id/text_user_genre"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Género:"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08" />
+
+                <TextView
+                    android:id="@+id/text_genre"
+                    style="@style/viewCustom"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="?attr/colorSecondaryVariant"
+                    android:inputType="text"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textColorHint="?attr/colorSecondaryVariant"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_edit2"
+                style="@style/viewCustom"
+                android:layout_width="397dp">
+
+                <TextView
+                    android:id="@+id/text_user_age"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Edad:"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08"/>
+
+                <TextView
+                    android:id="@+id/text_age"
+                    style="@style/viewCustom"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="?attr/colorSecondaryVariant"
+                    android:inputType="text"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textColorHint="?attr/colorSecondaryVariant"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSecondaryVariant" />
+
+        <LinearLayout
+            android:id="@+id/profile_titles3"
             style="@style/viewCustom"
             android:layout_width="397dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/text_admin_email"
+                android:id="@+id/text_user_cipa"
+                android:layout_width="192dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Número CIPA: "
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.079" />
+
+            <TextView
+                android:id="@+id/text_cipa"
+                style="@style/viewCustom"
+                android:layout_width="354dp"
+                android:layout_height="44dp"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:inputType="text"
+                android:paddingTop="10sp"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.931"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.165" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSecondaryVariant" />
+
+        <LinearLayout
+            android:id="@+id/profile_titles4"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_user_email"
                 android:layout_width="115dp"
                 android:layout_height="34dp"
                 android:layout_marginStart="8dp"
@@ -142,13 +293,13 @@
                 app:layout_constraintVertical_bias="0.079" />
 
             <TextView
-                android:id="@+id/text_email_admin"
+                android:id="@+id/text_email"
                 style="@style/viewCustom"
-                android:layout_width="344dp"
-                android:layout_height="wrap_content"
+                android:layout_width="360dp"
+                android:layout_height="44dp"
                 android:backgroundTint="?attr/colorSecondaryVariant"
                 android:inputType="text"
-                android:paddingTop="25sp"
+                android:paddingTop="10sp"
                 android:textColor="?attr/colorSecondaryVariant"
                 android:textColorHint="?attr/colorSecondaryVariant"
                 android:textSize="20sp"
@@ -166,18 +317,19 @@
             android:background="?attr/colorSecondaryVariant" />
 
         <LinearLayout
-        android:id="@+id/profile_titles6"
-        style="@style/viewCustom"
-        android:layout_width="397dp"
-        android:orientation="vertical">
+            android:id="@+id/profile_titles5"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
             <TextView
-                android:id="@+id/text_admin_user_elder"
+                android:id="@+id/text_user_info"
                 android:layout_width="310dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:text=" Usuario Receptor: "
+                android:text="Información Adicional: "
                 android:textColor="?attr/colorSecondaryVariant"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -186,25 +338,27 @@
                 app:layout_constraintHorizontal_bias="0.211"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.73" />
+                app:layout_constraintVertical_bias="0.724" />
 
             <TextView
-                android:id="@+id/text_user_elder_admin"
+                android:id="@+id/text_info"
                 style="@style/viewCustom"
-                android:layout_width="364dp"
-                android:layout_height="88dp"
+                android:layout_width="363dp"
+                android:layout_height="77dp"
                 android:backgroundTint="?attr/colorSecondaryVariant"
-                android:inputType="text"
-                android:paddingTop="25sp"
+                android:ellipsize="end"
+                android:maxLines="20"
+                android:singleLine="false"
+                android:paddingTop="10sp"
                 android:textColor="?attr/colorSecondaryVariant"
                 android:textSize="25sp"
                 android:textColorHint="?attr/colorSecondaryVariant"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.457"
+                app:layout_constraintHorizontal_bias="0.209"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.83" />
+                app:layout_constraintVertical_bias="0.866" />
 
         </LinearLayout>
 
@@ -214,7 +368,7 @@
             android:background="?attr/colorSecondaryVariant" />
 
         <Button
-            android:id="@+id/buttonEditProfile"
+            android:id="@+id/buttonEditProfileUser"
             style="@style/viewCustom"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -223,15 +377,16 @@
             android:onClick="editProfile"
             android:paddingTop="7dp"
             android:paddingBottom="7dp"
-            android:text="Editar Perfil"
+            android:text="Editar Perfil Usuario Receptor"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_info_admin"
             app:layout_constraintVertical_bias="0.702" />
 
+
     </LinearLayout>
+
 </ScrollView>

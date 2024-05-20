@@ -1,19 +1,15 @@
 package com.example.remindmeinfo.ui.calendar_user
 
+import android.annotation.SuppressLint
+import android.graphics.Color
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentItemCalendarUserBinding
 
-import com.example.remindmeinfo.ui.reminder_list_user.UserReminders
 
-/**
- * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
- */
 class MyItemCalendarUserRecyclerViewAdapter(
     private val values: List<CalendarReminders>,
     private val onItemClicked: (String) -> Unit
@@ -31,12 +27,23 @@ class MyItemCalendarUserRecyclerViewAdapter(
 
     }
 
+    @SuppressLint("Range")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
         holder.contentView.text = item.title
 
+        try {
+
+            val color = Color.parseColor(item.color)
+            holder.itemView.setBackgroundColor(color)
+        } catch (e: IllegalArgumentException) {
+            Log.e("MyItemRecyclerViewAdapter", "Formato de color no válido: $item.color", e)
+
+            holder.itemView.setBackgroundColor(Color.WHITE)
+        }
+
         holder.itemView.setOnClickListener {
-            onItemClicked(item.id) // Llama al callback cuando se hace clic en el ítem
+            onItemClicked(item.id)
         }
     }
 

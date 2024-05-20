@@ -1,13 +1,11 @@
 package com.example.remindmeinfo.ui.profile
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.remindmeinfo.R
 import com.example.remindmeinfo.databinding.FragmentProfileUserBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -34,6 +32,7 @@ class ProfileUserFragment : Fragment() {
         lateinit var textViewAge: TextView
         lateinit var textViewAddInfo: TextView
         lateinit var textViewEmail: TextView
+        lateinit var textViewCipa: TextView
 
 
         _binding = FragmentProfileUserBinding.inflate(inflater, container, false)
@@ -45,37 +44,34 @@ class ProfileUserFragment : Fragment() {
         textViewAge = binding.textAge
         textViewAddInfo = binding.textInfo
         textViewEmail = binding.textEmail
-
+        textViewCipa = binding.textCipa
 
         if (uid != null) {
             dbReference.collection("users").document(uid)
                 .get()
-                .addOnSuccessListener { documento ->
-                    if (documento != null) {
-                        val nombre = documento.getString("name")
-                        textViewName.text = nombre
+                .addOnSuccessListener { doc ->
+                    val nombre = doc.getString("name")
+                    textViewName.text = nombre
 
-                        val apellido = documento.getString("surname")
-                        textViewSurname.text = apellido
+                    val apellido = doc.getString("surname")
+                    textViewSurname.text = apellido
 
-                        val genero = documento.getString("genre")
-                        textViewGenre.text = genero
+                    val genero = doc.getString("genre")
+                    textViewGenre.text = genero
 
-                        val edad = documento.getString("age")
-                        textViewAge.text = edad
+                    val edad = doc.getString("age")
+                    textViewAge.text = edad
 
-                        val infoAdd = documento.getString("aditional_info")
-                        textViewAddInfo.text = infoAdd
+                    val cipa = doc.getString("cipa_number")
+                    textViewCipa.text = cipa
 
-                        val email = documento.getString("user")
-                        textViewEmail.text = email
+                    val email = doc.getString("user")
+                    textViewEmail.text = email
 
-                    } else {
-                        Log.d("Fragment", "No such document")
-                    }
+                    val infoAdd = doc.getString("aditional_info")
+                    textViewAddInfo.text = infoAdd
                 }
         }
-
         return root
     }
 

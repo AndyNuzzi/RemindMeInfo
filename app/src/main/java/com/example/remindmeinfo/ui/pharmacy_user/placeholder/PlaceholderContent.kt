@@ -1,44 +1,24 @@
 package com.example.remindmeinfo.ui.pharmacy_user.placeholder
 
-import android.util.Log
 import com.example.remindmeinfo.ui.pharmacy_user.Medications
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QueryDocumentSnapshot
-import com.google.firebase.firestore.ktx.toObject
 import java.util.ArrayList
-import java.util.HashMap
 
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- *
- * TODO: Replace all uses of this class before publishing your app.
- */
 object PlaceholderContent {
 
-    /**
-     * An array of sample (placeholder) items.
-     */
     val ITEMS: MutableList<Medications> = ArrayList()
 
     val dbReference = FirebaseFirestore.getInstance()
 
-    init {
-        //for (i in 1.. ITEMS.lastIndex){
-            createPlaceholderItem()
-       // }
-
-    }
-
-    private fun createPlaceholderItem(): List<Medications>{
+    fun createPlaceholderItem(onDataLoaded: () -> Unit){
         var med_amount = ""
         var med_date = ""
         var med_name = ""
 
-        //val db =
         dbReference.collection("pharmacy_medications")
             .get()
             .addOnSuccessListener{ result ->
+                ITEMS.clear()
                 for (doc in result){
                     med_amount = doc.get("amount") as String
                     med_date = doc.get("date") as String
@@ -49,11 +29,9 @@ object PlaceholderContent {
                     if (med != null) {
                         ITEMS.add(med)
                     }
-
+                    onDataLoaded()
                 }
-
             }
-        return ITEMS
     }
 
 }

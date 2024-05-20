@@ -1,220 +1,372 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/profile_user"
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileUserFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorOnSecondary">
 
-    <TextView
-        android:id="@+id/text_user_name"
-        android:layout_width="114dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Nombre:"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+    <LinearLayout
+        android:id="@+id/profile_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.profile.ProfileUserFragment">
 
-    <TextView
-        android:id="@+id/text_name"
-        style="@style/viewCustom"
-        android:layout_width="133dp"
-        android:layout_height="43dp"
-        android:backgroundTint="@color/gray"
-        android:inputType="text"
-        android:paddingTop="25sp"
-        android:textColor="@color/gray"
-        android:textColorHint="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        <LinearLayout
+            android:id="@+id/profile_titles"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_user_surname"
-        android:layout_width="115dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Apellidos: "
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249" />
+            <LinearLayout
+                style="@style/viewCustom"
+                android:layout_width="397dp">
 
-    <TextView
-        android:id="@+id/text_surname"
-        style="@style/viewCustom"
-        android:layout_width="237dp"
-        android:layout_height="41dp"
-        android:backgroundTint="@color/gray"
-        android:inputType="text"
-        android:paddingTop="25sp"
-        android:textColor="@color/gray"
-        android:textColorHint="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+                <TextView
+                    android:id="@+id/text_user_name"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Nombre:"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08" />
 
-    <TextView
-        android:id="@+id/text_user_email"
-        android:layout_width="115dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Email: "
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
+                <TextView
+                    android:id="@+id/text_name"
+                    style="@style/viewCustom"
+                    android:layout_width="217dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="?attr/colorSecondaryVariant"
+                    android:inputType="text"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textColorHint="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08" />
 
-    <TextView
-        android:id="@+id/text_email"
-        style="@style/viewCustom"
-        android:layout_width="176dp"
-        android:layout_height="44dp"
-        android:backgroundTint="@color/gray"
-        android:inputType="text"
-        android:paddingTop="25sp"
-        android:textColor="@color/gray"
-        android:textColorHint="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/text_user_genre"
-        android:layout_width="115dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Género: "
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
+            <LinearLayout
+                android:id="@+id/profile_edit"
+                style="@style/viewCustom"
+                android:layout_width="397dp">
 
-    <TextView
-        android:id="@+id/text_genre"
-        style="@style/viewCustom"
-        android:layout_width="237dp"
-        android:layout_height="41dp"
-        android:backgroundTint="@color/gray"
-        android:inputType="text"
-        android:paddingTop="25sp"
-        android:textColor="@color/gray"
-        android:textColorHint="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/text_user_surname"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Apellidos:"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08"  />
 
-    <TextView
-        android:id="@+id/text_user_age"
-        android:layout_width="115dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Edad: "
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
+                <TextView
+                    android:id="@+id/text_surname"
+                    style="@style/viewCustom"
+                    android:layout_width="219dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="?attr/colorSecondaryVariant"
+                    android:inputType="text"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textColorHint="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08" />
 
-    <TextView
-        android:id="@+id/text_age"
-        style="@style/viewCustom"
-        android:layout_width="237dp"
-        android:layout_height="41dp"
-        android:backgroundTint="@color/gray"
-        android:inputType="text"
-        android:paddingTop="25sp"
-        android:textColor="@color/gray"
-        android:textColorHint="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/text_user_info"
-        android:layout_width="310dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Información Adicional: "
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/text_info"
-        style="@style/viewCustom"
-        android:layout_width="287dp"
-        android:layout_height="77dp"
-        android:backgroundTint="@color/gray"
-        android:inputType="text"
-        android:paddingTop="25sp"
-        android:textColor="@color/gray"
-        android:textColorHint="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSecondaryVariant" />
+
+        <LinearLayout
+            android:id="@+id/profile_titles2"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/viewCustom"
+                android:layout_width="397dp">
+
+                <TextView
+                    android:id="@+id/text_user_genre"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Género:"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08" />
+
+                <TextView
+                    android:id="@+id/text_genre"
+                    style="@style/viewCustom"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="?attr/colorSecondaryVariant"
+                    android:inputType="text"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textColorHint="?attr/colorSecondaryVariant"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_edit2"
+                style="@style/viewCustom"
+                android:layout_width="397dp">
+
+                <TextView
+                    android:id="@+id/text_user_age"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Edad:"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08"/>
+
+                <TextView
+                    android:id="@+id/text_age"
+                    style="@style/viewCustom"
+                    android:layout_width="114dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="?attr/colorSecondaryVariant"
+                    android:inputType="text"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="25sp"
+                    android:textColorHint="?attr/colorSecondaryVariant"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.08"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSecondaryVariant" />
+
+        <LinearLayout
+            android:id="@+id/profile_titles3"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
+            <TextView
+            android:id="@+id/text_user_cipa"
+            android:layout_width="192dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Número CIPA: "
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.079" />
+
+            <TextView
+            android:id="@+id/text_cipa"
+            style="@style/viewCustom"
+            android:layout_width="354dp"
+            android:layout_height="44dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:inputType="text"
+            android:paddingTop="10sp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.165" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSecondaryVariant" />
+
+        <LinearLayout
+            android:id="@+id/profile_titles4"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
+            <TextView
+            android:id="@+id/text_user_email"
+            android:layout_width="115dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Email: "
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.079" />
+
+            <TextView
+            android:id="@+id/text_email"
+            style="@style/viewCustom"
+            android:layout_width="360dp"
+            android:layout_height="44dp"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:inputType="text"
+            android:paddingTop="10sp"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.165" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSecondaryVariant" />
+
+        <LinearLayout
+            android:id="@+id/profile_titles5"
+            style="@style/viewCustom"
+            android:layout_width="397dp"
+            android:orientation="vertical">
+
+            <TextView
+            android:id="@+id/text_user_info"
+            android:layout_width="310dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Información Adicional: "
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.211"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.724" />
+
+            <TextView
+                android:id="@+id/text_info"
+                style="@style/viewCustom"
+                android:layout_width="363dp"
+                android:layout_height="77dp"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:ellipsize="end"
+                android:maxLines="20"
+                android:singleLine="false"
+                android:paddingTop="10sp"
+                android:textSize="25sp"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.209"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.866"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSecondaryVariant" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>

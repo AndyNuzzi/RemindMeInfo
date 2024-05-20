@@ -9,11 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.SpacesItemDecorationGrid
 import com.example.remindmeinfo.ui.reminder_admin.placeholder.PlaceholderContent
 
-/**
- * A fragment representing a list of Items.
- */
 class ItemReminderAdminFragment : Fragment() {
 
     private var columnCount = 2
@@ -48,6 +46,7 @@ class ItemReminderAdminFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
+                addItemDecoration(SpacesItemDecorationGrid(10, 10, true))
                 adapter = MyItemReminderAdminRecyclerViewAdapter(PlaceholderContent.ITEMS) { itemId ->
                     val detailFragment = DetailAdminFragment().apply {
                         arguments = Bundle().apply {

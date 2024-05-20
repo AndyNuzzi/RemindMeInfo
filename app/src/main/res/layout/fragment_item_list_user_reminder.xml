@@ -8,6 +8,9 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".ui.reminder_list_user.UserReminderFragment"
-    tools:listitem="@layout/fragment_item_user_reminder" />
+    tools:listitem="@layout/fragment_item_user_reminder" >
+
+</androidx.recyclerview.widget.RecyclerView>

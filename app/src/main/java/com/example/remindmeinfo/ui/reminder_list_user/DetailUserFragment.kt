@@ -11,7 +11,6 @@ import com.example.remindmeinfo.databinding.FragmentDetailUserBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 class DetailUserFragment : Fragment() {
 
     private var _binding: FragmentDetailUserBinding? = null
@@ -25,13 +24,10 @@ class DetailUserFragment : Fragment() {
         _binding = FragmentDetailUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Ya no necesitas declarar las variables 'message1', 'message2', 'message3' aquí
-        // debido a que puedes acceder a ellas directamente desde el binding.
-
         val documentId = arguments?.getString("documentId")
         if (documentId == null) {
             Log.w("DetailViewFragment", "No se proporcionó 'documentId'.")
-            return root // Retorna aquí si no hay ID de documento, ya que no podemos proceder sin él.
+            return root // Retorna aquí si no hay ID de documento, ya que no se puede proceder sin él.
         }
 
         // email --> user receptor
@@ -62,8 +58,11 @@ class DetailUserFragment : Fragment() {
                                 }
 
                                 // Configuración de los textos
+                                val info = document.getString("subtitle")
+                                val info_saltos = info?.replace(", ", "\n ")
+
                                 binding.detailTextViewUser.text = document.getString("title")
-                                binding.detailSubtitleUser.text = document.getString("subtitle")
+                                binding.detailSubtitleUser.text = info_saltos
                                 binding.detailDateUser.text = document.getString("date") ?: ""
                             } else {
                                 Log.w("DetailViewFragment", "El documento solicitado no existe.")

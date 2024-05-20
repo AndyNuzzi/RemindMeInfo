@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="?attr/colorOnSecondary">
 
 
     <TextView
@@ -13,18 +18,43 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginTop="20dp"
-        android:text="Pantalla de "
-        android:textColor="@color/black"
+        android:text="Términos y Condiciones de Uso para RemindMeInfo \n
+
+Última actualización: 31/03/2024\n
+\n
+Bienvenido a RemindMeInfo, una aplicación móvil diseñada para ofrecerte una aplicación de ayuda a personas mayores. Al descargar, instalar o utilizar RemindMeInfo, usted acepta estar vinculado por estos términos y condiciones. Si no está de acuerdo con estos Términos, no acceda ni utilice nuestra aplicación.
+\n
+1. Uso de Internet\n
+RemindMeInfo requiere una conexión a Internet para funcionar correctamente. Usted es responsable de cualquier cargo asociado con el acceso a Internet desde su dispositivo móvil.
+\n
+2. Usuarios Registrados\n
+Para acceder a ciertas funcionalidades de RemindMeInfo, puede ser necesario crear una cuenta y convertirse en un usuario registrado. Usted es responsable de mantener la confidencialidad de su contraseña y cuenta, así como de todas las actividades que ocurran bajo su cuenta.
+\n
+3. Uso del GPS\n
+RemindMeInfo puede utilizar servicios de localización, como el GPS de su dispositivo, para ofrecer funcionalidades específicas. Al aceptar estos Términos, usted autoriza a RemindMeInfo a acceder a la información de su ubicación.
+\n
+4. Llamadas Telefónicas y Correos Electrónicos\n
+RemindMeInfo puede tener la funcionalidad de realizar llamadas telefónicas o enviar correos electrónicos desde su dispositivo. Estas acciones solo se realizarán con su consentimiento y en el contexto del uso previsto de la aplicación.
+\n
+5. Derechos de Propiedad Intelectual\n
+Todo el contenido de RemindMeInfo, incluyendo textos, gráficos, logos, iconos, imágenes y software, es propiedad de RemindMeInfo o sus proveedores de contenido y está protegido por leyes de derechos de autor y marcas registradas.
+\n
+6. Limitación de Responsabilidad\n
+RemindMeInfo no será responsable por daños directos, indirectos, incidentales, especiales o consecuentes que resulten del uso o la incapacidad de usar RemindMeInfo, incluso si RemindMeInfo ha sido advertido de la posibilidad de tales daños.
+\n
+7. Cambios en los Términos y Condiciones\n
+RemindMeInfo se reserva el derecho de modificar estos Términos en cualquier momento. Su uso continuado de RemindMeInfo después de cualquier cambio significa que acepta y está de acuerdo en cumplir con los Términos modificados.
+\n
+8. Jurisdicción y Ley Aplicable\n
+Estos Términos se regirán e interpretarán de acuerdo con las leyes del país de España sin dar efecto a ningún principio de conflictos de ley.
+\n
+9. Contacto\n
+Si tiene preguntas o comentarios sobre estos Términos, por favor contáctenos a rmeinfotfg@gmail.com.
+\n
+Al aceptar estos Términos, usted reconoce que ha leído, entendido y acordado estar vinculado por ellos.\n"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/terms2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Terminos y condiciones de uso"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        android:layout_margin="8dp"/>
 
 </LinearLayout>
+</ScrollView>

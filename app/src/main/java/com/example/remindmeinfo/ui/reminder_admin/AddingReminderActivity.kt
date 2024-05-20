@@ -9,6 +9,7 @@ import android.widget.*
 import androidx.fragment.app.FragmentManager
 import com.example.remindmeinfo.MainActivityAdmin
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.databinding.ActivityAddingReminderBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -16,6 +17,8 @@ import java.util.*
 class AddingReminderActivity : AppCompatActivity() {
 
     val currentUser = FirebaseAuth.getInstance().currentUser
+
+    private lateinit var binding: ActivityAddingReminderBinding
 
     private lateinit var fragmentManager: FragmentManager
 
@@ -25,6 +28,11 @@ class AddingReminderActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_reminder)
+
+        binding = ActivityAddingReminderBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
 
         fragmentManager = supportFragmentManager
 

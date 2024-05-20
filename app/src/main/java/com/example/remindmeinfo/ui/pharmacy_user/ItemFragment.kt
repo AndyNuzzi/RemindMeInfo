@@ -9,17 +9,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.remindmeinfo.R
+import com.example.remindmeinfo.SpacesItemDecoration
 import com.example.remindmeinfo.ui.pharmacy_user.placeholder.PlaceholderContent
 
-/**
- * A fragment representing a list of Items.
- */
 class ItemFragment : Fragment() {
 
     private var columnCount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+    }
+
+    private fun loadReminders() {
+        PlaceholderContent.createPlaceholderItem {
+            view?.findViewById<RecyclerView>(R.id.list_recycler_view)?.adapter?.notifyDataSetChanged()
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadReminders()
     }
 
     override fun onCreateView(
@@ -35,6 +45,8 @@ class ItemFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
+
+                addItemDecoration(SpacesItemDecoration(10))
                 adapter = MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS)
             }
         }

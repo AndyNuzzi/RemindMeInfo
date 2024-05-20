@@ -6,4 +6,10 @@
         android:icon="@drawable/ic_baseline_monitor_heart_24"
         android:title=""
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/panic_button"
+        android:icon="@drawable/ic_baseline_call_24"
+        android:title=""
+        app:showAsAction="always"/>
 </menu>

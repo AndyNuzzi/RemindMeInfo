@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorOnSecondary"
     tools:context=".VitalControlActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
 
     <TextView
         android:id="@+id/text_medical_info_diab"
@@ -14,7 +25,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Diabetes"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <TextView
         android:id="@+id/text_medical_info_heart"
@@ -32,15 +43,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Pulso cardíaco"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <TextView
         android:id="@+id/text_medical_info_tension"
@@ -50,7 +61,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Tensión"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.519" />
 
     <LinearLayout
         android:id="@+id/data_heart"
@@ -68,21 +79,21 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433">
+        app:layout_constraintVertical_bias="0.41">
 
         <EditText
             android:id="@+id/textDataHeart"
             style="@style/viewCustom"
             android:layout_width="285dp"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Datos del pulso cardíaco"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="372dp" />
     </LinearLayout>
@@ -95,22 +106,22 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698"
+        app:layout_constraintVertical_bias="0.622"
         tools:ignore="MissingConstraints">
 
         <EditText
             android:id="@+id/textDataTension"
             style="@style/viewCustom"
             android:layout_width="wrap_content"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Tensión Alta"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="372dp" />
 
@@ -118,12 +129,12 @@
             android:id="@+id/textDataTension2"
             style="@style/viewCustom"
             android:layout_width="wrap_content"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Tensión Baja"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="372dp" />
     </LinearLayout>
@@ -136,23 +147,22 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178"
+        app:layout_constraintVertical_bias="0.185"
         tools:ignore="MissingConstraints">
 
         <EditText
             android:id="@+id/textDataDiab"
             style="@style/viewCustom"
             android:layout_width="285dp"
-            android:layout_marginTop="0dp"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Datos de diabetes"
             android:inputType="text"
             android:paddingTop="25dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray" />
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant" />
     </LinearLayout>
 
     <TextView
@@ -161,7 +171,7 @@
         android:layout_width="317dp"
         android:layout_height="35dp"
         android:layout_marginTop="100dp"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:onClick="saveVitalInfo"
         android:text="Guardar información"
         android:textAlignment="center"
@@ -172,6 +182,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.76" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

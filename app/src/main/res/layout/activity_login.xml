@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple">
+    android:background="?attr/colorPrimary">
     
     <ImageView
         android:id="@+id/Image"
@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/buttonLogin"
         style="@style/viewCustom"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:paddingTop="7dp"
@@ -59,7 +59,7 @@
         android:paddingTop="0dp"
         android:gravity="center_horizontal"
         android:text="¿Ha olvidado su contraseña?"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:onClick="forgottenPsswrd" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:paddingTop="0dp"
         android:gravity="center_horizontal"
         android:text="¿Todavía no tiene cuenta en la aplicación?"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:onClick="signIn_Act"/>
 
     <Button
@@ -79,11 +79,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:drawableLeft="@drawable/google"
         android:text="GOOGLE"
         android:textAlignment="textStart"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="16sp"
         android:paddingLeft="30dp"
         android:onClick="signInGoogle"/>

@@ -2,6 +2,7 @@ package com.example.remindmeinfo
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,7 @@ import com.example.remindmeinfo.databinding.ActivityMainBinding
 import com.example.remindmeinfo.ui.help.HelpFragment
 import com.example.remindmeinfo.ui.map_admin.MapsAdminFragment
 import com.example.remindmeinfo.ui.profile.ProfileAdminFragment
-import com.example.remindmeinfo.ui.profile.ProfileUserFragment
+import com.example.remindmeinfo.ui.profile.ProfileUserFromFragment
 import com.example.remindmeinfo.ui.reminder_admin.AddingReminderActivity
 import com.example.remindmeinfo.ui.reminder_admin.ItemReminderAdminFragment
 import com.example.remindmeinfo.ui.setting.SettingFragment
@@ -68,6 +69,19 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         supportActionBar!!.setDisplayShowHomeEnabled(true)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.profile_menu_admin, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.profileAdmin -> openFragment(ProfileAdminFragment())
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onNavigationItemSelected(item: MenuItem):Boolean{
 
         when (item.itemId){
@@ -75,7 +89,7 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.navigation_setting -> openFragment(SettingFragment())
             R.id.navigation_home -> startMain()
             R.id.navigation_profile -> openFragment(ProfileAdminFragment())
-            R.id.navigation_profile_user -> openFragment(ProfileUserFragment())
+            R.id.navigation_profile_user -> openFragment(ProfileUserFromFragment())
             R.id.navigation_session -> singOutAdmin()
         }
 

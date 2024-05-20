@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple">
+    android:background="?attr/colorPrimary">
 
     <ImageView
         android:id="@+id/Image"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:textSize="10sp"
             android:text="He leido y acepto los"
-            android:textColor="@color/white"/>
+            android:textColor="?attr/colorOnSecondary"/>
 
         <TextView
             android:id="@+id/link"
@@ -56,7 +56,7 @@
             android:textSize="10sp"
             android:text="términos y condiciones de uso"
             android:layout_marginLeft="5dp"
-            android:textColor="@color/orange"
+            android:textColor="?attr/colorSecondary"
             android:onClick="goTerms" />
 
     </LinearLayout>
@@ -64,7 +64,7 @@
     <TextView
         android:id="@+id/buttonSignIn"
         style="@style/viewCustom"
-        android:background="@color/blue"
+        android:background="?attr/color"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:paddingTop="7dp"
